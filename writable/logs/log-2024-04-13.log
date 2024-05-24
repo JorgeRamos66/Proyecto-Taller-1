@@ -1,0 +1,42 @@
+CRITICAL - 2024-04-13 20:17:39 --> Invalid file: "Principal.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Principal.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('Principal.php', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('Principal.php')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 20:47:38 --> include(/Encabezado.html): failed to open stream: No such file or directory
+in APPPATH\Views\proyecto\front\Principal.php on line 9.
+ 1 APPPATH\Views\proyecto\front\Principal.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(/Encabezado.html): failed to open stream: No such file or directory', 'APPPATH\\Views\\proyecto\\front\\Principal.php', 9, [])
+ 2 APPPATH\Views\proyecto\front\Principal.php(9): include()
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Principal.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Principal.php', [], true)
+ 6 APPPATH\Controllers\Home.php(9): view('proyecto/front/Principal.php')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 21:12:29 --> Invalid file: "proyecto/front/Encabezado.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('proyecto/front/Encabezado.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Encabezado.php', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('proyecto/front/Encabezado.php')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-13 21:22:17 --> include(Barra_de_navegacion.php): failed to open stream: No such file or directory
+in APPPATH\Views\proyecto\front\Principal.php on line 10.
+ 1 APPPATH\Views\proyecto\front\Principal.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(Barra_de_navegacion.php): failed to open stream: No such file or directory', 'APPPATH\\Views\\proyecto\\front\\Principal.php', 10, [])
+ 2 APPPATH\Views\proyecto\front\Principal.php(10): include()
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Principal.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Principal.php', [], true)
+ 6 APPPATH\Controllers\Home.php(9): view('proyecto/front/Principal.php')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

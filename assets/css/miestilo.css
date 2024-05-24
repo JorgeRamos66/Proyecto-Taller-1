@@ -1,0 +1,248 @@
+
+*{ margin:0;
+    padding:0;
+    }
+    .h{
+     
+    }
+    .p{
+    }
+
+    .header1{
+        background-color: black;
+        opacity: 90%;
+        margin-bottom: 0;
+    }
+    
+
+    .about-us {
+        background-color: rgb(0, 0, 0, 0.2);
+        padding: 50px 0;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+      }
+      
+      .about-us h2 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      
+      .about-us p {
+        text-align: justify;
+        line-height: 1.6;
+      }
+      
+      .about-us h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      .staff {
+        
+        background-color: rgb(0, 0, 0, 0.2);
+        padding: 50px 0;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+      }
+      
+      .staff h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      
+      .staff h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .staff ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .staff li {
+        margin-bottom: 20px;
+      }
+      
+      .staff h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      
+      .staff p {
+        text-align: justify;
+        line-height: 1.6;
+      }
+
+      .comercializacion {
+        background-color: rgb(0, 0, 0, 0.2);
+        padding: 50px 0;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+      }
+      
+      .comercializacion h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      
+      .comercializacion h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .comercializacion h3 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      
+      .comercializacion ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .comercializacion li {
+        margin-bottom: 20px;
+      }
+      
+      .comercializacion h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      
+      .comercializacion p {
+        text-align: justify;
+        line-height: 1.6;
+      }
+      .aviso-legal article{
+        
+        background-color: rgb(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        color: white;
+        text-shadow: 1px 1px 2px black;
+      }
+      .aviso-legal h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+
+      .aviso-legal article h4{
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .aviso-legal article p{
+        text-align: justify;
+        line-height: 1.6;
+      }
+
+
+
+      .contacto {
+        background-color: rgb(0, 0, 0, 0.2);
+        padding: 50px 0;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+      }
+      
+      .contacto h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      
+      .contacto h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .contacto h3 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      
+      .contacto ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .contacto li {
+        margin-bottom: 20px;
+      }
+      
+      .contacto h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      
+      .contacto p {
+        text-align: justify;
+        line-height: 1.6;
+      }
+
+    #background-video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+
+      #videoCarousel {
+        /* Adjust height, width, and other carousel styles as needed */
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+      
+
+    .carousel-item img {
+        border-radius: 10px;
+        border: 1px solid black;
+        display: block;
+        margin: 0 auto;
+        width: 600px;
+        height: 400px;
+        opacity: 95%;
+      }
+      .carousel-caption {
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: black;
+        font-weight: bold;
+        background-color: white;
+        opacity: 90%;
+        text-align: center;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      }
+      .desc{
+        font-family: 'Open Sans', sans-serif;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        text-align: justify;
+        padding: 10px 15px;
+        margin: 10px 60px;
+        font-size: 13px;
+        color: white;
+        text-wrap: active;
+        text-shadow: 10px;
+        opacity: 90%;
+      }
+
+      
+      
+      
