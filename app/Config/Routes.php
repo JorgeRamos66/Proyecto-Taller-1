@@ -43,7 +43,7 @@ $routes->get('terminos_y_usos', 'Home::Terminos_y_usos');
 /**
  * Rutas del login
  */
-$routes->get('login', 'Login_controller::index');
+$routes->get('login', 'Login_controller::login');
 $routes->post('enviarlogin', 'Login_controller::auth');
 $routes->get('panel', 'Panel_controller::index', ['filter' => 'auth']);
 $routes->get('logout', 'Login_controller::logout');
@@ -53,9 +53,9 @@ $routes->get('logout', 'Login_controller::logout');
  * Rutas del registro
  */
 /*rutas del Registro de Usuarios*/
-$routes->get('/registro','Usuario_controller::create');
+$routes->get('registro','Usuario_controller::create');
 /*La URI enviar-form es el action del formulario registrarse.php*/
-$routes->post('/enviar-form','Usuario_controller::formValidation');
+$routes->post('enviar-form','Usuario_controller::formValidation');
 
 
 /*

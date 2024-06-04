@@ -8,13 +8,9 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
-Use App\Models\Usuarios_model;
+Use App\Models\Usuarios_Model;
 
-class Usuario_controller extends Controller {
-public function __construct(){
-    helper(['form', 'url']);
-    }
-}
+
 
 /**
  * Class BaseController

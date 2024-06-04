@@ -30,7 +30,7 @@
                 </ul>
                 <li class="nav-item btn-group">
                   <a class="nav-toggler btn btn-sm btn-outline-primary my-1" href="<?php echo base_url('login');?>">Login</a>
-                  <a class="nav-toggler btn btn-sm btn-outline-danger my-1" href="<?php echo base_url('../back/registro');?>">Registro</a>
+                  <a class="nav-toggler btn btn-sm btn-outline-danger my-1" href="<?php echo base_url('registro');?>">Registro</a>
                 </li>
               </div>
             </nav>

@@ -4,7 +4,7 @@ use App\Models\Usuarios_Model;
   
 class login_controller extends BaseController
 {
-    public function index()
+    public function login()
     {
         helper('form');
 
@@ -19,6 +19,7 @@ class login_controller extends BaseController
         //echo view('Back/usuario/login');
         //echo view('front/Pie_de_pagina');
     }
+
   
     public function auth()
     {

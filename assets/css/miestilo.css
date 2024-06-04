@@ -139,7 +139,26 @@
         line-height: 1.6;
       }
 
+      .registro {
+        width: 40%;
+        color: white; 
+      }
 
+      .registro label{
+        color: red;
+      }
+
+      .registro div{
+        color: white;
+      }
+
+      .registro input::placeholder{
+        color: blue;
+      }
+
+      .registro alert-danger{
+        color: black;
+      }
 
       .contacto {
         background-color: rgb(0, 0, 0, 0.2);
