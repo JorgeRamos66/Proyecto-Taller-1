@@ -25,11 +25,11 @@ class Usuario_controller extends BaseController{
     public function formValidation() {
              
         $input = $this->validate([
-            'nombre'   => 'required|min_length[3]|max_length[25]',
-            'apellido' => 'required|min_length[3]|max_length[25]',
-            'usuario'  => 'required|min_length[3]|max_length[25]',
+            'nombre'   => 'required|min_length[3]|max_length[50]',
+            'apellido' => 'required|min_length[3]|max_length[50]',
+            'usuario'  => 'required|min_length[3]|max_length[50]',
             'email'    => 'required|min_length[4]|max_length[100]|valid_email|is_unique[usuarios.email]',
-            'pass'     => 'required|min_length[3]|max_length[10]'
+            'pass'     => 'required|min_length[3]|max_length[100]'
         ],
         
        );
@@ -51,7 +51,7 @@ class Usuario_controller extends BaseController{
         } else {
             
             $formModel->save([
-                'nombre' => $this->request->getPost('nombre'),
+                'nombre' => $this->request->getVar('nombre'),
                 'apellido'=> $this->request->getVar('apellido'),
                 'usuario'=> $this->request->getVar('usuario'),
                 'email'=> $this->request->getVar('email'),
