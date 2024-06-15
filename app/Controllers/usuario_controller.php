@@ -1,7 +1,6 @@
 <?php
 namespace App\Controllers;
 Use App\Models\Usuarios_Model;
-require_once('db_connect.php');
 
 class Usuario_controller extends BaseController{
 
