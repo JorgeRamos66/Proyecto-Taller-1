@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 Use App\Models\Usuarios_Model;
+use CodeIgniter\Controller;
 
 class Usuario_controller extends BaseController{
 
@@ -33,7 +34,7 @@ class Usuario_controller extends BaseController{
         ],
         
        );
-        $formModel = new Usuarios_Model();
+        $formModel = new Usuario_Model();
      
         if (!$input) {
 

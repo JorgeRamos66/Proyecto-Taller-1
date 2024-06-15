@@ -57,6 +57,12 @@ $routes->get('registro','Usuario_controller::create');
 /*La URI enviar-form es el action del formulario registrarse.php*/
 $routes->post('enviar-form','Usuario_controller::formValidation');
 
+//Routes Admin
+$routes->get('/admin','Admin_controller::admin_view',['filter'=> 'auth']);
+$routes->get('/lista_usuarios','Admin_controller::users_list',['filter'=> 'auth']);
+
+$routes->get('/modificar_usuario','User_modify_controller::user_modify',['filter'=>'register']);
+$routes->post('/modify_user_post','User_modify_controller::modify_validation',['filter'=>'register']);
 
 /*
  * --------------------------------------------------------------------

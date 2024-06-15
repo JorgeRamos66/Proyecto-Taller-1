@@ -60,3 +60,76 @@ WHERE `email` = :email:
  9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
 10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 15:30:55 --> Class 'App\Controllers\Usuario' not found
+in APPPATH\Controllers\Usuario_controller.php on line 36.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 15:32:37 --> Invalid file: "front/Encabezado.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/Encabezado.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('front/Encabezado', [], true)
+ 3 APPPATH\Controllers\Usuario_controller.php(19): view('front/Encabezado', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->create()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 15:33:01 --> Class 'App\Controllers\Usuario' not found
+in APPPATH\Controllers\Usuario_controller.php on line 36.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 15:34:23 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_ramos_jorge`.`usuarios`, CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`perfil_id`) REFERENCES `perfiles` (`id_perfil`)) in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `us...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(58): CodeIgniter\BaseModel->save(Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-06-15 15:34:23 --> Cannot add or update a child row: a foreign key constraint fails (`bd_ramos_jorge`.`usuarios`, CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`perfil_id`) REFERENCES `perfiles` (`id_perfil`))
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `usuarios` (`nombre`, `apellido`, `usuario`, `email`, `pass`) VALUES (:nombre:, :apellido:, :usuario:, :email:, :pass:)', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Usuario_controller.php(58): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 18:10:10 --> Class 'App\Models\Usuarios_Model' not found
+in APPPATH\Controllers\Login_controller.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login_controller->auth()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 18:12:00 --> Class 'App\Models\Usuarios_Model' not found
+in APPPATH\Controllers\Usuario_controller.php on line 36.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 18:12:39 --> Class 'App\Controllers\Usuario_Model' not found
+in APPPATH\Controllers\Usuario_controller.php on line 36.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 18:28:43 --> Class 'App\Controllers\Usuario_Model' not found
+in APPPATH\Controllers\Usuario_controller.php on line 36.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

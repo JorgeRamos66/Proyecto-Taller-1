@@ -1,8 +1,9 @@
 <?php 
 namespace App\Controllers;
+use CodeIgniter\Controller;
 use App\Models\Usuarios_Model;
   
-class login_controller extends BaseController
+class Login_controller extends BaseController
 {
     public function login()
     {
@@ -24,7 +25,7 @@ class login_controller extends BaseController
     public function auth()
     {
         $session = session(); //el objeto de sesión se asigna a la variable $session
-        $model = new Usuarios_Model(); //instanciamos el modelo
+        $model = new Usuario_Model(); //instanciamos el modelo
 
         //traemos los datos del formulario
         $email = $this->request->getVar('email');
@@ -36,7 +37,7 @@ class login_controller extends BaseController
                $ba= $data['baja'];
                 if ($ba == 'SI'){
                      $session->setFlashdata('msg', 'usuario dado de baja');
-                     return redirect()->to('/login_controller');
+                     return redirect()->to('/Login_controller');
                  }
                     //Se verifican los datos ingresados para iniciar, si cumple la verificaciòn inicia la sesion
                $verify_pass = password_verify($password, $pass);
