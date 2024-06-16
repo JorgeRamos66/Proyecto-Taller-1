@@ -1,0 +1,71 @@
+CRITICAL - 2024-06-16 01:48:53 --> The route for "registrarse" cannot be found.
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 60.
+ 1 SYSTEMPATH\HTTP\RedirectResponse.php(60): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('registrarse')
+ 2 APPPATH\Controllers\Usuario_controller.php(109): CodeIgniter\HTTP\RedirectResponse->route(false)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->nuevo_registro()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 02:07:02 --> Invalid file: "Encabezado.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Encabezado.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('Encabezado.php', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('Encabezado.php')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 02:07:15 --> Invalid file: "front/Encabezado.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/Encabezado.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('front/Encabezado.php', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('front/Encabezado.php')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 02:08:42 --> Class 'App\Controllers\Usuario_Model' not found
+in APPPATH\Controllers\Login_controller.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login_controller->auth()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 16:58:31 --> Class 'App\Controllers\Usuario_Model' not found
+in APPPATH\Controllers\Login_controller.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login_controller->auth()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 18:14:23 --> Class 'App\Controllers\Usuario_Model' not found
+in APPPATH\Controllers\Login_controller.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login_controller->auth()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 21:38:30 --> Too few arguments to function CodeIgniter\HTTP\RedirectResponse::with(), 1 passed in D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php on line 176 and exactly 2 expected
+in SYSTEMPATH\HTTP\RedirectResponse.php on line 130.
+ 1 APPPATH\Controllers\Usuario_controller.php(176): CodeIgniter\HTTP\RedirectResponse->with('No existe el usuario o no fue bien escroto')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->auth()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 21:59:33 --> syntax error, unexpected '}', expecting ';'
+in APPPATH\Controllers\Usuario_controller.php on line 177.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Usuario_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Usuario_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Usuario_controller')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Usuario_controller')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Usuario_controller', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 22:06:49 --> syntax error, unexpected '<', expecting ')'
+in APPPATH\Controllers\Usuario_controller.php on line 146.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Usuario_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Usuario_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Usuario_controller')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Usuario_controller')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Usuario_controller', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

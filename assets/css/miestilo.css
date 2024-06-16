@@ -7,6 +7,8 @@
     }
     .p{
     }
+    
+
 
     .header1{
         background-color: black;
@@ -137,6 +139,21 @@
       .aviso-legal article p{
         text-align: justify;
         line-height: 1.6;
+      }
+
+      .login {
+        width: 50%;
+        color: white;
+      }
+      .login label{
+        color: blue;
+      }
+      .login div{
+        color: white;
+      }
+
+      .login input::placeholder{
+        color: red;
       }
 
       .registro {

@@ -133,3 +133,1310 @@ in APPPATH\Controllers\Usuario_controller.php on line 36.
  2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
  3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 19:18:47 --> Use of undefined constant ENVIROMENT - assumed 'ENVIROMENT' (this will throw an Error in a future version of PHP)
+in SYSTEMPATH\Database\Config.php on line 94.
+ 1 SYSTEMPATH\Database\Config.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant ENVIROMENT - assumed \'ENVIROMENT\' (this will throw an Error in a future version of PHP)', 'SYSTEMPATH\\Database\\Config.php', 94, [])
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(251): CodeIgniter\Database\Config::getConnections()
+ 3 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(70): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 4 SYSTEMPATH\Debug\Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 5 SYSTEMPATH\Config\Services.php(723): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 6 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 7 SYSTEMPATH\Config\BaseService.php(193): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+ 8 SYSTEMPATH\Config\Services.php(718): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+ 9 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::toolbar()
+10 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+11 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+12 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('registro', 'after')
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 19:18:47 --> Use of undefined constant ENVIROMENT - assumed 'ENVIROMENT' (this will throw an Error in a future version of PHP)
+in SYSTEMPATH\Database\Config.php on line 94.
+ 1 SYSTEMPATH\Database\Config.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant ENVIROMENT - assumed \'ENVIROMENT\' (this will throw an Error in a future version of PHP)', 'SYSTEMPATH\\Database\\Config.php', 94, [])
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(251): CodeIgniter\Database\Config::getConnections()
+ 3 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(70): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 4 SYSTEMPATH\Debug\Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 5 SYSTEMPATH\Config\Services.php(723): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 6 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 7 SYSTEMPATH\Config\BaseService.php(193): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+ 8 SYSTEMPATH\Config\Services.php(718): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+ 9 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::toolbar()
+10 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+11 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+12 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('login', 'after')
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 19:18:48 --> Use of undefined constant ENVIROMENT - assumed 'ENVIROMENT' (this will throw an Error in a future version of PHP)
+in SYSTEMPATH\Database\Config.php on line 94.
+ 1 SYSTEMPATH\Database\Config.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant ENVIROMENT - assumed \'ENVIROMENT\' (this will throw an Error in a future version of PHP)', 'SYSTEMPATH\\Database\\Config.php', 94, [])
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(251): CodeIgniter\Database\Config::getConnections()
+ 3 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(70): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 4 SYSTEMPATH\Debug\Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 5 SYSTEMPATH\Config\Services.php(723): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 6 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 7 SYSTEMPATH\Config\BaseService.php(193): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+ 8 SYSTEMPATH\Config\Services.php(718): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+ 9 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::toolbar()
+10 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+11 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+12 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('registro', 'after')
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 19:18:48 --> Use of undefined constant ENVIROMENT - assumed 'ENVIROMENT' (this will throw an Error in a future version of PHP)
+in SYSTEMPATH\Database\Config.php on line 94.
+ 1 SYSTEMPATH\Database\Config.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant ENVIROMENT - assumed \'ENVIROMENT\' (this will throw an Error in a future version of PHP)', 'SYSTEMPATH\\Database\\Config.php', 94, [])
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(251): CodeIgniter\Database\Config::getConnections()
+ 3 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(70): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 4 SYSTEMPATH\Debug\Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 5 SYSTEMPATH\Config\Services.php(723): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 6 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 7 SYSTEMPATH\Config\BaseService.php(193): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+ 8 SYSTEMPATH\Config\Services.php(718): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+ 9 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::toolbar()
+10 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+11 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+12 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('D:\\', 'after')
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 19:18:51 --> Use of undefined constant ENVIROMENT - assumed 'ENVIROMENT' (this will throw an Error in a future version of PHP)
+in SYSTEMPATH\Database\Config.php on line 94.
+ 1 SYSTEMPATH\Database\Config.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefined constant ENVIROMENT - assumed \'ENVIROMENT\' (this will throw an Error in a future version of PHP)', 'SYSTEMPATH\\Database\\Config.php', 94, [])
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(251): CodeIgniter\Database\Config::getConnections()
+ 3 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(70): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 4 SYSTEMPATH\Debug\Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 5 SYSTEMPATH\Config\Services.php(723): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 6 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 7 SYSTEMPATH\Config\BaseService.php(193): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+ 8 SYSTEMPATH\Config\Services.php(718): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+ 9 SYSTEMPATH\Config\BaseService.php(252): CodeIgniter\Config\Services::toolbar()
+10 SYSTEMPATH\Filters\DebugToolbar.php(40): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+11 SYSTEMPATH\Filters\Filters.php(196): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+12 SYSTEMPATH\CodeIgniter.php(519): CodeIgniter\Filters\Filters->run('D:\\', 'after')
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 19:20:27 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'DB_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate(Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate(Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 19:20:27 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gmail.com', 'email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gmail.com', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 19:23:46 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'DB_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate(Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate(Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 19:23:46 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gmail.com', 'email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gmail.com', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 19:23:50 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'DB_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate(Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate(Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 19:23:50 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gmail.com', 'email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gmail.com', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:41:21 --> syntax error, unexpected 'return' (T_RETURN)
+in APPPATH\Controllers\Usuario_controller.php on line 15.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Usuario_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Usuario_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Usuario_controller')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Usuario_controller')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Usuario_controller', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:41:29 --> syntax error, unexpected 'return' (T_RETURN)
+in APPPATH\Controllers\Usuario_controller.php on line 15.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Usuario_controller.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Usuario_controller')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Usuario_controller')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Usuario_controller')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Usuario_controller', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:42:25 --> Argument 2 passed to view() must be of the type array, null given, called in D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php on line 15
+in SYSTEMPATH\Common.php on line 1172.
+ 1 APPPATH\Controllers\Usuario_controller.php(15): view('./proyecto/front/Encabezado', null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->create()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:44:58 --> Argument 2 passed to view() must be of the type array, null given, called in D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php on line 15
+in SYSTEMPATH\Common.php on line 1172.
+ 1 APPPATH\Controllers\Usuario_controller.php(15): view('./proyecto/front/Encabezado', null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->create()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:45:05 --> Argument 2 passed to view() must be of the type array, null given, called in D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php on line 15
+in SYSTEMPATH\Common.php on line 1172.
+ 1 APPPATH\Controllers\Usuario_controller.php(15): view('./proyecto/front/Encabezado', null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->create()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:45:36 --> Argument 2 passed to view() must be of the type array, null given, called in D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php on line 15
+in SYSTEMPATH\Common.php on line 1172.
+ 1 APPPATH\Controllers\Usuario_controller.php(15): view('./proyecto/front/Encabezado.php', null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->create()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:46:18 --> Argument 2 passed to view() must be of the type array, null given, called in D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php on line 14
+in SYSTEMPATH\Common.php on line 1172.
+ 1 APPPATH\Controllers\Usuario_controller.php(14): view('./proyecto/front/Encabezado', null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->create()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 20:53:19 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'DB_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('asd', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'asd', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate(Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('asd', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'asd', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate(Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 20:53:19 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('asd', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'asd', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(29): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:01:41 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'DB_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('asd', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'asd', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(38): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('asd', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'asd', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(38): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:01:41 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('asd', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'asd', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(38): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:01:59 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'DB_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(38): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(38): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:01:59 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(38): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:02:33 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'DB_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(38): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(38): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:02:33 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(38): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:04:30 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'DB_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:04:30 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 21:04:36 --> Class 'App\Controllers\Usuario_Model' not found
+in APPPATH\Controllers\Usuario_controller.php on line 75.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:06:05 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'DB_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:06:05 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:07:49 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:07:49 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:18:20 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:18:20 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:20:12 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:20:12 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gmail.com', 'email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gmail.com', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:20:40 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:20:40 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gmail.com', 'email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gmail.com', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:20:55 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:20:55 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gmail.com', 'email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gmail.com', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:21:08 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:21:08 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 21:46:04 --> syntax error, unexpected '<', expecting end of file
+in APPPATH\Views\proyecto\front\Encabezado.php on line 21.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('./proyecto/front/Encabezado', [], true)
+ 3 APPPATH\Controllers\Usuario_controller.php(13): view('./proyecto/front/Encabezado')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->create()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 21:46:07 --> syntax error, unexpected '<', expecting end of file
+in APPPATH\Views\proyecto\front\Encabezado.php on line 21.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('./proyecto/front/Encabezado.php', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('./proyecto/front/Encabezado.php')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 21:47:26 --> mysqli::__construct(): (HY000/1045): Access denied for user 'taller'@'localhost' (using password: YES)
+in APPPATH\Views\proyecto\front\Encabezado.php on line 22.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::__construct(): (HY000/1045): Access denied for user \'taller\'@\'localhost\' (using password: YES)', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 22, [...])
+ 2 APPPATH\Views\proyecto\front\Encabezado.php(22): mysqli->__construct('localhost', 'taller', 'Programacion2024', 'db_ramos_jorge')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('./proyecto/front/Encabezado.php', [], true)
+ 6 APPPATH\Controllers\Home.php(9): view('./proyecto/front/Encabezado.php')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 21:50:15 --> mysqli::__construct(): (HY000/1045): Access denied for user 'taller'@'localhost' (using password: YES)
+in APPPATH\Views\proyecto\front\Encabezado.php on line 22.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::__construct(): (HY000/1045): Access denied for user \'taller\'@\'localhost\' (using password: YES)', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 22, [...])
+ 2 APPPATH\Views\proyecto\front\Encabezado.php(22): mysqli->__construct('localhost', 'taller', 'Programacion2024', 'db_ramos_jorge')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('./proyecto/front/Encabezado.php', [], true)
+ 6 APPPATH\Controllers\Home.php(9): view('./proyecto/front/Encabezado.php')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 21:50:16 --> mysqli::__construct(): (HY000/1045): Access denied for user 'taller'@'localhost' (using password: YES)
+in APPPATH\Views\proyecto\front\Encabezado.php on line 22.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::__construct(): (HY000/1045): Access denied for user \'taller\'@\'localhost\' (using password: YES)', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 22, [...])
+ 2 APPPATH\Views\proyecto\front\Encabezado.php(22): mysqli->__construct('localhost', 'taller', 'Programacion2024', 'db_ramos_jorge')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('./proyecto/front/Encabezado.php', [], true)
+ 6 APPPATH\Controllers\Home.php(9): view('./proyecto/front/Encabezado.php')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 21:50:16 --> mysqli::__construct(): (HY000/1045): Access denied for user 'taller'@'localhost' (using password: YES)
+in APPPATH\Views\proyecto\front\Encabezado.php on line 22.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::__construct(): (HY000/1045): Access denied for user \'taller\'@\'localhost\' (using password: YES)', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 22, [...])
+ 2 APPPATH\Views\proyecto\front\Encabezado.php(22): mysqli->__construct('localhost', 'taller', 'Programacion2024', 'db_ramos_jorge')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('./proyecto/front/Encabezado.php', [], true)
+ 6 APPPATH\Controllers\Home.php(9): view('./proyecto/front/Encabezado.php')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 21:50:17 --> mysqli::__construct(): (HY000/1045): Access denied for user 'taller'@'localhost' (using password: YES)
+in APPPATH\Views\proyecto\front\Encabezado.php on line 22.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::__construct(): (HY000/1045): Access denied for user \'taller\'@\'localhost\' (using password: YES)', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 22, [...])
+ 2 APPPATH\Views\proyecto\front\Encabezado.php(22): mysqli->__construct('localhost', 'taller', 'Programacion2024', 'db_ramos_jorge')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('./proyecto/front/Encabezado.php', [], true)
+ 6 APPPATH\Controllers\Home.php(9): view('./proyecto/front/Encabezado.php')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 21:50:17 --> mysqli::__construct(): (HY000/1045): Access denied for user 'taller'@'localhost' (using password: YES)
+in APPPATH\Views\proyecto\front\Encabezado.php on line 22.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::__construct(): (HY000/1045): Access denied for user \'taller\'@\'localhost\' (using password: YES)', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 22, [...])
+ 2 APPPATH\Views\proyecto\front\Encabezado.php(22): mysqli->__construct('localhost', 'taller', 'Programacion2024', 'db_ramos_jorge')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('./proyecto/front/Encabezado.php', [], true)
+ 6 APPPATH\Controllers\Home.php(9): view('./proyecto/front/Encabezado.php')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 21:55:42 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gm...', 'email', Array, NULL, 'email')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gm...', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 21:55:42 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('jpdjorgito12@gmail.com', 'email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('email', 'email', 'jpdjorgito12@gmail.com', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(39): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 22:08:38 --> Call to a member function database() on null
+in APPPATH\Controllers\Usuario_controller.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 22:22:22 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci4' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'ci4', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci4' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 22:22:22 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'ci4'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 22:23:07 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 22:23:07 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 22:23:18 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 22:23:18 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 22:24:53 --> mysqli_sql_exception: Table 'bd_ramos_jorge.usuarios' doesn't exist in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-06-15 22:24:53 --> Table 'bd_ramos_jorge.usuarios' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 4 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 5 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 6 APPPATH\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate([...], [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 22:25:02 --> mysqli_sql_exception: Table 'bd_ramos_jorge.usuarios' doesn't exist in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-06-15 22:25:02 --> Table 'bd_ramos_jorge.usuarios' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 4 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 5 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 6 APPPATH\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate([...], [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 22:26:16 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'bd_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'bd_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate(Array, Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'bd_ramos_jorge' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', Array, NULL, 'usuario')
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', Array, Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate(Array, Array)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-15 22:26:16 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'bd_ramos_jorge'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `usuarios`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(312): CodeIgniter\Validation\StrictRules\Rules->is_unique('pancasero', 'usuario', [...], null, 'usuario')
+ 5 SYSTEMPATH\Validation\Validation.php(170): CodeIgniter\Validation\Validation->processRules('usuario', 'usuario', 'pancasero', [...], [...])
+ 6 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\Usuario_controller.php(40): CodeIgniter\Controller->validate([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 22:31:46 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`db_ramos_jorge`.`usuarios`, CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`perfil_id`) REFERENCES `perfiles` (`id_perfil`)) in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `us...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Usuario_controller.php(98): CodeIgniter\BaseModel->save(Array)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-06-15 22:31:46 --> Cannot add or update a child row: a foreign key constraint fails (`db_ramos_jorge`.`usuarios`, CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`perfil_id`) REFERENCES `perfiles` (`id_perfil`))
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `usuarios` (`nombre`, `apellido`, `usuario`, `email`, `pass`) VALUES (:nombre:, :apellido:, :usuario:, :email:, :pass:)', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Usuario_controller.php(98): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->formValidation()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
