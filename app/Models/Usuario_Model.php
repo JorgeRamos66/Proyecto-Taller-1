@@ -16,4 +16,16 @@ class Usuario_Model extends Model
     'perfil_id'
     ,'baja',];
     protected $returnType = 'array';
+
+    public function getUsuariosAlta(){
+        return $this->where('baja', 'NO')->findAll();
+    }
+
+    public function getUsuariosBaja(){
+        return $this->where('baja', 'SI')->findAll();
+    }
+
+    public function getUsuariosTodos(){
+        return $this->findAll();
+    }
 }

@@ -4,7 +4,7 @@
             </div>
         <?php endif;?>
 <section class="container mt-5" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
-    <h2 class="mb-4" style=" text-align: center;">Productos</h2>
+    <h2 class="mb-4" style=" text-align: center;">Gestion Productos</h2>
     <table class="table table-striped table-bordered">
         <thead class="thead-dark">
             <tr>

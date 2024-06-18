@@ -173,6 +173,21 @@ class Usuario_controller extends BaseController{
     {
         $session = session();
         $session->destroy();
-        return redirect()->to('/');
+        return redirect()->to(base_url('/'));
     }
+
+    public function listar_usuarios(){
+
+        $usuarioModel = new Usuario_Model();
+        
+        $data['usuarios'] = $usuarioModel->getUsuariosTodos();
+        $data['titulo'] = 'Gestion productos';
+
+        return view('proyecto/front/Encabezado', $data)
+        .view('proyecto/front/Barra_de_navegacion_admin')
+        .view('proyecto/back/Gestion_usuarios')
+        .view('proyecto/front/Pie_de_pagina');
+    }
+
+
 }

@@ -7,6 +7,11 @@ class Categoria_Model extends Model {
     protected $primaryKey = 'id_categoria';
     protected $allowedFields =
     ['descripcion_categoria', 
-    'activocategoria'];
+    'activo_categoria'];
     protected $returnType = 'array';
+
+    public function getCategorias(){
+        return $this->findAll();
+    }
+
 }

@@ -4,7 +4,7 @@ $nombre = $session->get('nombre');
 $perfil = $session->get('perfil_id');
 ?>
 <?php $validation = \Config\Services::validation(); ?>
-<section class="contacto text-justify" style="">
+<section class="contacto text-justify">
     <div style="text-align: center;"><h1 class="my-2 badge" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">Información de Contacto</h1></div>
     <div class="container">
         <div class="row">

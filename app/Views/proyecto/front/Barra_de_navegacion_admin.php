@@ -11,12 +11,12 @@ $perfil = $session->get('perfil_id');
             <button class="navbar-toggler btn btn-outline-danger active" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <?php if($perfil == 1): ?>
+            
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-1">
                 
                 <li class="nav-item">
-                  <a class="nav-toggler btn btn-outline-warning mx-2 my-1" href="<?php echo base_url('lista_usuarios');?>">Gestion usuarios</a>
+                  <a class="nav-toggler btn btn-outline-warning mx-2 my-1" href="<?php echo base_url('gestion_usuarios');?>">Gestion usuarios</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-toggler btn btn-outline-success mx-2 my-1" href="<?php echo base_url('gestion_productos');?>">Gestion productos</a>
@@ -42,11 +42,6 @@ $perfil = $session->get('perfil_id');
                   <a class="nav-toggler btn btn-sm btn-outline-light my-1" href="<?= base_url('logout'); ?>">Logout</a>
                 </li>
               
-              <?php else: ?>
-                <div class="py-1 alert alert-danger mt-2" style="color: red; text-shadow: none;">      
-                  <h1>Acceso restringido!</h1>
-                </div>
-              <?php endif; ?>
               </div>
               
             </nav>

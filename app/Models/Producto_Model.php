@@ -19,11 +19,11 @@ class Producto_Model extends Model
     protected $returnType = 'array';
 
     public function getProductosAlta(){
-        return $this->where('baja', 'NO')->findAll();
+        return $this->where('eliminado_producto', 'NO')->findAll();
     }
 
     public function getProductosBaja(){
-        return $this->where('baja', 'SI')->findAll();
+        return $this->where('eliminado_producto', 'SI')->findAll();
     }
 
     public function getProductosTodos(){
