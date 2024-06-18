@@ -35,7 +35,7 @@ class Producto_controller extends Controller{
         return view('proyecto/front/Encabezado', $data)
         .view('proyecto/front/Barra_de_navegacion_admin')
         .view('proyecto/back/Alta_producto')
-        .view('proyecto/front/Pie_de_pagina');
+        .view('proyecto/front/Pie_de_pagina'); 
 
     }
 
