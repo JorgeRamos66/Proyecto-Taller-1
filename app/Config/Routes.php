@@ -30,10 +30,13 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('', 'Home::Principal');
+/**
+ * Rutas del navBar
+ */
+$routes->get('/', 'Home::Principal');
 $routes->get('quienes_somos', 'Home::Quienes_somos');
 $routes->get('comercializacion', 'Home::Comercializacion');
-$routes->get('informacion_de_contacto', 'Home::Informacion_de_contacto');
+$routes->get('informacion_de_contacto', 'Contacto_controller::contacto');
 $routes->get('terminos_y_usos', 'Home::Terminos_y_usos');
 //$routes->get();
 
@@ -44,10 +47,15 @@ $routes->get('terminos_y_usos', 'Home::Terminos_y_usos');
  */
 $routes->get('login', 'Usuario_controller::login');
 $routes->post('enviarlogin', 'Usuario_controller::auth');
-$routes->get('panel', 'Panel_controller::index', ['filter' => 'auth']);
+$routes->get('panel', 'Panel_controller::index', ['filter' => 'logged']);
 $routes->get('logout', 'Usuario_controller::logout');
 
+/**
+ * Rutas de las consultas
+ */
 
+$routes->post('enviar_consulta','Contacto_controller::nueva_consulta');
+$routes->get('enviar_consulta_registrado','Contacto_controller::nueva_consulta_registrado');
 /**
  * Rutas del registro
  */
@@ -57,11 +65,12 @@ $routes->get('registro','Usuario_controller::registro');
 $routes->post('enviar-form','Usuario_controller::nuevo_registro');
 
 //Routes Admin
-$routes->get('/admin','Admin_controller::admin_view',['filter'=> 'auth']);
-$routes->get('/lista_usuarios','Admin_controller::users_list',['filter'=> 'auth']);
+$routes->get('panel_admin','Admin_controller::Admin_view',['filter'=>'admin']);
+$routes->get('gestion_usuarios','Admin_controller::users_list',['filter'=> 'admin']);
+$routes->get('gestion_productos','Admin_controller::listar_productos');
 
-$routes->get('/modificar_usuario','User_modify_controller::user_modify',['filter'=>'register']);
-$routes->post('/modify_user_post','User_modify_controller::modify_validation',['filter'=>'register']);
+$routes->get('modificar_usuario','User_modify_controller::user_modify',['filter'=>'register']);
+$routes->post('modify_user_post','User_modify_controller::modify_validation',['filter'=>'register']);
 
 /*
  * --------------------------------------------------------------------

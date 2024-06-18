@@ -1,0 +1,167 @@
+INFO - 2024-06-18 00:03:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:03:08 --> Undefined variable: productos
+in APPPATH\Views\proyecto\back\Gestion_productos.php on line 19.
+ 1 APPPATH\Views\proyecto\back\Gestion_productos.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: productos', 'APPPATH\\Views\\proyecto\\back\\Gestion_productos.php', 19, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\back\\Gestion_productos.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_productos', [], true)
+ 5 APPPATH\Controllers\Admin_controller.php(19): view('proyecto/back/Gestion_productos')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin_controller->listar_productos()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 00:20:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:20:55 --> Undefined variable: productos
+in APPPATH\Views\proyecto\back\Gestion_productos.php on line 19.
+ 1 APPPATH\Views\proyecto\back\Gestion_productos.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: productos', 'APPPATH\\Views\\proyecto\\back\\Gestion_productos.php', 19, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\back\\Gestion_productos.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_productos', [], true)
+ 5 APPPATH\Controllers\Admin_controller.php(19): view('proyecto/back/Gestion_productos')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin_controller->listar_productos()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 00:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:22:00 --> Undefined variable: productos
+in APPPATH\Views\proyecto\back\Gestion_productos.php on line 19.
+ 1 APPPATH\Views\proyecto\back\Gestion_productos.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: productos', 'APPPATH\\Views\\proyecto\\back\\Gestion_productos.php', 19, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\back\\Gestion_productos.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_productos', [], true)
+ 5 APPPATH\Controllers\Admin_controller.php(19): view('proyecto/back/Gestion_productos')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin_controller->listar_productos()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 00:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:25:50 --> Undefined variable: productos
+in APPPATH\Views\proyecto\back\Gestion_productos.php on line 19.
+ 1 APPPATH\Views\proyecto\back\Gestion_productos.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: productos', 'APPPATH\\Views\\proyecto\\back\\Gestion_productos.php', 19, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\back\\Gestion_productos.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_productos', [], true)
+ 5 APPPATH\Controllers\Admin_controller.php(19): view('proyecto/back/Gestion_productos')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin_controller->listar_productos()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 00:25:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:25:52 --> Undefined variable: productos
+in APPPATH\Views\proyecto\back\Gestion_productos.php on line 19.
+ 1 APPPATH\Views\proyecto\back\Gestion_productos.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: productos', 'APPPATH\\Views\\proyecto\\back\\Gestion_productos.php', 19, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\back\\Gestion_productos.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_productos', [], true)
+ 5 APPPATH\Controllers\Admin_controller.php(19): view('proyecto/back/Gestion_productos')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin_controller->listar_productos()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 00:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:41:12 --> Undefined variable: productos
+in APPPATH\Views\proyecto\back\Gestion_productos.php on line 19.
+ 1 APPPATH\Views\proyecto\back\Gestion_productos.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: productos', 'APPPATH\\Views\\proyecto\\back\\Gestion_productos.php', 19, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\back\\Gestion_productos.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_productos', [], true)
+ 5 APPPATH\Controllers\Admin_controller.php(19): view('proyecto/back/Gestion_productos')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin_controller->listar_productos()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 00:52:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:52:47 --> Undefined variable: titulo
+in APPPATH\Views\proyecto\front\Encabezado.php on line 10.
+ 1 APPPATH\Views\proyecto\front\Encabezado.php(10): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: titulo', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 10, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Encabezado', [], true)
+ 5 APPPATH\Controllers\Admin_controller.php(9): view('proyecto/front/Encabezado')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin_controller->Admin_view()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 00:52:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:52:49 --> Undefined variable: titulo
+in APPPATH\Views\proyecto\front\Encabezado.php on line 10.
+ 1 APPPATH\Views\proyecto\front\Encabezado.php(10): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: titulo', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 10, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Encabezado', [], true)
+ 5 APPPATH\Controllers\Home.php(9): view('proyecto/front/Encabezado')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 00:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:54:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:54:38 --> Undefined variable: titulo
+in APPPATH\Views\proyecto\front\Encabezado.php on line 10.
+ 1 APPPATH\Views\proyecto\front\Encabezado.php(10): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: titulo', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 10, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Encabezado', [], true)
+ 5 APPPATH\Controllers\Home.php(24): view('proyecto/front/Encabezado')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Comercializacion()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 00:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:55:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:55:22 --> Undefined variable: titulo
+in APPPATH\Views\proyecto\front\Encabezado.php on line 10.
+ 1 APPPATH\Views\proyecto\front\Encabezado.php(10): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: titulo', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 10, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Encabezado', [], true)
+ 5 APPPATH\Controllers\Home.php(18): view('proyecto/front/Encabezado')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Quienes_somos()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-18 00:55:38 --> syntax error, unexpected ',', expecting ';'
+in APPPATH\Controllers\Home.php on line 26.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 00:55:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:56:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:56:03 --> Undefined variable: titulo
+in APPPATH\Views\proyecto\front\Encabezado.php on line 10.
+ 1 APPPATH\Views\proyecto\front\Encabezado.php(10): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: titulo', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 10, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Encabezado', [], true)
+ 5 APPPATH\Controllers\Admin_controller.php(9): view('proyecto/front/Encabezado')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin_controller->Admin_view()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 00:56:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 00:58:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 00:58:38 --> Undefined variable: titulo
+in APPPATH\Views\proyecto\front\Encabezado.php on line 10.
+ 1 APPPATH\Views\proyecto\front\Encabezado.php(10): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: titulo', 'APPPATH\\Views\\proyecto\\front\\Encabezado.php', 10, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Encabezado.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Encabezado', [], true)
+ 5 APPPATH\Controllers\Usuario_controller.php(105): view('proyecto/front/Encabezado')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Usuario_controller->login()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

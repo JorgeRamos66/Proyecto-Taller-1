@@ -15,27 +15,30 @@
       <!-- Incio del formulario de login-->              
     <form method="post" action="<?php echo base_url('enviarlogin') ?>">
       <div class="card-body" media="(max-width:768px)">
-        
-        <div class="col-12 mb-2 form-floatin">
-          <input name="usuario" type="text" class="form-control"  placeholder="Ingrese su nombre de usuario" >
-          <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+        <div class="col-12 mb-2 form-floating">
+          <input name="usuario" type="text" class="form-control" id="floatingUser" placeholder="Ingrese su nombre de usuario" >
+          <label for="floatingUser">Usuario</label>
           <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2">Ingrese su nombre de usuario.</div>
          </div>
         
-        <div class="col-12 mb-2">
-          <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
-          <input name="pass" type="password"  class="form-control" placeholder="Ingrese su contraseña">
-          <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2">Entre 3 y 25 letras.</div>
+        <div class="col-12 mb-2 form-floating">
+          <input name="pass" type="password"  class="form-control" id="floatingPass" placeholder="Ingrese su contraseña">
+          <label for="floatingPass">Contraseña</label>
+          <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2">Respete mayusculas y minusculas</div>
           
         </div>
         
+        
 
         <div class="container text-center">
-        <input type="submit" value="Ingresar" class="btn btn-success">
-        <a href="<?php echo base_url('login'); ?>" class="btn btn-danger">Cancelar</a>
-        <br>
+          <input type="submit" value="Ingresar" class="btn btn-success">
+          <a href="<?php echo base_url('/'); ?>" class="btn btn-danger">Cancelar</a>
+          <input type="reset" value="Borrar" class="btn btn-secondary" onclick="borrarTextArea()">
+          <br>
         </div>
-        <span>¿Aún no se registró? <a href="<?php echo base_url('registro'); ?>">Registrarse aquí</a></span>
+          <div class="container text-center" style="text-shadow: none;">
+            <span>¿Aún no se registró? <a href="<?php echo base_url('registro'); ?>">Registrarse aquí</a></span>
+          </div>
       </div>
     </form>
   </div>

@@ -1,4 +1,13 @@
 
+<?php if(session()->getFlashdata('msg')):?>
+<div class=" d-flex mx-6 justify-content-center">
+  <div class="alert alert-info alert-dismissible fade show" style="color: black; text-shadow: none;" role="alert">
+    <?= session()->getFlashdata('msg')?>
+    <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+  
+<?php endif;?>
 <div class="container">
     <div class="green-background"></div>
     <div class="row justify-content-center">

@@ -145,8 +145,13 @@
         width: 50%;
         color: white;
       }
+      .form-floating{
+        color: blue;
+      }
       .login label{
         color: blue;
+        size: 1.2px;
+        text-shadow: none;
       }
       .login div{
         color: white;
@@ -163,6 +168,7 @@
 
       .registro label{
         color: red;
+        text-shadow: none;
       }
 
       .registro div{
@@ -170,7 +176,6 @@
       }
 
       .registro input::placeholder{
-        color: blue;
       }
 
       .registro alert-danger{
