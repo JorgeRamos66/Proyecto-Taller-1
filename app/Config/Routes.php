@@ -67,7 +67,7 @@ $routes->post('enviar-form','Usuario_controller::nuevo_registro');
 //Routes Admin
 $routes->get('panel_admin','Admin_controller::Admin_view',['filter'=>'admin']);
 $routes->get('gestion_usuarios','Admin_controller::users_list',['filter'=> 'admin']);
-$routes->get('gestion_productos','Admin_controller::listar_productos');
+$routes->get('gestion_productos','Producto_controller::listar_productos');
 
 $routes->get('modificar_usuario','User_modify_controller::user_modify',['filter'=>'register']);
 $routes->post('modify_user_post','User_modify_controller::modify_validation',['filter'=>'register']);

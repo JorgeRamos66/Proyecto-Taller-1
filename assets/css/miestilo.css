@@ -2,11 +2,7 @@
 *{ margin:0;
     padding:0;
     }
-    .h{
-     
-    }
-    .p{
-    }
+    
     
 
 
@@ -175,8 +171,6 @@
         color: white;
       }
 
-      .registro input::placeholder{
-      }
 
       .registro alert-danger{
         color: black;
