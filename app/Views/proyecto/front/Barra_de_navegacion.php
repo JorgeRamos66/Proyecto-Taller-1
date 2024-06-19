@@ -33,25 +33,14 @@ $perfil = $session->get('perfil_id');
                 
               </ul>
               <div class=" col d-flex justify-content-end">
-                <div class=" d-flex">
-                  <?php if (session()->has('loggedIn')): ?>
-                    <?php if($perfil == 1): ?>
-                      <button type="button" class="btn btn-outline-primary btn-sm nav-toggler my-1 mx-3">
-                        <a><span style="color: white;">USUARIO:</span> <?php echo session('nombre'); ?> </a>
-                      </button>
-                    <?php else: ?>
-                      <button type="button" class="btn btn-outline-primary btn-sm nav-toggler my-1 mx-3">
-                        <a><span style="color: white;">CLIENTE:</span> <?php echo session('nombre'); ?> </a>
-                      </button>
-                    <?php endif; ?>
-                  <?php endif; ?>
-                  
-                </div>
+                
+
+                
                 <div class="row d-flex">
                   <?php if (!session()->has('loggedIn')): ?>
                     <li class="nav-item btn-group">
                       <a class="nav-toggler btn btn-sm btn-outline-primary my-1" href="<?= base_url('login'); ?>">Login</a>
-                      <a class="nav-toggler btn btn-sm btn-outline-danger my-1" href="<?= base_url('registro'); ?>">Registro</a>
+                      <a class="nav-toggler btn btn-sm btn-outline-danger my-1" href="<?= base_url('form-registro'); ?>">Registro</a>
                     </li>
                   <?php elseif (session()->has('loggedIn') && !session()->get('es_admin')): ?>
                     <li class="nav-item btn-group">
@@ -60,11 +49,24 @@ $perfil = $session->get('perfil_id');
                     </li>
                   <?php else: ?>
                     <li class="nav-item btn-group">
-                      <a class="nav-toggler btn btn-sm btn-outline-success my-1" href="<?= base_url('panel_admin'); ?>">Panel Admin</a>
-                      <a class="nav-toggler btn btn-sm btn-outline-light my-1" href="<?= base_url('logout'); ?>">Logout</a>
+                      <a class="nav-toggler btn btn-sm btn-outline-warning my-1" href="<?= base_url('panel_admin'); ?>">Panel Admin</a>
+                      <a class="nav-toggler btn btn-sm btn-outline-danger my-1" href="<?= base_url('logout'); ?>">Logout</a>
                     </li>
                   <?php endif; ?>
-              </div>
+                </div>
+                <div class=" d-flex">
+                    <?php if (session()->has('loggedIn')): ?>
+                      <?php if($perfil == 1): ?>
+                        <button type="button" class="btn btn-outline-success btn-sm nav-toggler my-1 mx-3">
+                          <a><span style="color: white;">USUARIO:</span> <?php echo session('nombre'); ?> </a>
+                        </button>
+                      <?php else: ?>
+                        <button type="button" class="btn btn-outline-primary btn-sm nav-toggler my-1 mx-3">
+                          <a><span style="color: white;">CLIENTE:</span> <?php echo session('nombre'); ?> </a>
+                        </button>
+                      <?php endif; ?>
+                    <?php endif; ?>
+                  </div>
                 
               </div>
               

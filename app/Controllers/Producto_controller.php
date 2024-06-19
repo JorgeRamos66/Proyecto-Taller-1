@@ -14,7 +14,9 @@ class Producto_controller extends Controller{
     public function listar_productos(){
 
         $productoModel = new Producto_Model();
-        
+        $categoriasModel = new Categoria_Model();
+
+        $data['categorias'] = $categoriasModel->getCategorias();
         $data['productos'] = $productoModel->getProductosTodos();
         $data['titulo'] = 'Gestion productos';
 
@@ -41,21 +43,24 @@ class Producto_controller extends Controller{
 
     public function store(){
         $session = session();
+        $categoriasModel = new Categoria_Model();
 
         $input = $this->validate([
             'nombre_producto'       => 'required|min_length[3]',
-            'id_categoria'          => 'is_not_unique[categorias.id_categoria]',
+            'id_categoria'          => 'required|is_not_unique[categorias.id_categoria]',
             'precio_producto'       => 'required',
             'precio_vta_producto'   => 'required',
             'stock_producto'        => 'required',
-            'stock_min_producto'    => 'required'
+            'stock_min_producto'    => 'required',
+            'imagen_producto'       => 'uploaded[imagen_producto]'
         ],
         [
-            'nombre'=>[
+            'nombre_producto'=>[
                 'required'=>'Debe ingresar un nombre que tenga almenos 3 caracteres.',
-                'max_lenght'=>'Supero el maximo de caracteres.'
+                'min_length'=>'Debe tener minimo 3 caracteres.'
             ],
             'id_categoria'=>[
+                'required'=>'Debe seleccionar alguna categoria.',
                 'is_not_unique'=>'Seleccione una categoria existente.'
             ],
             'precio_producto'=>[
@@ -69,22 +74,44 @@ class Producto_controller extends Controller{
             ],
             'stock_min_producto'=>[
                 'required'=>'Debe ingresar un stock minimo para el producto.'
+            ],
+            'imagen_producto'=>[
+                'uploaded'=>'Debe cargar una imagen.'
             ]
         ]
        );
     
        $productoModel = new Producto_Model();
        if (!$input) {
+        $data['categorias'] = $categoriasModel->getCategorias();
         $data['titulo'] = 'Alta Producto';
         return view('proyecto/front/Encabezado', $data)
         .view('proyecto/front/Barra_de_navegacion_admin')
-        .view('proyecto/back/Alta_producto')
-        .view('proyecto/front/Pie_de_pagina', [
-        'validation' => $this->validator
-        ]);
+        .view('proyecto/back/Alta_producto', ['validation' => $this->validator])
+        .view('proyecto/front/Pie_de_pagina');
+
        }else {
         
-        $img = $this->request->getFile('imagen');
-       }
+        $img = $this->request->getFile('imagen_producto');
+        $nombre_aleatorio = $img->getRandomName();
+        $img->move(ROOTPATH. 'assets/uploads', $nombre_aleatorio);
+
+        $data = [
+            'nombre_producto'       => $this->request->getPost('nombre_producto'), 
+            'imagen_producto'       => $nombre_aleatorio,
+            'id_categoria'          => $this->request->getPost('id_categoria'),
+            'precio_producto'       => $this->request->getPost('precio_producto'), 
+            'precio_vta_producto'   => $this->request->getPost('precio_vta_producto'),
+            'stock_producto'        => $this->request->getPost('stock_producto'),
+            'stock_min_producto'    => $this->request->getPost('stock_min_producto'),
+            'eliminado_producto'    => 'NO'
+        ];
+
+        $productoModel->insert($data);
+
+        return redirect()->to(base_url('gestion_productos'))->with('exito', 'Producto agregado!');
+        }
+
+        
     }
 }

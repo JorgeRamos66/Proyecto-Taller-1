@@ -5,15 +5,14 @@ $perfil = $session->get('perfil_id');
 ?>
 <?php $validation = \Config\Services::validation(); ?>
 <section class="contacto text-justify">
-    <div style="text-align: center;"><h1 class="my-2 badge" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">Información de Contacto</h1></div>
+    <div style="text-align: center;"><h1 class="my-2 badge" style="border-color: red ;color: red ;backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">Información de Contacto</h1></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
                 <div class="row-4">
-
                     <div class="informacion-empresa rounded-2 my-2 text-justify text-wrap" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
                         <div class="container">                        
-                            <h3>Datos de la Empresa</h3>
+                            <h3 class="py-2">Datos de la Empresa</h3>
                             <ul>
                                 <li>
                                     <h4>Titular:</h4>
@@ -67,7 +66,7 @@ $perfil = $session->get('perfil_id');
             <?php endif;?>
                 <?php if(!session()->has('loggedIn')): ?>
                     <div class="px-2 rounded-2 my-2 text-justify text-wrap" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
-                        <h2 class="mb-4 text-center">Envíanos un Mensaje</h2>
+                        <h2 class="mb-4 text-center py-2">Envíanos un Mensaje</h2>
                         <form class="my-0" method="post" action="<?php echo base_url('enviar_consulta') ?>">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre</label>
@@ -133,7 +132,8 @@ $perfil = $session->get('perfil_id');
                                 </div>
                             <?php }?>
                         </div>
-                        <button type="submit" value="Enviar" class="btn btn-dark mb-2 mx-auto">Enviar</button>
+                        <div class="text-center"><button type="submit" value="Enviar" class="btn btn-dark mb-2 mx-auto ">Enviar</button></div>
+                        
                     </form>
                 </div>
                 <?php endif; ?>

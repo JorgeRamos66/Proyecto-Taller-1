@@ -65,6 +65,7 @@ class Usuario_controller extends BaseController{
             ]
         ]
        );
+       
         $formModel = new Usuario_Model();
         if (!$input) {
             $data['titulo'] = 'Registro';
@@ -84,8 +85,7 @@ class Usuario_controller extends BaseController{
               //password_hash() crea un nuevo hash de contraseña usando un algoritmo de hash de único sentido.
             ]);
             // Flashdata funciona solo en redirigir la función en el controlador en la vista de carga.
-               session()->setFlashdata('success', 'Usuario registrado con exito');
-               return redirect()->to(base_url('login'))->with('mensaje', 'El registro ha sido exitoso!');
+               return redirect()->to(base_url('login'))->with('exito', 'El registro ha sido exitoso!');
             //return redirect()->to('login')->with('mensaje','El registro ha sido exitoso!');
             //return $this->response->redirect(site_url('login'));
             //return redirect()->route('login')->with('mensaje','El registro ha sido exitoso!');

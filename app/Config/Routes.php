@@ -60,15 +60,19 @@ $routes->get('enviar_consulta_registrado','Contacto_controller::nueva_consulta_r
  * Rutas del registro
  */
 /*rutas del Registro de Usuarios*/
-$routes->get('registro','Usuario_controller::registro');
+$routes->get('form-registro','Usuario_controller::registro');
 /*La URI enviar-form es el action del formulario registrarse.php*/
-$routes->post('enviar-form','Usuario_controller::nuevo_registro');
+$routes->post('enviar-registro','Usuario_controller::nuevo_registro');
 
 //Routes Admin
 $routes->group('', ['filter' => 'admin'], function ($routes) {
     $routes->get('panel_admin','Admin_controller::Admin_view');
     $routes->get('gestion_productos','Producto_controller::listar_productos');
+    $routes->get('form-producto','Producto_controller::crear_producto');
+    $routes->Post('enviar-producto','Producto_controller::store');
+
     $routes->get('gestion_usuarios','Usuario_controller::listar_usuarios');
+
 });
 
 $routes->get('modificar_usuario','User_modify_controller::user_modify',['filter'=>'register']);

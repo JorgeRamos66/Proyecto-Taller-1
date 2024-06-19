@@ -6,24 +6,31 @@
       <h2 style="color: blue;">Iniciar sesion</h2>
     </div>
      <!-- Mensaje de Error -->
-        <?php if(session()->getFlashdata('msg')):?>
+        <?php if(session()->getFlashdata('error')):?>
                     <div class="alert alert-danger alert-dismissible fade show" style="color: blue; text-shadow: none;" role="alert">
-                          <?= session()->getFlashdata('msg')?>
+                          <?= session()->getFlashdata('error')?>
                           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
          <?php endif;?>
+         <?php if(session()->getFlashdata('exito')):?>
+                    <div class="alert alert-success alert-dismissible fade show" style="color: blue; text-shadow: none;" role="alert">
+                          <?= session()->getFlashdata('exito')?>
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+         <?php endif;?>
+         
       <!-- Incio del formulario de login-->              
     <form method="post" action="<?php echo base_url('enviarlogin') ?>">
       <div class="card-body" media="(max-width:768px)">
         <div class="col-12 mb-2 form-floating">
           <input name="usuario" type="text" class="form-control" id="floatingUser" placeholder="Ingrese su nombre de usuario" >
-          <label for="floatingUser">Usuario</label>
+          <label style="color: blue;" for="floatingUser">Usuario</label>
           <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2">Ingrese su nombre de usuario.</div>
          </div>
         
         <div class="col-12 mb-2 form-floating">
           <input name="pass" type="password"  class="form-control" id="floatingPass" placeholder="Ingrese su contraseña">
-          <label for="floatingPass">Contraseña</label>
+          <label style="color: blue;" for="floatingPass">Contraseña</label>
           <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2">Respete mayusculas y minusculas</div>
           
         </div>
@@ -37,7 +44,7 @@
           <br>
         </div>
           <div class="container text-center" style="text-shadow: none;">
-            <span>¿Aún no se registró? <a href="<?php echo base_url('registro'); ?>">Registrarse aquí</a></span>
+            <span>¿Aún no se registró? <a href="<?php echo base_url('form-registro'); ?>">Registrarse aquí</a></span>
           </div>
       </div>
     </form>

@@ -34,13 +34,14 @@ $perfil = $session->get('perfil_id');
               </ul>
               <div class=" col d-flex justify-content-end">
                 <div class=" d-flex">
-                <button type="button" class="btn btn-outline-primary btn-sm nav-toggler my-1 mx-3">
+                
+                <li class="nav-item btn-group">
+                  <a class="nav-toggler btn btn-sm btn-outline-primary my-1" href="<?= base_url('/'); ?>">Inicio</a>
+                  <a class="nav-toggler btn btn-sm btn-outline-danger my-1" href="<?= base_url('logout'); ?>">Logout</a>
+                </li>
+                <button type="button" class="btn btn-outline-success btn-sm nav-toggler my-1 mx-3">
                   <a><span style="color: white;">USUARIO:</span> <?php echo session('nombre'); ?> </a>
                 </button>
-                <li class="nav-item btn-group">
-                  <a class="nav-toggler btn btn-sm btn-outline-success my-1" href="<?= base_url('/'); ?>">Inicio</a>
-                  <a class="nav-toggler btn btn-sm btn-outline-light my-1" href="<?= base_url('logout'); ?>">Logout</a>
-                </li>
               
               </div>
               

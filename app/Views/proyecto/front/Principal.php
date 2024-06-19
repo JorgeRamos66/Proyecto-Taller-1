@@ -6,8 +6,8 @@
     <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 </div>
-  
 <?php endif;?>
+
 <div class="container">
     <div class="green-background"></div>
     <div class="row justify-content-center">

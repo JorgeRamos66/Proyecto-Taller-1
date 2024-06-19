@@ -1,9 +1,9 @@
 <section class="comercializacion text-justify container">
-    <div style="text-align: center;"><h1 class="my-2 badge" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">Opciones de Comercialización</h1></div>
+    <div style="text-align: center;"><h1 class="my-2 badge" style="text-shadow: none;color: blue;backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">Opciones de Comercialización</h1></div>
     
     <div class="row">
         <div class="col-lg-6">
-            <div class="entrega rounded-2 my-2 text-justify text-wrap" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
+            <div class="entrega rounded-2 my-2 text-justify text-wrap container" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
                 <h3>Tipos de Entrega</h3>
                 <ul>
                   <li>
@@ -18,7 +18,7 @@
               </div>
         </div>
         <div class="col-lg-6">
-            <div class="envio rounded-2 my-2 text-justify text-wrap" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
+            <div class="envio rounded-2 my-2 text-justify text-wrap container" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
                 <h3>Formas de Envío</h3>
                 <ul>
                   <li>
@@ -35,7 +35,7 @@
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <div class="pago rounded-2 my-2 text-justify text-wrap" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
+            <div class="pago rounded-2 my-2 text-justify text-wrap container" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
                 <h3>Formas de Pago</h3>
                 <ul>
                   <li>
@@ -50,7 +50,7 @@
               </div>
         </div>
         <div class="col-lg-6">
-            <div class="informacion rounded-2 my-2 text-justify text-wrap" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
+            <div class="informacion rounded-2 my-2 text-justify text-wrap container" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
                 <h3>Información Adicional</h3>
                 <ul>
                   <li>Cambios y devoluciones: Consulta nuestra política de cambios y devoluciones.</li>

@@ -1,6 +1,8 @@
 <section class="container about-us" style="backdrop-filter: blur(10px);">
+    
     <div class="row">
       <div class="col-md-12 text-justify">
+      <div style="text-align: center;"><h1 class="my-2 badge" style="text-shadow: none;color: red ;backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);font-size: 24px;">Quienes somos</h1></div>
         <h2>Ratita Sporting: Pasión por el deporte, dedicación a la calidad</h2>
         <p>En Ratita Sporting, compartimos la pasión por el fútbol y el compromiso de brindar a los atletas de todas las edades y niveles las herramientas necesarias para alcanzar su máximo potencial. Desde nuestros inicios, nos hemos dedicado a ofrecer productos de alta calidad que combinan innovación, rendimiento y estilo.</p>
       </div>
@@ -55,7 +57,7 @@
   </section>
 
   <section class="container staff">
-    <div style="text-align: center;"><h1 class="my-2 badge" style="background-color: rgb(255, 255, 255, 0.2);">Staff de Ratita Sporting</h1></div>
+    <div style="text-align: center;"><h1 class="my-2 badge" style="color: red;text-shadow: none ;background-color: rgb(255, 255, 255, 0.2);">Staff de Ratita Sporting</h1></div>
     
     <div class="row rounded-5 my-2" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
         <div class="col-lg-4 my-3"><img src="assets/img/ceo_y_dir1x1.png" width="300px" style="" class="shadow border-1 rounded-5" alt=""></div>

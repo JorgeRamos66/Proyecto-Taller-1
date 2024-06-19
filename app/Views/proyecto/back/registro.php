@@ -6,7 +6,7 @@
 		  
     <?php $validation = \Config\Services::validation(); ?>
    
-    <form method="post" action="<?php echo base_url('enviar-form') ?>">
+    <form method="post" action="<?php echo base_url('enviar-registro') ?>">
      	<?php if(!empty (session()->getFlashdata('fail'))):?>
      	<div class="alert alert-danger"><?=session()->getFlashdata('fail');?></div>
         <?php endif?>
