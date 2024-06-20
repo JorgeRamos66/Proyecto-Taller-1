@@ -31,7 +31,7 @@
 
                     <td><?php echo $producto['nombre_producto']; ?></td>
                     <td>
-                        <img height="70px" width="85px" src=" <?=base_url()?>/assets/updoads/<?=$imagen?> " alt="">
+                        <img height="70px" width="85px" src=" <?=base_url()?>assets/uploads/<?=$imagen?> " alt="">
                     </td>
                     <?php $cat = $producto['id_categoria'] -1 ?>
                     <td><?php echo $categorias[$cat]['descripcion_categoria'] ?></td>

@@ -14,7 +14,7 @@
             
       <?php $validation = \Config\Services::validation(); ?>
      
-      <form method="post" action="<?php echo base_url('enviar-producto') ?>">
+      <form method="post" action="<?php echo base_url('enviar-producto') ?>" enctype="multipart/form-data">
         <?php if(!empty (session()->getFlashdata('error'))):?>
             <div class="alert alert-danger"><?=session()->getFlashdata('error');?></div>
         <?php endif?>
@@ -32,18 +32,22 @@
                             <?= $error = $validation->getError('nombre_producto'); ?>
                         </div>
                     <?php }?>
-            </div>          
-            <select style="color: green;" class="mb-1 form-floating form-control" name="id_categoria" id="categoria">
-                <option value="">Seleccionar Categoria</option>
-                <?php foreach ($categorias as $categoria): ?>
-                    <option value="<?= $categoria['id_categoria'] ?>"><?= $categoria['descripcion_categoria'] ?></option>
-                <?php endforeach; ?>
+            </div>
+            <div>
+                <select style="color: green;" class="mb-1 form-floating form-control" name="id_categoria" id="categoria">
+                    <option value="">Seleccionar Categoria</option>
+                    <?php foreach ($categorias as $categoria): ?>
+                        <?php $selected = (isset($_POST['id_categoria']) && $_POST['id_categoria'] == $categoria['id_categoria']) ? 'selected' : ''; ?>
+                        <option value="<?= $categoria['id_categoria'] ?>" <?= $selected ?>><?= $categoria['descripcion_categoria'] ?></option>
+                    <?php endforeach; ?>
+                </select>
                 <?php if($validation->getError('id_categoria')) {?>
-                  <div class='py-1 alert alert-danger mt-2' style="color: red; text-shadow: none;">
-                    <?= $error = $validation->getError('id_categoria'); ?>
-                  </div>
+                    <div class='py-1 alert alert-danger mt-2' style="color: red; text-shadow: none;">
+                        <?= $error = $validation->getError('id_categoria'); ?>
+                    </div>
                 <?php }?>
-            </select>
+            </div>        
+            
             <div id="nameHelp" class="form-text fw-medium text mt-0 mb-3">Seleccione una categoria.</div>
         
           
@@ -93,11 +97,11 @@
                 <?php }?>
             </div>
             <div class="mb-3 file">
-                <label style="color: green;" for="imagen">Imagen del Producto:</label>
-                <input type="file" class="form-control" name="imagen" id="imagen">
-                <?php if($validation->getError('imagen')) {?>
+                <label style="color: green;" for="imagen_producto">Imagen del Producto:</label>
+                <input type="file" class="form-control" name="imagen_producto" id="imagen_producto">
+                <?php if($validation->getError('imagen_producto')) {?>
                     <div class='py-1 alert alert-danger mt-2' style="color: red; text-shadow: none;">
-                    <?= $error = $validation->getError('imagen'); ?>
+                    <?= $error = $validation->getError('imagen_producto'); ?>
                     </div>
                 <?php }?>
             </div>

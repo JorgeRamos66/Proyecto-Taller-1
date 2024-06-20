@@ -4,7 +4,7 @@ use App\Models\Producto_Model;
 use App\Models\Categoria_Model;
 use CodeIgniter\Controller;
 
-class Producto_controller extends Controller{
+class Producto_controller extends BaseController{
     public function __construct(){
         helper(['url', 'form']);
         $session = \Config\Services::session();
@@ -52,16 +52,16 @@ class Producto_controller extends Controller{
             'precio_vta_producto'   => 'required',
             'stock_producto'        => 'required',
             'stock_min_producto'    => 'required',
-            'imagen_producto'       => 'uploaded[imagen_producto]'
+            'imagen_producto'       => 'uploaded[imagen_producto]|is_image[imagen_producto]'
         ],
         [
             'nombre_producto'=>[
-                'required'=>'Debe ingresar un nombre que tenga almenos 3 caracteres.',
+                'required'  =>'Debe ingresar un nombre que tenga almenos 3 caracteres.',
                 'min_length'=>'Debe tener minimo 3 caracteres.'
             ],
             'id_categoria'=>[
-                'required'=>'Debe seleccionar alguna categoria.',
-                'is_not_unique'=>'Seleccione una categoria existente.'
+                'required'      =>'Debe seleccionar alguna categoria.',
+                'is_not_unique' =>'Seleccione una categoria existente.'
             ],
             'precio_producto'=>[
                 'required'=>'Debe ingresar un precio para el producto.'
@@ -76,7 +76,8 @@ class Producto_controller extends Controller{
                 'required'=>'Debe ingresar un stock minimo para el producto.'
             ],
             'imagen_producto'=>[
-                'uploaded'=>'Debe cargar una imagen.'
+                'uploaded'  =>'Debe cargar una imagen.',
+                'is_image'  => 'El archivo subido no es una imagen válida.'
             ]
         ]
        );
