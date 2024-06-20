@@ -77,7 +77,7 @@ class Producto_controller extends BaseController{
             ],
             'imagen_producto'=>[
                 'uploaded'  =>'Debe cargar una imagen.',
-                'is_image'  => 'El archivo subido no es una imagen válida.'
+                'is_image'  => 'El archivo cargado no es una imagen válida.'
             ]
         ]
        );
