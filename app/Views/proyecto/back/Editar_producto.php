@@ -2,7 +2,7 @@
 <div class="container mt-2 mb-5 d-flex justify-content-center">
     <div class="card registro" style="border-color: green; color: white ;text-shadow: none; ;backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.5);">
       <div class="card-header text-center">
-        <h2 style="color: green;">Alta Producto</h2>
+        <h2 style="color: green;">Formulario de Edicion</h2>
       </div>
             
       <?php $validation = \Config\Services::validation(); ?>

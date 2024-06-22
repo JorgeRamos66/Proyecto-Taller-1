@@ -12,9 +12,9 @@ class Producto_Model extends Model
     'imagen_producto',
     'id_categoria',
     'precio_producto', 
-    'precio_vta_producto',
+    'marca_producto',
+    'descripcion_producto',
     'stock_producto',
-    'stock_min_producto',
     'eliminado_producto'];
     protected $returnType = 'array';
 

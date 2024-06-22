@@ -70,6 +70,9 @@ $routes->group('', ['filter' => 'admin'], function ($routes) {
     $routes->get('gestion_productos','Producto_controller::listar_productos');
     $routes->get('form-producto','Producto_controller::crear_producto');
     $routes->Post('enviar-producto','Producto_controller::store');
+    $routes->get('eliminar-producto/(:num)','Producto_controller::eliminar_producto/$1');
+    $routes->get('activar-producto/(:num)','Producto_controller::activar_producto/$1');
+    $routes->get('editar-producto/(:num)','Producto_controller::editar-producto/$1');
 
     $routes->get('gestion_usuarios','Usuario_controller::listar_usuarios');
 

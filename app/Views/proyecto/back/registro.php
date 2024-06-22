@@ -19,11 +19,11 @@
           <label style="color: blue;" for="nombre_usuario" class="form-label">Nombre</label>
           <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2">Entre 3 y 25 letras.</div>
             <!-- Error -->
-                <?php if($validation->getError('nombre')) {?>
-                    <div class="py-1 alert alert-danger mt-2" style="color: red; text-shadow: none;">      
-                      <?= $error = $validation->getError('nombre'); ?>
-                    </div>
-                <?php }?>
+            <?php if($validation->getError('nombre')) {?>
+                <div class="py-1 alert alert-danger mt-2" style="color: red; text-shadow: none;">      
+                  <?= $error = $validation->getError('nombre'); ?>
+                </div>
+            <?php }?>
         </div>
         <div class="mb-3 form-floating">
           <input type="text" name="apellido" class="form-control"value="<?php echo isset($_POST['apellido']) ? $_POST['apellido'] : ''; ?>" placeholder="Ingrese su apellido">
