@@ -1,0 +1,27 @@
+CRITICAL - 2024-06-23 14:37:01 --> Invalid argument supplied for foreach()
+in APPPATH\Views\proyecto\back\Editar_producto.php on line 35.
+ 1 APPPATH\Views\proyecto\back\Editar_producto.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\proyecto\\back\\Editar_producto.php', 35, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\back\\Editar_producto.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Editar_producto', [], true)
+ 5 APPPATH\Controllers\Producto_controller.php(150): view('proyecto/back/Editar_producto')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto_controller->editar_producto('8')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-23 23:02:13 --> unlink(D:\Xamp\htdocs\proyecto_ramos_jorge\assets/uploads1718861212_2b10a9fbf47b9ef7859b.webp): No such file or directory
+in APPPATH\Controllers\Producto_controller.php on line 225.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Xamp\\htdocs\\proyecto_ramos_jorge\\assets/uploads1718861212_2b10a9fbf47b9ef7859b.webp): No such file or directory', 'APPPATH\\Controllers\\Producto_controller.php', 225, [...])
+ 2 APPPATH\Controllers\Producto_controller.php(225): unlink('FCPATH\\assets/uploads1718861212_2b10a9fbf47b9ef7859b.webp')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto_controller->update('8')
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-23 23:12:44 --> unlink(D:\Xamp\htdocs\proyecto_ramos_jorge\assets/uploads1718861212_2b10a9fbf47b9ef7859b.webp): No such file or directory
+in APPPATH\Controllers\Producto_controller.php on line 225.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(D:\\Xamp\\htdocs\\proyecto_ramos_jorge\\assets/uploads1718861212_2b10a9fbf47b9ef7859b.webp): No such file or directory', 'APPPATH\\Controllers\\Producto_controller.php', 225, [...])
+ 2 APPPATH\Controllers\Producto_controller.php(225): unlink('FCPATH\\assets/uploads1718861212_2b10a9fbf47b9ef7859b.webp')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto_controller->update('8')
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

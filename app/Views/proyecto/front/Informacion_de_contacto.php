@@ -3,6 +3,7 @@ $session = session();
 $nombre = $session->get('nombre');
 $perfil = $session->get('perfil_id');
 ?>
+
 <?php $validation = \Config\Services::validation(); ?>
 <section class="contacto text-justify">
     <div style="text-align: center;"><h1 class="my-2 badge" style="border-color: red ;color: red ;backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">Información de Contacto</h1></div>
@@ -67,7 +68,7 @@ $perfil = $session->get('perfil_id');
                 <?php if(!session()->has('loggedIn')): ?>
                     <div class="px-2 rounded-2 my-2 text-justify text-wrap" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
                         <h2 class="mb-4 text-center py-2">Envíanos un Mensaje</h2>
-                        <form class="my-0" method="post" action="<?php echo base_url('enviar_consulta') ?>">
+                        <form class="my-0" method="post" action="<?php echo base_url('enviar_consulta/'. '1') ?>">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre</label>
                                 <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo isset($_POST['nombre']) ? $_POST['nombre'] : ''; ?>" placeholder="Maximo 25 caracteres."><br>
@@ -108,20 +109,25 @@ $perfil = $session->get('perfil_id');
                         </form>
                     </div>
                 <?php else: ?>
-                    <div class="px-2 rounded-2 my-2 text-justify text-wrap" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
+
+                
+                <div class="px-2 rounded-2 my-2 text-justify text-wrap" style="backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">
                     <h2 class="mb-4 text-center">Envíanos un Mensaje</h2>
-                    <form class="my-0" action="<?php echo base_url('enviar_consulta_registrado') ?>" method="post">
+                    <form class="my-0" action="<?php echo base_url('enviar_consulta/'. '2') ?>" method="post">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo session('nombre'); ?>" placeholder="Maximo 25 caracteres." disabled><br>
+                            <input type="hidden" name="nombre" value="<?php echo session('nombre'); ?>">
                         </div>
                         <div class="mb-3">
                             <label for="apellido" class="form-label">Apellido</label>
                             <input type="text" class="form-control" id="apellido" name="nombre" value="<?php echo session('apellido'); ?>" placeholder="Maximo 25 caracteres." disabled><br>
+                            <input type="hidden" name="apellido" value="<?php echo session('apellido'); ?>">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Correo Electrónico</label>
                             <input type="email" class="form-control" id="email" name="email" value="<?php echo session('email'); ?>" placeholder="nombre@ejemplo.com" disabled><br>
+                            <input type="hidden" name="email" value="<?php echo session('email'); ?>">
                         </div>
                         <div class="mb-3">
                             <label for="mensaje" class="form-label">Mensaje</label>

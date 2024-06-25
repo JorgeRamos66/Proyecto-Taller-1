@@ -1,7 +1,7 @@
 <script src="assets/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
 
 </body>
-<footer class="" style="background-color: rgb(0, 0, 0, 0.9);">
+<footer class="" style="background-color: rgb(0, 0, 0, 0.9);position: relative; bottom: 0; width: 100%;">
     <section class="container">
         <div class="row">
             <div class="col-6 mt-3">
@@ -14,9 +14,9 @@
                 </div>
                 <div class="separator" style="color: white;"></div>
                 <div class="row-fluid">
-                    <a href="https://web.facebook.com/" target="_blank"><img src="assets/img/facebookpng.png" width="40px" alt="Facebook"></a>
-                    <a href="https://web.instagram.com/" target="_blank"><img src="assets/img/instapng.png" width="40px" alt="Instagram"></a>
-                    <a href="https://web.whatsapp.com/" target="_blank"><img src="assets/img/whatspng.png" width="40px" alt="Whatsapp"></a>
+                    <a href="https://web.facebook.com/" target="_blank"><img src="<?php echo base_url ('./assets/img/facebookpng.png') ?>" width="40px" alt="Facebook"></a>
+                    <a href="https://web.instagram.com/" target="_blank"><img src="<?php echo base_url ('./assets/img/instapng.png') ?>" width="40px" alt="Instagram"></a>
+                    <a href="https://web.whatsapp.com/" target="_blank"><img src="<?php echo base_url ('./assets/img/whatspng.png') ?>" width="40px" alt="Whatsapp"></a>
                 </div>
             </div>
         </div>

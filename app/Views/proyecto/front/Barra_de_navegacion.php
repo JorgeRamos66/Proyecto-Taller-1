@@ -2,6 +2,7 @@
 $session = session();
 $nombre = $session->get('nombre');
 $perfil = $session->get('perfil_id');
+$id = $session->get('id_usuario');
 ?>
   <section class="">
     <div class="">
@@ -44,8 +45,8 @@ $perfil = $session->get('perfil_id');
                     </li>
                   <?php elseif (session()->has('loggedIn') && !session()->get('es_admin')): ?>
                     <li class="nav-item btn-group">
-                      <a class="nav-toggler btn btn-sm btn-outline-info my-1" href="<?= base_url('perfil'); ?>">Perfil</a>
-                      <a class="nav-toggler btn btn-sm btn-outline-light my-1" href="<?= base_url('logout'); ?>">Logout</a>
+                      <a class="nav-toggler btn btn-sm btn-outline-info my-1" href="<?php echo base_url('perfil-usuario/'.$id); ?>">Perfil</a>
+                      <a class="nav-toggler btn btn-sm btn-outline-danger my-1" href="<?= base_url('logout'); ?>">Logout</a>
                     </li>
                   <?php else: ?>
                     <li class="nav-item btn-group">

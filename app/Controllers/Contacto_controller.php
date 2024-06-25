@@ -17,7 +17,7 @@ class Contacto_controller extends BaseController{
         .view('proyecto/front/Informacion_de_contacto')
         .view('proyecto/front/Pie_de_pagina');
     }
-    public function nueva_consulta(){
+    public function nueva_consulta($tipo=null){
         helper(['form', 'url', 'session']);
         
         $validation = \Config\Services::validation();
@@ -64,56 +64,70 @@ class Contacto_controller extends BaseController{
             
            
         }else{
+            if ($tipo == '1'){
+                $data = 
             
-
-            $nombreUsuario = session()->get('nombre');
-            $apellidoUsuario = session()->get('apellido');
-            $emailUsuario = session()->get('email');
-
-            $data = 
+                $consultaModel->save([
+                    'consulta_nombre'     =>$request->getPost('nombre'),
+                    'consulta_apellido'   =>$request->getPost('apellido'),
+                    'consulta_email'      =>$request->getPost('email'),
+                    'consulta_mensaje'    =>$request->getPost('mensaje'),
+                    'consulta_leido'      => 'NO'
+                ]);
+            }else {
+                $data = 
             
-            $consultaModel->save([
-                'consulta_nombre'     =>$request->getPost('nombre'),
-                'consulta_apellido'   =>$request->getPost('apellido'),
-                'consulta_email'      =>$request->getPost('email'),
-                'consulta_mensaje'    =>$request->getPost('mensaje'),
-                'consulta_leido'      => 'NO'
-            ]);
+                $consultaModel->save([
+                    'consulta_nombre'     =>$request->getPost('nombre'),
+                    'consulta_apellido'   =>$request->getPost('apellido'),
+                    'consulta_email'      =>$request->getPost('email'),
+                    'consulta_mensaje'    =>$request->getPost('mensaje'),
+                    'consulta_registrado' => 'SI',
+                    'consulta_leido'      => 'NO'
+                ]);
+            }
 
             session()->setFlashdata('msj', 'La consulta se ha realizado con exito. ¡Pronto nos comunicaremos con usted!');
             return redirect()->to(base_url('informacion_de_contacto'));
 
         }
     }
-
-    public function ver_consultas($filtro = 'todos'){
+    public function listar_consultas(){
 
         $consultaModel = new Consulta_Model();
-        // Filtrar según el parametro recibido
-        if ($filtro == 'leidos') {
-            $consultas = $consultaModel->where('leido', 'SI')->findAll();
-        } elseif ($filtro == 'no_leidos') {
-            $consultas = $consultaModel->where('leido', 'NO')->findAll();
-        } else {
-            $consultas = $consultaModel->findAll();
-        }
 
-        // Traer los valores de la tabla
-        $data['consultas'] = $consultas;
-        $data['filtro'] = $filtro;
-        // Cargar la vista y pasar los datos de las consultas
-        $data['titulo'] = 'Mensaje contactos';
+        $data['consultas'] = $consultaModel->getMensajes();
 
+        $data['titulo'] = 'Gestion Consultas';
         return view('proyecto/front/Encabezado', $data)
         .view('proyecto/front/Barra_de_navegacion_admin')
-        .view('proyecto/front/mensajes_contactos')
+        .view('proyecto/back/Gestion_consultas')
         .view('proyecto/front/Pie_de_pagina');
+
     }
 
-    public function mensaje_consulta_leido($id){
+    public function marcar_consulta_leido($id = null) {
+        if ($id === null) {
+            // Handle case where $id is not provided or invalid
+            return;
+        }
+    
+        // Assuming Consulta_Model has an update method similar to your previous example
+        $consultaModel = new Consulta_Model();
+        $data = ['consulta_leido' => 'SI'];
+        
+        // Update the consultation's 'consulta_leido' field to 'SI'
+        $consultaModel->update($id, $data);
+    
+        // Redirect back to the gestion_consultas page or any other desired page
+        return redirect()->to(base_url('gestion_consultas'));
+    }
+
+
+    public function mensaje_consulta_desleido($id=null){
         $consultaModel = new Consulta_Model();
         
-        $consultaModel ->update($id, ['consulta_leido' => 'SI']);
+        $consultaModel ->update($id, ['consulta_leido' => 'NO']);
 
         session()->setFlashdata('msj', 'El mensaje se ha marcado como LEIDO.');
         return redirect()->back();

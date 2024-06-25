@@ -1,5 +1,5 @@
 
-<div class="container mt-2 mb-5 d-flex justify-content-center">
+<div class="container my-0 mb-5 d-flex justify-content-center">
     <div class="card registro" style="border-color: green; color: white ;text-shadow: none; ;backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.5);">
       <div class="card-header text-center">
         <h2 style="color: green;">Alta Producto</h2>
@@ -18,13 +18,14 @@
             <div class="form-floating">
                 <input name="nombre_producto" type="text"  class="form-control" value="<?php echo isset($_POST['nombre_producto']) ? $_POST['nombre_producto'] : ''; ?>" placeholder="Ingrese su nombre" >
                 <label style="color: green;" for="nombre_usuario" class="form-label">Nombre del producto</label>
-                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Entre 3 y 25 letras.</div>
+                
                 <!-- Error -->
                     <?php if($validation->getError('nombre_producto')) {?>
-                        <div class="py-1 alert alert-danger mt-2" style="color: red; text-shadow: none;">      
+                        <div class="py-1 alert alert-danger my-0" style="color: red; text-shadow: none;">      
                             <?= $error = $validation->getError('nombre_producto'); ?>
                         </div>
                     <?php }?>
+                    <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Entre 3 y 25 letras.</div>
             </div>
             <div>
                 <select style="color: green;" class="mb-1 form-floating form-control" name="id_categoria" id="categoria">
@@ -34,77 +35,103 @@
                         <option value="<?= $categoria['id_categoria'] ?>" <?= $selected ?>><?= $categoria['descripcion_categoria'] ?></option>
                     <?php endforeach; ?>
                 </select>
+                
                 <?php if($validation->getError('id_categoria')) {?>
-                    <div class='py-1 alert alert-danger mt-2' style="color: red; text-shadow: none;">
+                    <div class='py-1 alert alert-danger my-0' style="color: red; text-shadow: none;">
                         <?= $error = $validation->getError('id_categoria'); ?>
                     </div>
                 <?php }?>
+                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-3" style="color: black;">Seleccione una categoria.</div>
             </div>        
             
-            <div id="nameHelp" class="form-text fw-medium text mt-0 mb-3" style="color: black;">Seleccione una categoria.</div>
+            
         
           
             <div class="mb-3 form-floating">
                 <input name="precio_producto" type="text"  class="form-control" value="<?php echo isset($_POST['precio_producto']) ? $_POST['precio_producto'] : ''; ?>" placeholder="Ingrese su nombre" >
                 <label style="color: green;" for="precio_producto" class="form-label mb-1">Precio</label>
-                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Ingrese un numero.</div>
+                
                 <!-- Error -->
-                    <?php if($validation->getError('precio_producto')) {?>
-                        <div class="py-1 alert alert-danger mt-2" style="color: red; text-shadow: none;">      
-                        <?= $error = $validation->getError('precio_producto'); ?>
-                        </div>
-                    <?php }?>
+                <?php if($validation->getError('precio_producto')) {?>
+                    <div class="py-1 alert alert-danger my-0" style="color: red; text-shadow: none;">      
+                    <?= $error = $validation->getError('precio_producto'); ?>
+                    </div>
+                <?php }?>
+                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Ingrese un numero.</div>
             </div>   
             <div class="mb-3 form-floating">
                 <input  type="text" name="marca_producto" class="form-control" value="<?php echo isset($_POST['marca_producto']) ? $_POST['marca_producto'] : ''; ?>" placeholder="Ingrese un nombre de usuario">
                 <label style="color: green;" for="marca_producto" class="form-label">Marca</label>
-                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Entre 3 y 25 letras.</div>
+                
                 <!-- Error -->
                 <?php if($validation->getError('marca_producto')) {?>
-                    <div class='py-1 alert alert-danger mt-2' style="color: red; text-shadow: none;">
+                    <div class='py-1 alert alert-danger my-0' style="color: red; text-shadow: none;">
                     <?= $error = $validation->getError('marca_producto'); ?>
                     </div>
                 <?php }?>
+                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Entre 3 y 25 letras.</div>
             </div>
           
             <div class="mb-3 form-floating">
                 <input name="descripcion_producto" type="text" class="form-control" value="<?php echo isset($_POST['descripcion_producto']) ? $_POST['descripcion_producto'] : ''; ?>" placeholder="Contraseña">
                 <label style="color: green;" for="exampleFormControlInput1" class="form-label">Descripcion</label>
-                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Entre 3 y 100 letras.</div>
+                
                 <!-- Error -->
                 <?php if($validation->getError('descripcion_producto')) {?>
-                    <div class='py-1 alert alert-danger mt-2' style="color: red; text-shadow: none;">
+                    <div class='py-1 alert alert-danger my-0' style="color: red; text-shadow: none;">
                     <?= $error = $validation->getError('descripcion_producto'); ?>
                     </div>
                 <?php }?>
+                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Entre 3 y 100 letras.</div>
             </div>
             <div class="mb-3 form-floating">
                 <input name="stock_producto" type="text" class="form-control" value="<?php echo isset($_POST['stock_producto']) ? $_POST['stock_producto'] : ''; ?>" placeholder="Repita la contraseña">
                 <label style="color: green;" for="exampleFormControlInput1" class="form-label">Stock</label>
-                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Ingrese un numero entero.</div>
+                
                 <!-- Error -->
                 <?php if($validation->getError('stock_producto')) {?>
-                    <div class='py-1 alert alert-danger mt-2' style="color: red; text-shadow: none;">
+                    <div class='py-1 alert alert-danger my-0' style="color: red; text-shadow: none;">
                     <?= $error = $validation->getError('stock_producto'); ?>
                     </div>
                 <?php }?>
+                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Ingrese un numero entero.</div>
             </div>
             <div class="mb-3 file">
                 <label style="color: green;" for="imagen_producto">Imagen del Producto:</label>
                 <input type="file" class="form-control" name="imagen_producto" id="imagen_producto">
-                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Solo archivos con formato de imagen.</div>
+                
                 <?php if($validation->getError('imagen_producto')) {?>
-                    <div class='py-1 alert alert-danger mt-2' style="color: red; text-shadow: none;">
+                    <div class='py-1 alert alert-danger my-0' style="color: red; text-shadow: none;">
                     <?= $error = $validation->getError('imagen_producto'); ?>
                     </div>
                 <?php }?>
+                <div id="nameHelp" class="form-text fw-medium text mt-0 mb-2" style="color: black;">Solo archivos con formato de imagen.</div>
             </div>
             
             
             <div class="container text-center">
                 <input type="submit" value="Enviar" class="btn btn-primary">
                 <a href="<?php echo base_url('gestion_productos'); ?>" class="btn btn-danger">Atras</a>
-                <input type="reset" value="Borrar" class="btn btn-secondary" onclick="borrarTextArea()">
+                <script>
+                    function borrarCampos() {
+                        // Limpiar todos los campos de entrada de texto
+                        document.querySelector('input[name="nombre_producto"]').value = '';
+                        document.querySelector('input[name="precio_producto"]').value = '';
+                        document.querySelector('input[name="marca_producto"]').value = '';
+                        document.querySelector('input[name="descripcion_producto"]').value = '';
+                        document.querySelector('input[name="stock_producto"]').value = '';
+                        
+                        // Limpiar el campo de selección
+                        document.querySelector('select[name="id_categoria"]').selectedIndex = 0; // Selecciona el primer índice, que debe ser la opción "Seleccionar Categoria"
+
+                        // Limpiar el campo de archivo
+                        document.querySelector('input[name="imagen_producto"]').value = '';
+
+                        // Limpiar cualquier mensaje de error
+                        document.querySelectorAll('.alert-danger').forEach(alert => alert.remove());
+                    }
+                    </script>
+                <input type="button" value="Borrar" class="btn btn-secondary" onclick="borrarCampos()">
             </div>
             
         </div>

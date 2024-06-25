@@ -54,8 +54,7 @@ $routes->get('logout', 'Usuario_controller::logout');
  * Rutas de las consultas
  */
 
-$routes->post('enviar_consulta','Contacto_controller::nueva_consulta');
-$routes->get('enviar_consulta_registrado','Contacto_controller::nueva_consulta_registrado');
+$routes->post('enviar_consulta/(:num)','Contacto_controller::nueva_consulta/$1');
 /**
  * Rutas del registro
  */
@@ -69,13 +68,27 @@ $routes->group('', ['filter' => 'admin'], function ($routes) {
     $routes->get('panel_admin','Admin_controller::Admin_view');
     $routes->get('gestion_productos','Producto_controller::listar_productos');
     $routes->get('form-producto','Producto_controller::crear_producto');
-    $routes->Post('enviar-producto','Producto_controller::store');
+    $routes->post('enviar-producto','Producto_controller::store');
     $routes->get('eliminar-producto/(:num)','Producto_controller::eliminar_producto/$1');
     $routes->get('activar-producto/(:num)','Producto_controller::activar_producto/$1');
-    $routes->get('editar-producto/(:num)','Producto_controller::editar-producto/$1');
+    $routes->get('editar-producto/(:num)','Producto_controller::editar_producto/$1');
+    $routes->post('actualizar-producto/(:num)','Producto_controller::update/$1');
+    
 
     $routes->get('gestion_usuarios','Usuario_controller::listar_usuarios');
+    $routes->get('eliminar-usuario/(:num)','Usuario_controller::eliminar_usuario/$1');
+    $routes->get('activar-usuario/(:num)','Usuario_controller::activar_usuario/$1');
 
+    $routes->get('gestion_consultas','Contacto_controller::listar_consultas');
+    $routes->post('leer-consulta/(:num)','Contacto_controller::mensaje_consulta_leido/$1');
+    $routes->get('desleer-consulta/(:num)','Contacto_controller::mensaje_consulta_desleido/$1');
+
+    
+});
+$routes->group('', ['filter' => 'logged'], function ($routes) {
+    $routes->get('perfil-usuario/(:num)','Usuario_controller::perfil_usuario/$1');
+    $routes->get('editar-usuario/(:num)','Usuario_controller::editar_usuario/$1');
+    $routes->post('actualizar-usuario/(:num)', 'Usuario_controller::actualizar_perfil/$1');
 });
 
 $routes->get('modificar_usuario','User_modify_controller::user_modify',['filter'=>'register']);

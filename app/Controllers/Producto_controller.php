@@ -31,18 +31,16 @@ class Producto_controller extends BaseController{
         $categoriasModel = new Categoria_Model();
         $productoModel = new Producto_Model();
         $data['categorias'] = $categoriasModel->getCategorias();
-        $data['obj'] = $productoModel->orderBy('id_producto', 'DESC')->findAll();
         
         $data['titulo'] = 'Alta Producto';
         return view('proyecto/front/Encabezado', $data)
         .view('proyecto/front/Barra_de_navegacion_admin')
         .view('proyecto/back/Alta_producto')
-        .view('proyecto/front/Pie_de_pagina'); 
+        .view('proyecto/front/Pie_de_pagina');
 
     }
 
     public function store(){
-        $session = session();
         $categoriasModel = new Categoria_Model();
 
         $input = $this->validate([
@@ -139,17 +137,31 @@ class Producto_controller extends BaseController{
 
     }
     public function editar_producto($id=null){
-        $session = session();
+        
+        $categoriasModel = new Categoria_Model();
+        $productoModel = new Producto_Model();
+        $data['categorias'] = $categoriasModel->getCategorias();
+        $data['producto'] = $productoModel->find($id);
+        
+        $data['titulo'] = 'Editar Producto';
+
+        return view('proyecto/front/Encabezado', $data)
+        .view('proyecto/front/Barra_de_navegacion_admin')
+        .view('proyecto/back/Editar_producto')
+        .view('proyecto/front/Pie_de_pagina');
+    }
+    public function update($id=null){
+        $productoModel = new Producto_Model();
         $categoriasModel = new Categoria_Model();
 
         $input = $this->validate([
-            'nombre_producto'       => 'required|min_length[3]|max_length[25]',
-            'id_categoria'          => 'required|is_not_unique[categorias.id_categoria]',
-            'precio_producto'       => 'required|numeric',
-            'marca_producto'        => 'required|min_length[3]|max_length[25]',
-            'descripcion_producto'  => 'required|min_length[3]|max_length[100]',
-            'stock_producto'        => 'required|integer|greater_than[0]',
-            'imagen_producto'       => 'uploaded[imagen_producto]|is_image[imagen_producto]'
+            'nombre_producto'       => 'min_length[3]|max_length[25]',
+            'id_categoria'          => 'is_not_unique[categorias.id_categoria]',
+            'precio_producto'       => 'numeric',
+            'marca_producto'        => 'min_length[3]|max_length[25]',
+            'descripcion_producto'  => 'min_length[3]|max_length[100]',
+            'stock_producto'        => 'integer',
+            'imagen_producto'       => 'permit_empty|is_image[imagen_producto]|mime_in[imagen_producto,image/jpg,image/webp,image/jpeg,image/png,image/gif]'
         ],
         [
             'nombre_producto'=>[
@@ -181,48 +193,63 @@ class Producto_controller extends BaseController{
                 'greater_than'  =>'Debe ingresar un numero mayor a 0.'
             ],
             'imagen_producto'=>[
-                'uploaded'   =>'Debe cargar una imagen.',
-                'is_image'   => 'El archivo cargado no es una imagen válida.'
+                'is_image'   => 'El archivo cargado no es una imagen válida.',
+                'mime_in'    => 'El archivo cargado debe ser una imagen de tipo jpg, jpeg, gif, o png.'
             ]
         ]
        );
     
-       $productoModel = new Producto_Model();
        if (!$input) {
-        $data['categorias'] = $categoriasModel->getCategorias();
-        $data['titulo'] = 'Alta Producto';
-        
+        $data['categorias'] = $categoriasModel->getCategorias(); 
+        $data['producto'] = $productoModel->find($id);
+
+        $data['titulo'] = 'Editar Producto';
+
+
         return view('proyecto/front/Encabezado', $data)
         .view('proyecto/front/Barra_de_navegacion_admin')
-        .view('proyecto/back/editar-producto/'.$id, ['validation' => $this->validator])
+        .view('proyecto/back/Editar_producto', ['validation' => $this->validator])
         .view('proyecto/front/Pie_de_pagina');
 
        }else {
-        
         $img = $this->request->getFile('imagen_producto');
-        $nombre_aleatorio = $img->getRandomName();
-        $img->move(ROOTPATH. 'assets/uploads', $nombre_aleatorio);
+        $oldImage = $productoModel->find($id)['imagen_producto'];
+        $nombre_aleatorio = $oldImage; // Mantener el nombre de la imagen existente por defecto
+
+            if ($img->isValid() && !$img->hasMoved()) {
+                // Validar MIME en el servidor por seguridad
+                $mime = $img->getMimeType();
+                $allowedMimeTypes = ['image/jpg', 'image/webp', 'image/jpeg', 'image/png', 'image/gif'];
+
+                if (in_array($mime, $allowedMimeTypes)) {
+                    // Generar un nombre aleatorio para la nueva imagen y moverla
+                    $nombre_aleatorio = $img->getRandomName();
+                    $img->move(ROOTPATH . 'assets/uploads', $nombre_aleatorio);
+
+                    // Eliminar la imagen antigua si existe
+                    if ($oldImage && file_exists(ROOTPATH . 'assets/uploads/' . $oldImage)) {
+                        unlink(ROOTPATH . 'assets/uploads/' . $oldImage);
+                    }
+                } else {
+                    // Error si el MIME no es válido
+                    return redirect()->back()->withInput()->with('error', 'El archivo cargado debe ser una imagen de tipo jpg, jpeg, png, o gif.');
+                }
+        }
 
         $data = [
-            'nombre_producto'       => $this->request->getPost('nombre_producto'), 
+            'nombre_producto'       => $this->request->getPost('nombre_producto'),
             'imagen_producto'       => $nombre_aleatorio,
             'id_categoria'          => $this->request->getPost('id_categoria'),
             'precio_producto'       => $this->request->getPost('precio_producto'), 
             'marca_producto'        => $this->request->getPost('marca_producto'),
             'descripcion_producto'  => $this->request->getPost('descripcion_producto'),
-            'stock_producto'        => $this->request->getPost('stock_producto'),
-            'eliminado_producto'    => 'NO'
+            'stock_producto'        => $this->request->getPost('stock_producto')
         ];
 
-        $productoModel->insert($data);
+        $productoModel->update($id,$data);
 
-        return redirect()->to(base_url('gestion_productos'))->with('editado', 'Producto actualizado!');
+        return redirect()->to(base_url('gestion_productos'))->with('modificado', 'Producto modificado con exito!');
+        }
     }
 }
-    public function update(){
-        $productoModel = new Producto_Model();
-
-        return redirect()->to(base_url('gestion_productos'))->with('activado', 'Producto dado de alta!');
-    }
     
-}

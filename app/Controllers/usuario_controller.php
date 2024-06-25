@@ -21,8 +21,6 @@ class Usuario_controller extends BaseController{
     public function nuevo_registro(){
         helper(['form', 'url', 'session']);
         
-        $validation = \Config\Services::validation();
-             
         $input = $this->validate([
             'nombre'   => 'required|min_length[3]|max_length[25]',
             'apellido' => 'required|min_length[3]|max_length[25]',
@@ -96,84 +94,98 @@ class Usuario_controller extends BaseController{
     {
         helper(['form', 'url', 'session']);
 
+
         $data['titulo'] = 'Login';
         return view('proyecto/front/Encabezado', $data)
         .view('proyecto/front/Barra_de_navegacion')
         .view('proyecto/back/login')
         .view('proyecto/front/Pie_de_pagina');
       
-        //$dato['titulo']='login'; 
-        //echo view('front/Encabezado');
-        //echo view('front/Barra_de_navegacion');
-        //echo view('Back/usuario/login');
-        //echo view('front/Pie_de_pagina');
+
     }
 
   
-    public function auth()
-    {
-        helper(['form', 'url', 'session']);
+    public function auth() {
+    helper(['form', 'url', 'session']);
 
-        $session = session(); //el objeto de sesión se asigna a la variable $session
-        $usuarioModel = new Usuario_Model(); //instanciamos el modelo
+    $session = session();
+    $usuarioModel = new Usuario_Model();
 
-        //traemos los datos del formulario
-        $usuario = $this->request->getPost('usuario');
-        $password = $this->request->getVar('pass');
+    // Define validation rules
+    $rules = [
+        'usuario' => [
+            'label' => 'Usuario',
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'Debe ingresar un nombre de usuario.',
+            ]
+        ],
+        'pass' => [
+            'label' => 'Contraseña',
+            'rules' => 'required',
+            'errors' => [
+                'required' => 'Debe ingresar una contraseña.'
+            ]
+        ]
+    ];
+
+    // Validate form input
+    if (!$this->validate($rules)) {
+        return view('proyecto/front/Encabezado')
+                .view('proyecto/front/Barra_de_navegacion')
+                .view('proyecto/back/login', ['validation' => $this->validator])
+                .view('proyecto/front/Pie_de_pagina');
+    }
+
+    // Fetch form data
+    $usuario = $this->request->getPost('usuario');
+    
+    // Fetch user from database
+    $usuarioActual = $usuarioModel->where('usuario', $usuario)->first();
+
+    // If user does not exist
+    if (!$usuarioActual) {
+        $session->setFlashdata('msg', 'El usuario no existe o no está bien escrito');
+        return redirect()->to(base_url('login'));
+    }
+    // Check if the user is inactive
+    if ($usuarioActual['baja'] == 'SI') {
+        $session->setFlashdata('msg', 'El usuario se encuentra inactivo. Contáctese con nosotros para recuperarlo.');
+        return redirect()->to(base_url('login'));
+    }
+    $password = $this->request->getVar('pass');
+
+    
+    // Verify password
+    if (password_verify($password, $usuarioActual['pass'])) {
+        // Set session data
+        $ses_data = [
+            'id_usuario' => $usuarioActual['id_usuario'],
+            'nombre'     => $usuarioActual['nombre'],
+            'apellido'   => $usuarioActual['apellido'],
+            'email'      => $usuarioActual['email'],
+            'usuario'    => $usuarioActual['usuario'],
+            'perfil_id'  => $usuarioActual['perfil_id'],
+            'es_admin'   => ($usuarioActual['perfil_id'] == 1),
+            'baja'       => $usuarioActual['baja'],
+            'loggedIn'   => true
+        ];
         
-                    
-        
-        $usuarioActual = $usuarioModel->where('usuario', $usuario)->first(); //consulta sql 
-        //$usuarioActual = $this->request->getPost(['user', ''])
-
-        
-        if($usuarioActual){
-
-                if ($usuarioActual['baja'] == 'SI'){
-                    
-                     $session->setFlashdata('msg', 'El usuario se encuentra inactivo. Contáctese con nosotros para recuperarlo.');
-                     return redirect()->to(base_url('login'));
-                 }
-                    //Se verifican los datos ingresados para iniciar, si cumple la verificaciòn inicia la sesion
-                    //$verify_pass = password_verify($password, $pass);
-                    //password_verify determina los requisitos de configuracion de la contraseña
-                   if(password_verify($password, $usuarioActual['pass'])){
-                     $ses_data = [
-                    'id_usuario' => $usuarioActual['id_usuario'],
-                    'nombre'     => $usuarioActual['nombre'],
-                    'apellido'   => $usuarioActual['apellido'],
-                    'email'      => $usuarioActual['email'],
-                    'usuario'    => $usuarioActual['usuario'],
-                    'perfil_id'  => $usuarioActual['perfil_id'],
-                    'es_admin'   => ($usuarioActual['perfil_id']==1),
-                    'baja'       => $usuarioActual['baja'],
-                    'loggedIn'   => true
-                ];
-                  //Si se cumple la verificacion inicia la sesiòn  
-                  $session->set($ses_data);
-
-                  session()->setFlashdata('msg', 'Bienvenido!!');
-
-                  return redirect()->to(base_url('/'));
-                  
-                  // return redirect()->to('/prueba');//pagina principal
-            }else{
-                 //no paso la validaciòn de la password
-               $session->setFlashdata('msg', 'Contraseña incorrecta');
-               $session->setFlashdata('msg', password_hash($password, PASSWORD_DEFAULT));
-               return redirect()->to(base_url('login'));
-         }   
-        }else{
-             //no paso la validaciòn del usuario
-            $session->setFlashdata('msg', 'El usuario no existe o no esta bien escroto');
-            return redirect()->to(base_url('login'));
-        }
-  }
+        $session->set($ses_data);
+        session()->setFlashdata('msg', 'Bienvenido!!');
+        return redirect()->to(base_url('/'));
+    } else {
+        // Incorrect password
+        $session->setFlashdata('msg', 'Contraseña incorrecta');
+        return redirect()->to(base_url('login'));
+    }
+}
+    
     public function logout()
     {
         $session = session();
         $session->destroy();
-        return redirect()->to(base_url('/'));
+        return redirect()->to(base_url('login'));
     }
 
     public function listar_usuarios(){
@@ -188,6 +200,146 @@ class Usuario_controller extends BaseController{
         .view('proyecto/back/Gestion_usuarios')
         .view('proyecto/front/Pie_de_pagina');
     }
+    public function eliminar_usuario($id=null){
+        $usuarioModel = new Usuario_Model();
+        $data['baja'] = 'SI';
+        $usuarioModel->update($id,$data);
+
+        return redirect()->to(base_url('gestion_usuarios'))->with('eliminado', 'Usuario dado de baja!');
+
+    }
+    public function activar_usuario($id=null){
+        $usuarioModel = new Usuario_Model();
+        $data['baja'] = 'NO';
+        $usuarioModel->update($id,$data);
+
+        return redirect()->to(base_url('gestion_usuarios'))->with('activado', 'Usuario dado de alta!');
+
+    }
+
+    public function perfil_usuario($id=null){
+        
+        $usuarioModel = new Usuario_Model();
+        $data['usuario'] = $usuarioModel->find($id);
+        
+        $data['titulo'] = 'Perfil';
+
+        return view('proyecto/front/Encabezado', $data)
+        .view('proyecto/front/Barra_de_navegacion')
+        .view('proyecto/back/Perfil_usuario')
+        .view('proyecto/front/Pie_de_pagina');
+    }
+    public function editar_usuario($id=null){
+        
+        $usuarioModel = new Usuario_Model();
+        $data['usuario'] = $usuarioModel->find($id);
+        $data['titulo'] = 'Editar Perfil';
+
+        return view('proyecto/front/Encabezado', $data)
+        .view('proyecto/front/Barra_de_navegacion')
+        .view('proyecto/back/Editar_perfil')
+        .view('proyecto/front/Pie_de_pagina');
+    }
+    public function actualizar_perfil($id = null) {
+        helper(['form', 'url', 'session']);
+        $usuarioModel = new Usuario_Model();
+    
+        // Common validation rules
+        $input = $this->validate([
+            'nombre'   => 'required|min_length[3]|max_length[25]',
+            'apellido' => 'required|min_length[3]|max_length[25]',
+            'usuario'  => 'required|min_length[3]|max_length[25]',
+            'email'    => 'required|min_length[4]|max_length[100]|valid_email'
+        ], [
+            'nombre' => [
+                'required' => 'Debe ingresar un nombre que tenga entre 3 y 25 caracteres.',
+                'max_length' => 'Superó el máximo de caracteres.',
+                'min_length' => 'Debe tener mínimo 3 caracteres.'
+            ],
+            'apellido' => [
+                'required' => 'Debe ingresar un apellido que tenga entre 3 y 25 caracteres.',
+                'max_length' => 'Superó el máximo de caracteres.',
+                'min_length' => 'Debe tener mínimo 3 caracteres.'
+            ],
+            'usuario' => [
+                'required' => 'Debe ingresar un usuario que tenga entre 3 y 25 caracteres.',
+                'max_length' => 'Superó el máximo de caracteres.',
+                'min_length' => 'Debe tener mínimo 3 caracteres.'
+            ],
+            'email' => [
+                'required' => 'Debe ingresar un correo electrónico.',
+                'max_length' => 'Superó el máximo de caracteres.',
+                'min_length' => 'Debe tener mínimo 4 caracteres.',
+                'valid_email' => 'Debe ingresar una cuenta de correo válida.'
+            ]
+        ]);
+    
+        if (!$input) {
+            $data['usuario'] = $usuarioModel->find($id);
+            $data['titulo'] = 'Editar Perfil';
+            return view('proyecto/front/Encabezado', $data)
+                . view('proyecto/front/Barra_de_navegacion')
+                . view('proyecto/back/Editar_perfil', ['validation' => $this->validator])
+                . view('proyecto/front/Pie_de_pagina');
+        }
+    
+        if ($this->request->getPost('pass-checkbox')) {
+            $usuario = $usuarioModel->find($id);
+            $old_pass_db = $usuario['pass'];
+            $old_pass = $this->request->getVar('pass_old');
+            if (password_verify($old_pass, $old_pass_db)) {
+                $input = $this->validate([
+                    'pass' => 'required|min_length[3]|max_length[10]',
+                    're_pass' => 'matches[pass]'
+                ], [
+                    'pass' => [
+                        'required' => 'Debe ingresar una contraseña que tenga entre 3 y 10 caracteres.',
+                        'max_length' => 'Superó el máximo de caracteres.',
+                        'min_length' => 'Debe ingresar al menos 3 caracteres.'
+                    ],
+                    're_pass' => [
+                        'matches' => 'Las contraseñas no coinciden!'
+                    ]
+                ]);
+    
+                if (!$input) {
+                    $data['usuario'] = $usuarioModel->find($id);
+                    $data['titulo'] = 'Editar Perfil';
+                    return view('proyecto/front/Encabezado', $data)
+                        . view('proyecto/front/Barra_de_navegacion')
+                        . view('proyecto/back/Editar_perfil', ['validation' => $this->validator])
+                        . view('proyecto/front/Pie_de_pagina');
+                }
+            } else {
+                $data['usuario'] = $usuarioModel->find($id);
+                session()->setFlashdata('msj', 'La contraseña actual no coincide con la antigua.');
+                
+                $data['titulo'] = 'Editar Perfil';
+                return view('proyecto/front/Encabezado', $data)
+                    . view('proyecto/front/Barra_de_navegacion')
+                    . view('proyecto/back/Editar_perfil', ['validation' => $this->validator])
+                    . view('proyecto/front/Pie_de_pagina');
+            }
+        }
+    
+        // Passed validations
+        $data = [
+            'nombre' => $this->request->getPost('nombre'),
+            'apellido' => $this->request->getPost('apellido'),
+            'usuario' => $this->request->getPost('usuario'),
+            'email' => $this->request->getPost('email')
+        ];
+    
+        if ($this->request->getPost('pass-checkbox')) {
+            $data['pass'] = password_hash($this->request->getVar('pass'), PASSWORD_DEFAULT);
+        }
+    
+        // Update the user in the database
+        $usuarioModel->update($id, $data);
+    
+        return redirect()->to(base_url('perfil-usuario/'.$id))->with('msj', 'Perfil actualizado correctamente. Vuelva a iniciar sesion para visualizar los cambios');
+    }
+    
 
 
 }
