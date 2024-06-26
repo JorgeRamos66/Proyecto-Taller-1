@@ -27,11 +27,10 @@ class Producto_controller extends BaseController{
                                        ->like('nombre_producto', $search)
                                        ->orLike('descripcion_producto', $search)
                                        ->orLike('marca_producto', $search)
-                                       ->groupEnd()
-                                       ->getProductosAlta() // Obtener solo productos no eliminados
+                                       ->groupEnd() // Obtener solo productos no eliminados
                                        ->paginate($itemsPerPage, 'productos'); // Use 'page' here
         } else {
-            $productos = $productoModel->getProductosAlta() // Obtener solo productos no eliminados
+            $productos = $productoModel // Obtener solo productos no eliminados
                                        ->paginate($itemsPerPage, 'productos'); // Use 'page' here
         }
         
