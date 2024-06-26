@@ -222,7 +222,7 @@ class Producto_controller extends BaseController{
             'precio_producto'       => 'numeric',
             'marca_producto'        => 'min_length[3]|max_length[25]',
             'descripcion_producto'  => 'min_length[3]|max_length[100]',
-            'stock_producto'        => 'required','integer','greater_than[-1]',
+            'stock_producto'        => 'integer',
             'imagen_producto'       => 'permit_empty|is_image[imagen_producto]|mime_in[imagen_producto,image/jpg,image/webp,image/jpeg,image/png,image/gif]'
         ],
         [
