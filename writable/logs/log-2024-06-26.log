@@ -8,3 +8,27 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
  6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 ERROR - 2024-06-26 05:25:24 --> The cart array must contain a product ID, quantity, price, and name.
+CRITICAL - 2024-06-26 06:14:58 --> Too few arguments to function App\Controllers\Carrito_controller::actualiza_carrito(), 0 passed in D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\Carrito_controller.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Carrito_controller->actualiza_carrito()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 06:17:44 --> Too few arguments to function App\Controllers\Carrito_controller::actualiza_carrito(), 0 passed in D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH\Controllers\Carrito_controller.php on line 63.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Carrito_controller->actualiza_carrito()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-26 06:18:44 --> actualiza_carrito: Insufficient stock for product ID: 9
+ERROR - 2024-06-26 06:18:52 --> actualiza_carrito: Insufficient stock for product ID: 9
+ERROR - 2024-06-26 06:18:56 --> actualiza_carrito: Insufficient stock for product ID: 9
+ERROR - 2024-06-26 06:19:06 --> An invalid name was submitted as the product name: Canilleras de futbol	 The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+ERROR - 2024-06-26 06:19:35 --> An invalid name was submitted as the product name: Canilleras de futbol	 The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+CRITICAL - 2024-06-26 06:21:45 --> Call to a member function get() on null
+in APPPATH\Controllers\Carrito_controller.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Carrito_controller->agregar_al_carrito()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-26 06:22:23 --> An invalid name was submitted as the product name: Canilleras de futbol	 The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces

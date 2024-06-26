@@ -4,7 +4,12 @@ $nombre = $session->get('nombre');
 $perfil = $session->get('perfil_id');
 $id = $session->get('id_usuario');
 ?>
-
+<?php if (session()->getFlashdata('mensaje')): ?>
+    <div class="container col-4 alert alert-success text-center fs-6 alert-dismissible fade show" role="alert">
+        <?= session()->getFlashdata('mensaje') ?>
+        <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif;?>
 <div class="comercializacion container mt-5" style="text-shadow: none; border-radius: 10px;background-color: rgb(255, 255, 255, 0)">
     <div style="text-align: center;">
         <h1 class="my-2 badge" style="text-shadow: none;color: blue;backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">Carrito de Compras</h1>
@@ -25,7 +30,7 @@ $id = $session->get('id_usuario');
             // Inicializa el total del carrito
             $total_carrito = 0; 
             ?>
-            <?php foreach ($carrito as $item): ?>
+            <?php foreach ($cart as $item): ?>
                 <?php 
                 // Calcula el subtotal por producto
                 $subtotal = $item['price'] * $item['qty']; 
@@ -38,18 +43,18 @@ $id = $session->get('id_usuario');
                     <td><?= esc($item['qty']); ?></td>
                     <td>$<?= number_format($subtotal, 2); ?></td>
                     <td>
-                        <form action="<?= base_url('actualizar_carrito'); ?>" method="post" class="d-inline">
-                            <input type="hidden" name="id" value="<?= esc($item['rowid']); ?>">
-                            <input type="number" name="qty" value="<?= esc($item['qty']); ?>" min="1" class="form-control form-control-sm w-auto d-inline">
-                            <button type="submit" class="btn btn-sm btn-outline-primary">Actualizar</button>
-                        </form>
+                    <form action="<?= base_url('actualizar_carrito'); ?>" method="post" class="d-inline">
+                        <input type="hidden" name="id" value="<?= esc($item['rowid']); ?>">
+                        <input type="number" name="qty" value="<?= esc($item['qty']); ?>" min="1" class="form-control form-control-sm w-auto d-inline">
+                        <button type="submit" class="btn btn-sm btn-outline-primary">Actualizar</button>
+                    </form>
                         <form action="<?= base_url('elimina_carrito/' . esc($item['rowid'])); ?>" method="post" class="d-inline">
                             <button type="submit" class="btn btn-sm btn-outline-danger">Borrar producto</button>
                         </form>
                     </td>
                 </tr>
             <?php endforeach; ?>
-            <?php if (empty($carrito)): ?>
+            <?php if (empty($cart)): ?>
                 <tr>
                     <td colspan="5" class="text-center">No hay productos en el carrito.</td>
                 </tr>

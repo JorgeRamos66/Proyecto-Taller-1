@@ -4,9 +4,9 @@ $nombre = $session->get('nombre');
 $perfil = $session->get('perfil_id');
 $id = $session->get('id_usuario');
 ?>
-<?php if (session()->getFlashdata('msj')): ?>
+<?php if (session()->getFlashdata('mensaje')): ?>
     <div class="container col-4 alert alert-success text-center fs-6 alert-dismissible fade show" role="alert">
-        <?= session()->getFlashdata('msj') ?>
+        <?= session()->getFlashdata('mensaje') ?>
         <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php endif;?>
@@ -46,22 +46,21 @@ $id = $session->get('id_usuario');
                     <div class="card-body">
                         <h6 class="card-title" style="font-size: 0.9rem;"><?= $producto['nombre_producto']; ?></h6>
                         <p class="card-text" style="font-size: 0.8rem;">Precio: $<?= number_format($producto['precio_producto'], 2); ?></p>
-                        <form action="<?= base_url('comprar-producto/'.$producto['id_producto']); ?>" method="post">
-                            <?php if (session()->has('loggedIn')): ?>
-                                <button type="button" class="btn btn-outline-danger"
-                                data-bs-toggle="modal"
-                                data-bs-target="#compraModal"
-                                data-id="<?= $producto['id_producto']; ?>"
-                                data-nombre="<?= $producto['nombre_producto']; ?>"
-                                data-marca="<?= $producto['marca_producto']; ?>"
-                                data-descripcion="<?= $producto['descripcion_producto']; ?>"
-                                data-precio="<?= $producto['precio_producto']; ?>"
-                                data-stock="<?= $producto['stock_producto']; ?>"
-                                data-imagen="<?= base_url('assets/uploads/'.$producto['imagen_producto']); ?>">
-                            Comprar
-                        </button>
+                        <form action="<?= base_url('agregar_carrito'); ?>" method="post">
+                            <input type="hidden" name="id" value="<?= $producto['id_producto']; ?>">
+                            <?php if(session()->has('loggedIn')): ?>
+                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#compraModal" 
+                                    data-id="<?= $producto['id_producto']; ?>"
+                                    data-nombre="<?= $producto['nombre_producto']; ?>"
+                                    data-marca="<?= $producto['marca_producto']; ?>"
+                                    data-descripcion="<?= $producto['descripcion_producto']; ?>"
+                                    data-precio="<?= $producto['precio_producto']; ?>"
+                                    data-stock="<?= $producto['stock_producto']; ?>"
+                                    data-imagen="<?= base_url('assets/uploads/'.$producto['imagen_producto']); ?>">
+                                    Comprar
+                                </button>
                             <?php else: ?>
-                                <button type="submit" class="btn btn-outline-danger" disabled>Comprar</button>
+                                <button type="button" class="btn btn-outline-danger" disabled>Comprar</button>
                             <?php endif; ?>
                         </form>
                     </div>
@@ -95,7 +94,7 @@ $id = $session->get('id_usuario');
                         <p><strong>Precio:</strong> $<span id="productoPrecio"></span></p>
                         <p><strong>Stock:</strong> <span id="productoStock"></span></p>
                         <form id="formComprar" action="<?= base_url('agregar_carrito'); ?>" method="post">
-                            <input type="hidden" name="id_producto" id="productoId">
+                            <input type="hidden" name="id" id="productoId">
                             <input type="hidden" name="precio" id="hiddenProductoPrecio">
                             <input type="hidden" name="nombre_producto" id="hiddenProductoNombre">
                             <div class="mb-3">
@@ -146,7 +145,8 @@ document.addEventListener('DOMContentLoaded', function () {
         productoStock.textContent = stock;
 
         var productoCantidad = compraModal.querySelector('#productoCantidad');
-        productoCantidad.setAttribute('max', stock);
+        productoCantidad.value = 1; // Valor por defecto
+        productoCantidad.setAttribute('max', stock); // Máximo stock disponible
 
         // Update hidden fields in the form
         var productoId = compraModal.querySelector('#productoId');

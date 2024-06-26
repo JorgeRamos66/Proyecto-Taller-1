@@ -94,10 +94,11 @@ $routes->group('', ['filter' => 'logged'], function ($routes) {
     $routes->get('vista_compras/(:num)','Ventas_controller::ver_factura/&1');
     $routes->get('ver_facturas_usuario/(:num)','Ventas_controller::ver_facturas_usuarios/&1');
 
+    /*rutas del Carrito de Usuarios*/
     $routes->get('ver_carrito', 'Carrito_controller::ver_carrito');
     $routes->post('agregar_carrito', 'Carrito_controller::agregar_al_carrito'); 
     $routes->get('elimina_carrito/(:any)','carrito_controller::remover_del_carrito/$1');
-    $routes->get('actualizar_carrito','carrito_controller::actualiza_carrito');
+    $routes->post('actualizar_carrito', 'Carrito_controller::actualiza_carrito');
 });
 
 $routes->get('modificar_usuario','User_modify_controller::user_modify',['filter'=>'register']);
