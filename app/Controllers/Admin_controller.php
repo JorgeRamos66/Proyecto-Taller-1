@@ -13,12 +13,4 @@ class Admin_controller extends BaseController
         .view('proyecto/front/Pie_de_pagina');
     }
 
-    public function listar_productos()
-    {
-        $data['titulo'] = 'Gestion productos';
-        return view('proyecto/front/Encabezado', $data)
-        .view('proyecto/front/Barra_de_navegacion_admin')
-        .view('proyecto/back/Gestion_productos')
-        .view('proyecto/front/Pie_de_pagina');
-    }
 }

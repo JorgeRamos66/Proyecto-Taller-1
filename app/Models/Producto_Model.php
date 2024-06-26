@@ -29,4 +29,31 @@ class Producto_Model extends Model
     public function getProductosTodos(){
         return $this->findAll();
     }
+
+    public function getBuilderProductos(){
+        $db = \Config\Database::connect();
+
+        $builder = $db->table('products');
+        $builder->select('*');
+        $builder->join('categoria','categorias.id_categoria = productos.id_categoria');
+
+        return $builder;
+    }
+
+    public function getProducto($id = null){
+
+        $builder = $this->getBuilderProductos();
+        $builder->where('productos.id_producto', $id);
+        $query = $builder->get();
+
+        return $query->getRowArray();
+    }
+
+    public function updateStock($id = null, $stock = null){
+
+        $builder = $this->getBuilderProductos();
+        $builder->where('productos.id_producto', $id);
+        $builder->set('productos.stock_producto', $stock);
+        $builder->update();
+    }
 }

@@ -98,6 +98,28 @@
             
         </div>
 </section>
-<section>
-  
+<section class="registro comercializacion text-center container mx-0 my-2 text-justify fs-6 desc" style="border-radius: 10px;background-color: rgb(255, 255, 255, 0)">
+<div style="text-align: center;"><h1 class="my-2 badge" style="text-shadow: none;color: blue;backdrop-filter: blur(10px); background-color: rgb(255, 255, 255, 0.2);">Últimos ingresos</h1></div>
+    
+    <h2></h2>
+    <div class=" row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3">
+        <?php foreach ($latestProducts as $producto): ?>
+            <div class="col">
+                <div class="card h-100 text-center" style="backdrop-filter: blur(5px); background-color: rgb(0, 97, 224); height: 300px;">
+                    <img src="<?= base_url('assets/uploads/'.$producto['imagen_producto']); ?>" class="card-img-top" alt="<?= $producto['nombre_producto']; ?>" style="height: 150px; object-fit: cover;">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: 0.9rem;"><?= $producto['nombre_producto']; ?></h6>
+                        <p class="card-text" style="font-size: 0.8rem;">Precio: $<?= number_format($producto['precio_producto'], 2); ?></p>
+                        <form action="<?= base_url('comprar-producto/'.$producto['id_producto']); ?>" method="post">
+                            <?php if (session()->has('loggedIn')): ?>
+                                <button type="submit" class="btn btn-outline-danger">Comprar</button>
+                            <?php else: ?>
+                                <button type="submit" class="btn btn-outline-danger" disabled>Comprar</button>
+                            <?php endif; ?>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </section>

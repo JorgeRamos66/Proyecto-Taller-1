@@ -67,7 +67,7 @@ $routes->post('enviar-registro','Usuario_controller::nuevo_registro');
 //Routes Admin
 $routes->group('', ['filter' => 'admin'], function ($routes) {
     $routes->get('panel_admin','Admin_controller::Admin_view');
-    $routes->get('gestion_productos','Producto_controller::listar_productos');
+    $routes->get('gestion_productos','Producto_controller::gestion_productos');
     $routes->get('form-producto','Producto_controller::crear_producto');
     $routes->post('enviar-producto','Producto_controller::store');
     $routes->get('eliminar-producto/(:num)','Producto_controller::eliminar_producto/$1');
@@ -90,6 +90,14 @@ $routes->group('', ['filter' => 'logged'], function ($routes) {
     $routes->get('perfil-usuario/(:num)','Usuario_controller::perfil_usuario/$1');
     $routes->get('editar-usuario/(:num)','Usuario_controller::editar_usuario/$1');
     $routes->post('actualizar-usuario/(:num)', 'Usuario_controller::actualizar_perfil/$1');
+
+    $routes->get('vista_compras/(:num)','Ventas_controller::ver_factura/&1');
+    $routes->get('ver_facturas_usuario/(:num)','Ventas_controller::ver_facturas_usuarios/&1');
+
+    $routes->get('ver_carrito', 'Carrito_controller::ver_carrito');
+    $routes->post('agregar_carrito', 'Carrito_controller::agregar_al_carrito'); 
+    $routes->get('elimina_carrito/(:any)','carrito_controller::remover_del_carrito/$1');
+    $routes->get('actualizar_carrito','carrito_controller::actualiza_carrito');
 });
 
 $routes->get('modificar_usuario','User_modify_controller::user_modify',['filter'=>'register']);

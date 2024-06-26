@@ -16,7 +16,7 @@ class Producto_controller extends BaseController{
         $categoriasModel = new Categoria_Model();
     
         // Parámetros para la paginación y búsqueda
-        $itemsPerPage = $this->request->getVar('itemsPerPage') ? $this->request->getVar('itemsPerPage') : 6;
+        $itemsPerPage = $this->request->getVar('itemsPerPage') ? $this->request->getVar('itemsPerPage') : 5;
         $search = $this->request->getGet('search');
     
         // Obtener productos con o sin filtro de búsqueda
@@ -49,7 +49,7 @@ class Producto_controller extends BaseController{
                . view('proyecto/front/Pie_de_pagina');
     }
 
-    public function listar_productos() {
+    public function gestion_productos() {
         $productoModel = new Producto_Model();
     
         // Obtener el término de búsqueda y número de elementos por página
