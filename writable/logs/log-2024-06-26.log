@@ -32,3 +32,14 @@ in APPPATH\Controllers\Carrito_controller.php on line 31.
  3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 ERROR - 2024-06-26 06:22:23 --> An invalid name was submitted as the product name: Canilleras de futbol	 The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+ERROR - 2024-06-26 14:30:22 --> actualiza_carrito: Item not found for rowid: 
+ERROR - 2024-06-26 14:56:53 --> An invalid name was submitted as the product name: Canilleras de futbol	 The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+ERROR - 2024-06-26 15:13:50 --> An invalid name was submitted as the product name: Canilleras de futbol	 The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces
+ERROR - 2024-06-26 15:31:16 --> actualiza_carrito: Producto no encontrado en el carrito. rowid=
+ERROR - 2024-06-26 15:41:40 --> actualiza_carrito: Producto no encontrado en el carrito. rowid=
+CRITICAL - 2024-06-26 15:54:59 --> Call to undefined method App\Controllers\Carrito_controller::incrementarProducto()
+in APPPATH\Controllers\Carrito_controller.php on line 76.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Carrito_controller->agregar_al_carrito()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

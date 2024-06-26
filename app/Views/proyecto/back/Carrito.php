@@ -22,7 +22,7 @@ $id = $session->get('id_usuario');
                 <th>Precio</th>
                 <th>Cantidad</th>
                 <th>Total</th>
-                <th>Cancelar producto</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@ $id = $session->get('id_usuario');
             // Inicializa el total del carrito
             $total_carrito = 0; 
             ?>
-            <?php foreach ($cart as $item): ?>
+            <?php foreach ($cart as $index => $item): ?>
                 <?php 
                 // Calcula el subtotal por producto
                 $subtotal = $item['price'] * $item['qty']; 
@@ -40,16 +40,25 @@ $id = $session->get('id_usuario');
                 <tr>
                     <td><?= esc($item['name']); ?></td>
                     <td>$<?= number_format($item['price'], 2); ?></td>
-                    <td><?= esc($item['qty']); ?></td>
+                    <td>
+                        <div class="btn-group">
+                            <form action="<?= base_url('incrementar_producto/' . $index); ?>" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-sm btn-outline-dark">+</button>
+                            </form>
+                            <div class="btn btn-sm btn-dark">
+                                <?= esc($item['qty']); ?>
+                            </div>
+                            
+                            <form action="<?= base_url('decrementar_producto/' . $index); ?>" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-sm btn-outline-dark">-</button>
+                            </form>
+                        </div>
+                        
+                    </td>
                     <td>$<?= number_format($subtotal, 2); ?></td>
                     <td>
-                    <form action="<?= base_url('actualizar_carrito'); ?>" method="post" class="d-inline">
-                        <input type="hidden" name="id" value="<?= esc($item['rowid']); ?>">
-                        <input type="number" name="qty" value="<?= esc($item['qty']); ?>" min="1" class="form-control form-control-sm w-auto d-inline">
-                        <button type="submit" class="btn btn-sm btn-outline-primary">Actualizar</button>
-                    </form>
-                        <form action="<?= base_url('elimina_carrito/' . esc($item['rowid'])); ?>" method="post" class="d-inline">
-                            <button type="submit" class="btn btn-sm btn-outline-danger">Borrar producto</button>
+                        <form action="<?= base_url('quitar_producto/' . $index); ?>" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
                         </form>
                     </td>
                 </tr>

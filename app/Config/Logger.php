@@ -38,7 +38,9 @@ class Logger extends BaseConfig
      *
      * @var array|int
      */
-    public $threshold = (ENVIRONMENT === 'production') ? 4 : 9;
+    public $threshold = 4;  // Log all levels: DEBUG, INFO, NOTICE, WARNING, ERROR, CRITICAL, ALERT, EMERGENCY
+
+    public $fileExtension = '';
 
     /**
      * --------------------------------------------------------------------------

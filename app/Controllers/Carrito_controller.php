@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 Use App\Models\Producto_Model;
+use CodeIgniter\Session\Session;
+use CodeIgniter\Controller;
 use App\Models\Cabecera_Ventas_Model;
 use App\Models\Detalle_Ventas_Model;
 
@@ -17,8 +19,6 @@ class Carrito_controller extends BaseController{
 
     //Ver el carrito
     public function ver_carrito(){
-
-        helper(['form','url','cart']);
         $cart = \config\Services::cart();
         $cart = $this->session->get('cart') ?? [];
         $productoModel = new Producto_Model();
@@ -45,136 +45,114 @@ class Carrito_controller extends BaseController{
 
         return view('proyecto/front/Encabezado', $data)
         .view('proyecto/front/Barra_de_navegacion')
-        .view('proyecto/back/Carrito')
+        .view('proyecto/back/Carrito', $data)
         .view('proyecto/front/Pie_de_pagina');
     }
 
     public function agregar_al_carrito() {
-        // Initialize the cart service
-        $cart = \Config\Services::cart();
-        
-        // Retrieve the current session cart or create an empty array if it doesn't exist
-        $sessionCart = $this->session->get('cart') ?? [];
+        // Obtén el servicio de sesión y el carrito
+        $session = session();
+        $cart = $session->get('cart') ?? [];
     
-        // Load the product model
-        $productoModel = new Producto_Model();
-        
-        // Retrieve posted data
+        // Obtén los datos del producto a agregar desde el formulario
         $productId = $this->request->getPost('id');
+        $nombre_producto = $this->request->getPost('nombre_producto');
+        $precio = $this->request->getPost('precio');
         $cantidad = $this->request->getPost('cantidad');
-        
-        // Fetch product data from the database
-        $producto = $productoModel->find($productId);
-        if (!$producto) {
-            return redirect()->to(base_url('catalogoDeProductos'))->with('mensaje', 'Producto no encontrado.');
+    
+        // Verifica el stock disponible para el nuevo producto
+        $stockDisponible = $this->obtenerStock($productId);
+    
+        // Si la cantidad solicitada es mayor al stock disponible, muestra un mensaje de error
+        if ($cantidad > $stockDisponible) {
+            return redirect()->to(base_url('ver_carrito'))->with('mensaje', 'No hay suficiente stock disponible para este producto.');
         }
     
-        // Check the available stock
-        $stockDisponible = $producto['stock_producto'];
-        
-        $repetido = false;
-        
-        // Verify if the product already exists in the cart
-        foreach ($sessionCart as &$cartItem) {
-            if ($cartItem['id'] == $productId) {
-                $newQuantity = $cartItem['qty'] + $cantidad;
-                if ($newQuantity > $stockDisponible) {
-                    return redirect()->to(base_url('ver_carrito'))->with('mensaje', 'No se puede añadir más de ' . $stockDisponible . ' unidades de este producto2.');
-                }
-                // Update the quantity in the session cart
-                $cartItem['qty'] = $newQuantity;
-                $repetido = true;
+        // Busca si el producto ya está en el carrito
+        $producto_existente = false;
+        foreach ($cart as $index => $item) {
+            if ($item['id'] == $productId) {
+                // Si el producto ya está en el carrito, incrementa la cantidad utilizando la función incrementarProducto
+                $this->incrementar_producto($index);
+                $producto_existente = true;
                 break;
             }
         }
-        
-        // If the product is not in the cart, add it
-        if (!$repetido) {
-            if ($cantidad > $stockDisponible) {
-                return redirect()->to(base_url('ver_carrito'))->with('mensaje', 'No se puede añadir más de ' . $stockDisponible . ' unidades de este producto.');
-            }
     
-            // Create a new item array
-            $item = [
-                'id'    => $productId,
-                'name'  => $producto['nombre_producto'],
-                'price' => $producto['precio_producto'],
-                'qty'   => $cantidad,
+        // Si el producto no está en el carrito, agrégalo como un nuevo ítem
+        if (!$producto_existente) {
+            $producto = [
+                'id' => $productId,
+                'name' => $nombre_producto, // Asegúrate de cambiar 'name' según la estructura de tu carrito
+                'price' => $precio,
+                'qty' => $cantidad,
             ];
-            // Add the item to the session cart
-            $sessionCart[] = $item;
+            $cart[] = $producto;
+            $session->set('cart', $cart);
         }
-        
-        // Update the session with the modified cart
-        $this->session->set('cart', $sessionCart);
-        
-        // Use the cart service to update the actual cart contents
-        foreach ($sessionCart as $item) {
-            $cart->insert($item);
-        }
-        
-        // Redirect to the catalog page with a success message
-        return redirect()->to(base_url('catalogoDeProductos'))->with('mensaje', 'Producto añadido al carrito.');
+    
+        // Redirecciona de vuelta al carrito después de agregar el producto
+        return redirect()->to(base_url('ver_carrito'))->with('mensaje', 'Producto añadido al carrito.');
     }
-
-    public function remover_del_carrito($rowid) {
-        $cart = \Config\Services::cart();
-        $request = \Config\Services::request();
-
-        if ($rowid == 'all'){
-            $cart->destroy();
-        }
-        else{
-            $cart->remove($rowid);
-        }
-        return redirect()->back()->withInput();
-
-    }
-
-    public function actualiza_carrito() {
+    public function incrementar_producto($index)
+    {
         $session = session();
-        $cart = \Config\Services::cart();
-        $request = \Config\Services::request();
-    
-        $rowid = $request->getPost('id'); // Retrieve rowid from POST data
-    
-        // Log received rowid and POST data
-        log_message('info', 'actualiza_carrito: Received rowid: ' . $rowid);
-        log_message('info', 'actualiza_carrito: Received POST data: ' . json_encode($request->getPost()));
-    
-        // Check if the cart item exists
-        $item = $cart->getItem($rowid);
-        if (!$item) {
-            log_message('error', 'actualiza_carrito: Item not found for rowid: ' . $rowid);
-            return redirect()->back()->with('mensaje', 'Producto no encontrado en el carrito.');
-        }
-    
-        $productoId = $item['id'];
-        $stockDisponible = $this->obtenerStock($productoId);
-        $qty = $request->getPost('qty');
-    
-        if ($qty < $stockDisponible) {
-            $data = [
-                'rowid' => $rowid,
-                'qty'   => $qty,  // Accept quantity from user input
-            ];
-    
-            // Log prepared data
-            log_message('info', 'actualiza_carrito: Prepared data for cart update: ' . json_encode($data));
-    
-            // Validate input data
-            if ($this->validateCartData($data)) {
-                $cart->update($data);
-                log_message('info', 'actualiza_carrito: Cart updated successfully.');
+        $cart = $session->get('cart');
+
+        // Verifica si el índice proporcionado está dentro del rango válido para el carrito
+        if (isset($cart[$index])) {
+            // Obtén el ID del producto y verifica el stock disponible
+            $productId = $cart[$index]['id'];
+            $stockDisponible = $this->obtenerStock($productId);
+
+            // Incrementa la cantidad del producto si hay suficiente stock
+            if ($cart[$index]['qty'] < $stockDisponible) {
+                $cart[$index]['qty']++;
+                $session->set('cart', $cart);
+                return redirect()->back();
             } else {
-                log_message('error', 'actualiza_carrito: Validation failed for data: ' . json_encode($data));
+                return redirect()->back()->with('mensaje', 'Esta superando el stock maximo en esta compra.');
             }
-            return redirect()->back();
         } else {
-            log_message('error', 'actualiza_carrito: Insufficient stock for product ID: ' . $productoId);
-            return redirect()->back()->with('mensaje', 'No hay stock disponible para seguir incrementando la compra');
+            return redirect()->back()->with('mensaje', 'Índice de producto no válido.');
         }
     }
+
+    public function decrementar_producto($index)
+    {
+        $session = session();
+        $cart = $session->get('cart');
+
+        // Verifica si el índice proporcionado está dentro del rango válido para el carrito
+        if (isset($cart[$index])) {
+            // El límite de decremento es 1 (no se puede tener menos de 1 producto en el carrito)
+            if ($cart[$index]['qty'] > 1) {
+                $cart[$index]['qty']--;
+                $session->set('cart', $cart);
+                return redirect()->back();
+            } else {
+                return redirect()->back()->with('mensaje', 'No se pueden establecer cantidades inferiores a una unidad. Si desea eliminar el producto, presione "Eliminar".');
+            }
+        } else {
+            return redirect()->back()->with('mensaje', 'Índice de producto no válido.');
+        }
+    }
+
+
+    public function borrar_del_carrito($index){
+        $cart = \config\Services::cart();
+        $cart = $this->session->get('cart');
+        if (isset($cart[$index])) {
+            unset($cart[$index]);
+            $this->session->set('cart', array_values($cart));
+        }
+
+        //Retornar a la vista del carrito
+        return redirect()->to('ver_carrito');
+    }
+
+    
+    
     public function obtenerStock($id_producto){
 
         $productoModel = new Producto_Model();
@@ -182,7 +160,7 @@ class Carrito_controller extends BaseController{
         $producto = $productoModel->find($id_producto);
         
         if ($producto) {
-            return $producto['stock'];
+            return $producto['stock_producto'];
         } else {
             //Si el producto no existe retorna 0 (Esto es opcional, sujeto a pruebas posteriores)
             //Si el producto esta añadido a carrito debería existir
