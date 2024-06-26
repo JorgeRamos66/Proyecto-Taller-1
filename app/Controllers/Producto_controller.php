@@ -12,28 +12,29 @@ class Producto_controller extends BaseController{
     }
 
     public function catalogo_productos() {
-        
         $productoModel = new Producto_Model();
         $categoriaModel = new Categoria_Model();
     
         // Parámetros para la paginación y búsqueda
         $itemsPerPage = $this->request->getVar('itemsPerPage') ? $this->request->getVar('itemsPerPage') : 5;
         $search = $this->request->getGet('search');
-        
     
         // Obtener productos con o sin filtro de búsqueda
         if ($search) {
-            $productos = $productoModel->groupStart()
+            // Aplica la búsqueda y filtra productos no eliminados
+            $productos = $productoModel->where('eliminado_producto', 'NO') // Filtra productos no eliminados
+                                       ->groupStart()
                                        ->like('nombre_producto', $search)
                                        ->orLike('descripcion_producto', $search)
                                        ->orLike('marca_producto', $search)
-                                       ->groupEnd() // Obtener solo productos no eliminados
-                                       ->paginate($itemsPerPage, 'productos'); // Use 'page' here
+                                       ->groupEnd()
+                                       ->paginate($itemsPerPage, 'productos');
         } else {
-            $productos = $productoModel // Obtener solo productos no eliminados
-                                       ->paginate($itemsPerPage, 'productos'); // Use 'page' here
+            // Obtener solo productos no eliminados
+            $productos = $productoModel->where('eliminado_producto', 'NO') // Filtra productos no eliminados
+                                       ->paginate($itemsPerPage, 'productos');
         }
-        
+    
         $pager = $productoModel->pager;
         $pager->setPath('catalogo_productos'); // Establecer la ruta base para la paginación
     
@@ -50,7 +51,6 @@ class Producto_controller extends BaseController{
                . view('proyecto/front/Barra_de_navegacion')
                . view('proyecto/front/Catalogo_productos', $data)
                . view('proyecto/front/Pie_de_pagina');
-               
     }
 
     public function gestion_productos() {

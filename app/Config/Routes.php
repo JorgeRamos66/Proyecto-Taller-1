@@ -80,6 +80,8 @@ $routes->group('', ['filter' => 'admin'], function ($routes) {
     $routes->get('eliminar-usuario/(:num)','Usuario_controller::eliminar_usuario/$1');
     $routes->get('activar-usuario/(:num)','Usuario_controller::activar_usuario/$1');
 
+    $routes->get('ver_ventas','Ventas_controller::gestion_ventas');
+
     $routes->get('gestion_consultas','Contacto_controller::listar_consultas');
     $routes->post('leer-consulta/(:num)','Contacto_controller::marcar_consulta_leido/$1');
     $routes->get('desleer-consulta/(:num)','Contacto_controller::marcar_consulta_desleido/$1');

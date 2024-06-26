@@ -9,6 +9,11 @@ use App\Models\Venta_Cabecera_Model;
 use App\Models\Venta_Detalle_Model;
 
 class Ventas_controller extends Controller {
+    public function __construct(){
+        helper(['url', 'form']);
+        $session = \Config\Services::session();
+        //$session = session();
+    }
 
     public function registrar_venta() {
         $session = session();
@@ -62,7 +67,45 @@ class Ventas_controller extends Controller {
         // Clear cart after successful order
         $session->remove('cart');
         $session->setFlashdata('mensaje', 'Venta registrada exitosamente.');
-        return redirect()->to(base_url('vista_compras/' . $venta_id));
+        return redirect()->to(base_url('catalogoDeProductos'));
+    }
+    public function gestion_ventas() {
+        helper(['url', 'form']);
+    
+        $ventasModel = new Venta_Cabecera_Model();
+        $usuarioModel = new Usuario_Model();
+         /**
+         * @var IncomingRequest $request 
+         */
+        $request = $this->request;
+    
+        // Parámetros para la paginación y búsqueda
+        $itemsPerPage = $request->getVar('itemsPerPage') ? $request->getVar('itemsPerPage') : 5;
+        $search = $request->getGet('search');
+        
+        // Obtener ventas con o sin filtro de búsqueda
+        if ($search) {
+            $ventas = $ventasModel->like('usuario_id', $search)
+                                  ->paginate($itemsPerPage, 'ventas');
+        } else {
+            $ventas = $ventasModel->paginate($itemsPerPage, 'ventas');
+        }
+    
+        $pager = $ventasModel->pager;
+        $pager->setPath('gestion_ventas'); // Establecer la ruta base para la paginación
+    
+        $data = [
+            'ventas' => $ventas,
+            'pager' => $pager,
+            'itemsPerPage' => $itemsPerPage,
+            'search' => $search,
+            'titulo' => 'Gestión de Ventas',
+        ];
+    
+        return view('proyecto/front/Encabezado', $data)
+               . view('proyecto/front/Barra_de_navegacion')
+               . view('proyecto/back/Ventas', $data)
+               . view('proyecto/front/Pie_de_pagina');
     }
 
     public function ver_factura($venta_id) {

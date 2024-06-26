@@ -45,7 +45,11 @@ $id = $session->get('id_usuario');
                     <img src="<?= base_url('assets/uploads/'.$producto['imagen_producto']); ?>" class="card-img-top" alt="<?= $producto['nombre_producto']; ?>" style="height: 150px; object-fit:scale-down;">
                     <div class="card-body">
                         <h6 class="card-title" style="font-size: 0.9rem;"><?= $producto['nombre_producto']; ?></h6>
-                        <p class="card-text" style="font-size: 0.8rem;">Precio: $<?= number_format($producto['precio_producto'], 2); ?></p>
+                        <?php if($producto['stock_producto'] > 0): ?>
+                            <p class="card-text" style="font-size: 0.8rem;">Precio: $<?= number_format($producto['precio_producto'], 2); ?> </p>
+                        <?php else: ?>
+                            <p class="card-text" style="font-size: 0.8rem;">Sin Stock!</p>
+                        <?php endif; ?>
                         <form action="<?= base_url('agregar_carrito'); ?>" method="post">
                             <input type="hidden" name="id" value="<?= $producto['id_producto']; ?>">
                             <?php if(session()->has('loggedIn') && $perfil == 2): ?>

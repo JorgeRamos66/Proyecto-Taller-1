@@ -22,7 +22,7 @@ $perfil = $session->get('perfil_id');
                   <a class="nav-toggler btn btn-outline-success mx-2 my-1" href="<?php echo base_url('gestion_productos');?>">Gestion productos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-toggler btn btn-outline-warning mx-2 my-1" href="<?php echo base_url('informacion_de_contacto');?>">Ventas</a>
+                  <a class="nav-toggler btn btn-outline-warning mx-2 my-1" href="<?php echo base_url('ver_ventas');?>">Ventas</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-toggler btn btn-outline-success mx-2 my-1" href="<?php echo base_url('gestion_consultas');?>">Gestion consultas</a>

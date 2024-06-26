@@ -170,3 +170,57 @@ in APPPATH\Controllers\Producto_controller.php on line 35.
  2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
  3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 18:10:09 --> Invalid file: "proyecto/back/Vista_compras.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('proyecto/back/Vista_compras.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Vista_compras', [], true)
+ 3 APPPATH\Controllers\Ventas_controller.php(75): view('proyecto/back/Vista_compras')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->ver_factura('&1')
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 18:20:51 --> Invalid file: "proyecto/front/Gestion_ventas.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('proyecto/front/Gestion_ventas.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Gestion_ventas', [], true)
+ 3 APPPATH\Controllers\Ventas_controller.php(108): view('proyecto/front/Gestion_ventas', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 18:21:12 --> Invalid file: "proyecto/back/Gestion_ventas.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('proyecto/back/Gestion_ventas.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_ventas', [], true)
+ 3 APPPATH\Controllers\Ventas_controller.php(108): view('proyecto/back/Gestion_ventas', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 18:21:15 --> Invalid file: "proyecto/back/Gestion_ventas.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('proyecto/back/Gestion_ventas.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_ventas', [], true)
+ 3 APPPATH\Controllers\Ventas_controller.php(108): view('proyecto/back/Gestion_ventas', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 18:23:07 --> Invalid file: "proyecto/front/Gestion_ventas.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('proyecto/front/Gestion_ventas.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Gestion_ventas', [], true)
+ 3 APPPATH\Controllers\Ventas_controller.php(103): view('proyecto/front/Gestion_ventas', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 18:24:44 --> Invalid file: "proyecto/back/Vista_compras.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('proyecto/back/Vista_compras.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Vista_compras', [], true)
+ 3 APPPATH\Controllers\Ventas_controller.php(118): view('proyecto/back/Vista_compras')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->ver_factura('&1')
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
