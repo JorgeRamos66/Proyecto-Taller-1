@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?php echo base_url ('./assets/css/miestilo.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url ('./assets/css/bootstrap.min.css') ?>" rel="stylesheet" integrity="" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <title><?=$titulo?></title>
 </head>
 <body class="">

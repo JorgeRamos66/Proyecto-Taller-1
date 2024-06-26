@@ -38,6 +38,7 @@ $routes->get('quienes_somos', 'Home::Quienes_somos');
 $routes->get('comercializacion', 'Home::Comercializacion');
 $routes->get('informacion_de_contacto', 'Contacto_controller::contacto');
 $routes->get('terminos_y_usos', 'Home::Terminos_y_usos');
+$routes->get('catalogoDeProductos', 'Producto_controller::catalogo_productos');
 //$routes->get();
 
 
@@ -80,8 +81,8 @@ $routes->group('', ['filter' => 'admin'], function ($routes) {
     $routes->get('activar-usuario/(:num)','Usuario_controller::activar_usuario/$1');
 
     $routes->get('gestion_consultas','Contacto_controller::listar_consultas');
-    $routes->post('leer-consulta/(:num)','Contacto_controller::mensaje_consulta_leido/$1');
-    $routes->get('desleer-consulta/(:num)','Contacto_controller::mensaje_consulta_desleido/$1');
+    $routes->post('leer-consulta/(:num)','Contacto_controller::marcar_consulta_leido/$1');
+    $routes->get('desleer-consulta/(:num)','Contacto_controller::marcar_consulta_desleido/$1');
 
     
 });

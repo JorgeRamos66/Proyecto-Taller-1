@@ -11,20 +11,61 @@ class Producto_controller extends BaseController{
         //$session = session();
     }
 
-    public function listar_productos(){
+    public function catalogo_productos(){
 
         $productoModel = new Producto_Model();
         $categoriasModel = new Categoria_Model();
 
+        // Parámetros para la paginación
+        $page = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
+        $itemsPerPage = $this->request->getVar('itemsPerPage') ? $this->request->getVar('itemsPerPage') : 8;
+
         $data['categorias'] = $categoriasModel->getCategorias();
-        $data['productos'] = $productoModel->getProductosTodos();
-        $data['titulo'] = 'Gestion productos';
+        $data['productos'] = $productoModel->where('eliminado_producto', 'NO')
+                                        ->paginate($itemsPerPage, 'productos', $page);
+        $data['pager'] = $productoModel->pager;  // Paginador
+        $data['itemsPerPage'] = $itemsPerPage;  // Elementos por página
+        $data['titulo'] = 'Catálogo de Productos';
 
         return view('proyecto/front/Encabezado', $data)
-        .view('proyecto/front/Barra_de_navegacion_admin')
-        .view('proyecto/back/Gestion_productos')
-        .view('proyecto/front/Pie_de_pagina');
+            .view('proyecto/front/Barra_de_navegacion')
+            .view('proyecto/front/Catalogo_productos')
+            .view('proyecto/front/Pie_de_pagina');
+    }
 
+    public function listar_productos() {
+        $productoModel = new Producto_Model();
+    
+        // Obtener el término de búsqueda y número de elementos por página
+        $search = $this->request->getGet('search');
+        $itemsPerPage = $this->request->getGet('itemsPerPage') ?? 5;
+    
+        // Aplicar filtro de búsqueda si existe
+        if ($search) {
+            // Busca en nombre o marca
+            $productos = $productoModel->groupStart()
+                                       ->like('nombre_producto', $search)
+                                       ->orLike('marca_producto', $search)
+                                       ->groupEnd()
+                                       ->paginate($itemsPerPage, 'productos');
+        } else {
+            $productos = $productoModel->paginate($itemsPerPage, 'productos');
+        }
+    
+        $pager = $productoModel->pager;
+        $pager->setPath('listar-productos'); // Establece la ruta base para la paginación
+    
+        $data = [
+            'productos' => $productos,
+            'pager' => $pager,
+            'itemsPerPage' => $itemsPerPage,
+            'search' => $search
+        ];
+    
+        return view('proyecto/front/Encabezado', $data)
+            .view('proyecto/front/Barra_de_navegacion_admin')
+            .view('proyecto/back/Gestion_productos', $data) // Pasa $data aquí
+            .view('proyecto/front/Pie_de_pagina');
     }
 
     public function crear_producto(){

@@ -112,9 +112,10 @@ class Contacto_controller extends BaseController{
             return;
         }
     
-        // Assuming Consulta_Model has an update method similar to your previous example
         $consultaModel = new Consulta_Model();
-        $data = ['consulta_leido' => 'SI'];
+        $consulta = $consultaModel->find($id);
+
+        $data = ['consulta_leido' => $consulta['consulta_leido'] === 'SI' ? 'NO' : 'SI'];
         
         // Update the consultation's 'consulta_leido' field to 'SI'
         $consultaModel->update($id, $data);
@@ -124,7 +125,7 @@ class Contacto_controller extends BaseController{
     }
 
 
-    public function mensaje_consulta_desleido($id=null){
+    public function marcar_consulta_desleido($id=null){
         $consultaModel = new Consulta_Model();
         
         $consultaModel ->update($id, ['consulta_leido' => 'NO']);

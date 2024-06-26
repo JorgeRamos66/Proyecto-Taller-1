@@ -29,7 +29,7 @@ $id = $session->get('id_usuario');
                   <a class="nav-toggler btn btn-outline-primary mx-2 my-1" href="<?php echo base_url('terminos_y_usos');?>">Terminos y usos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-toggler btn btn-outline-danger mx-2 my-1" href="<?php echo base_url('productos');?>">Productos</a>
+                  <a class="nav-toggler btn btn-outline-danger mx-2 my-1" href="<?php echo base_url('catalogoDeProductos');?>">Productos</a>
                 </li>
                 
               </ul>
