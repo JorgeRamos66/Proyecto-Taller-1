@@ -11,26 +11,42 @@ class Producto_controller extends BaseController{
         //$session = session();
     }
 
-    public function catalogo_productos(){
-
+    public function catalogo_productos() {
         $productoModel = new Producto_Model();
         $categoriasModel = new Categoria_Model();
-
-        // Parámetros para la paginación
-        $page = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
-        $itemsPerPage = $this->request->getVar('itemsPerPage') ? $this->request->getVar('itemsPerPage') : 8;
-
-        $data['categorias'] = $categoriasModel->getCategorias();
-        $data['productos'] = $productoModel->where('eliminado_producto', 'NO')
-                                        ->paginate($itemsPerPage, 'productos', $page);
-        $data['pager'] = $productoModel->pager;  // Paginador
-        $data['itemsPerPage'] = $itemsPerPage;  // Elementos por página
-        $data['titulo'] = 'Catálogo de Productos';
-
+    
+        // Parámetros para la paginación y búsqueda
+        $itemsPerPage = $this->request->getVar('itemsPerPage') ? $this->request->getVar('itemsPerPage') : 6;
+        $search = $this->request->getGet('search');
+    
+        // Obtener productos con o sin filtro de búsqueda
+        if ($search) {
+            $productos = $productoModel->groupStart()
+                                       ->like('nombre_producto', $search)
+                                       ->orLike('descripcion_producto', $search)
+                                       ->orLike('marca_producto', $search)
+                                       ->groupEnd()
+                                       ->paginate($itemsPerPage, 'productos'); // Use 'page' here
+        } else {
+            $productos = $productoModel->paginate($itemsPerPage, 'productos'); // Use 'page' here
+        }
+        $pager = $productoModel->pager;
+        $pager->setPath('catalogoDeProductos'); // Establece la ruta base para la paginación
+    
+    
+        $data = [
+            'categorias' => $categoriasModel->getCategorias(),
+            'productos' => $productos,
+            'pager' => $pager,
+            'itemsPerPage' => $itemsPerPage,
+            'search' => $search,
+            'titulo' => 'Catálogo de Productos',
+        ];
+    
         return view('proyecto/front/Encabezado', $data)
-            .view('proyecto/front/Barra_de_navegacion')
-            .view('proyecto/front/Catalogo_productos')
-            .view('proyecto/front/Pie_de_pagina');
+               . view('proyecto/front/Barra_de_navegacion')
+               . view('proyecto/front/Catalogo_productos', $data)
+               . view('proyecto/front/Pie_de_pagina');
     }
 
     public function listar_productos() {
@@ -45,6 +61,7 @@ class Producto_controller extends BaseController{
             // Busca en nombre o marca
             $productos = $productoModel->groupStart()
                                        ->like('nombre_producto', $search)
+                                       ->orLike('descripcion_producto', $search)
                                        ->orLike('marca_producto', $search)
                                        ->groupEnd()
                                        ->paginate($itemsPerPage, 'productos');
@@ -53,7 +70,7 @@ class Producto_controller extends BaseController{
         }
     
         $pager = $productoModel->pager;
-        $pager->setPath('listar-productos'); // Establece la ruta base para la paginación
+        $pager->setPath('gestion_productos'); // Establece la ruta base para la paginación
     
         $data = [
             'productos' => $productos,

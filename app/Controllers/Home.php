@@ -1,16 +1,26 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Producto_Model;
 
 class Home extends BaseController
 {
     public function Principal()
     {
-        $data['titulo'] = 'Ratita Sporting';
+        $productoModel = new Producto_Model();
+        
+        // Fetch the latest product
+        $latestProduct = $productoModel->orderBy('id_producto', 'DESC')->first(); // Assuming 'id_producto' is your primary key
+        
+        $data = [
+            'titulo' => 'Ratita Sporting',
+            'latestProduct' => $latestProduct, // Pass the latest product to the view
+        ];
+
         return view('proyecto/front/Encabezado', $data)
-        .view('proyecto/front/Barra_de_navegacion')
-        .view('proyecto/front/Principal')
-        .view('proyecto/front/Pie_de_pagina');
+               . view('proyecto/front/Barra_de_navegacion')
+               . view('proyecto/front/Principal', $data) // Pass $data to your Principal view
+               . view('proyecto/front/Pie_de_pagina');
     }
     public function Quienes_somos()
     {

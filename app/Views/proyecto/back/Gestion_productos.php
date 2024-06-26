@@ -29,11 +29,10 @@
     <!-- Formulario de Búsqueda -->
     <div class="d-flex justify-content-center mb-2">
         <form class="d-flex justify-content-end col-2 mb-3" method="get" action="<?= base_url('gestion_productos'); ?>">
-            <input type="text" name="search" class="form-control form-control-sm me-2 bg-warning" placeholder="Buscar producto" value="<?= isset($search) ? esc($search) : ''; ?>" />
-            <button type="submit" class="btn btn-sm btn-outline-warning">Buscar</button>
+            <input type="text" name="search" class="form-control form-control-sm me-2 bg-light border-success" placeholder="Buscar producto" value="<?= isset($search) ? esc($search) : ''; ?>" />
+            <button type="submit" class="btn btn-sm btn-outline-success">Buscar</button>
         </form>
-        <a href="<?= base_url('gestion_productos'); ?>">
-            <button type="button" class="btn btn-sm btn-outline-light">Borrar</button>
+        <a href="<?= base_url('gestion_productos'); ?>"><button type="button" class="btn btn-sm btn-outline-dark">Borrar</button>
         </a>
     </div>
     

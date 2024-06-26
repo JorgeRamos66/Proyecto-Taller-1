@@ -1,0 +1,9 @@
+CRITICAL - 2024-06-26 01:46:30 --> Invalid file: "proyecto/back/Catalogo_productos.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('proyecto/back/Catalogo_productos.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Catalogo_productos', [], true)
+ 3 APPPATH\Controllers\Producto_controller.php(58): view('proyecto/back/Catalogo_productos', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto_controller->catalogo_productos()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
