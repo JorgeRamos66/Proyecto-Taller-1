@@ -22,6 +22,7 @@ class Carrito_controller extends BaseController{
         $cart = \config\Services::cart();
         $cart = $this->session->get('cart') ?? [];
         $productoModel = new Producto_Model();
+        
 
         
 
@@ -149,6 +150,14 @@ class Carrito_controller extends BaseController{
 
         //Retornar a la vista del carrito
         return redirect()->to('ver_carrito');
+    }
+
+    public function vaciar_carrito() {
+        $session = session();
+        // Elimina los datos del carrito de la sesión
+        $session->remove('cart');
+        // Redirecciona de vuelta a la página anterior
+        return redirect()->back()->with('mensaje', 'Carrito vaciado.');
     }
 
     

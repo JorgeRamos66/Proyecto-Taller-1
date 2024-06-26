@@ -80,8 +80,8 @@ $id = $session->get('id_usuario');
             <form action="<?= base_url('Ventas_controller/registrar_venta'); ?>" method="post" class="d-inline">
                 <button type="submit" class="btn btn-success">Confirmar Orden</button>
             </form>
-            <form action="<?= base_url('Carrito_controller/remover_del_carrito/all'); ?>" method="post" class="d-inline">
-                <button type="submit" class="btn btn-danger">Borrar Carrito</button>
+            <form action="<?= base_url('vaciar_carrito'); ?>" method="post" class="d-inline">
+                <button type="submit" class="btn btn-danger">Vaciar Carrito</button>
             </form>
             <a href="<?= base_url('catalogoDeProductos'); ?>" class="btn btn-primary">Seguir Comprando</a>
         </div>
