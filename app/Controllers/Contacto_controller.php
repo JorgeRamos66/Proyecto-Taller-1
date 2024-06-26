@@ -92,18 +92,39 @@ class Contacto_controller extends BaseController{
 
         }
     }
-    public function listar_consultas(){
-
+    public function listar_consultas() {
         $consultaModel = new Consulta_Model();
-
-        $data['consultas'] = $consultaModel->getMensajes();
-
-        $data['titulo'] = 'Gestion Consultas';
+        
+        // Obtener el término de búsqueda y número de elementos por página
+        $search = $this->request->getGet('search');
+        $itemsPerPage = $this->request->getGet('itemsPerPage') ?? 9;
+        
+        // Aplicar filtro de búsqueda si existe
+        if ($search) {
+            $consultas = $consultaModel->groupStart()
+                                       ->like('consulta_nombre', $search)
+                                       ->orLike('consulta_apellido', $search)
+                                       ->orLike('consulta_email', $search)
+                                       ->orLike('consulta_mensaje', $search)
+                                       ->groupEnd()
+                                       ->paginate($itemsPerPage, 'consultas');
+        } else {
+            $consultas = $consultaModel->paginate($itemsPerPage, 'consultas');
+        }
+        
+        $pager = $consultaModel->pager;
+        $pager->setPath('listar_consultas'); // Establece la ruta base para la paginación
+        
+        $data = [
+            'consultas' => $consultas,
+            'pager' => $pager,
+            'search' => $search
+        ];
+        
         return view('proyecto/front/Encabezado', $data)
-        .view('proyecto/front/Barra_de_navegacion_admin')
-        .view('proyecto/back/Gestion_consultas')
-        .view('proyecto/front/Pie_de_pagina');
-
+            . view('proyecto/front/Barra_de_navegacion_admin')
+            . view('proyecto/back/Gestion_consultas', $data) // Pasa $data aquí
+            . view('proyecto/front/Pie_de_pagina');
     }
 
     public function marcar_consulta_leido($id = null) {

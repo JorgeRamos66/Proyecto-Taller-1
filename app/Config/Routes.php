@@ -101,6 +101,7 @@ $routes->group('', ['filter' => 'logged'], function ($routes) {
     $routes->post('incrementar_producto/(:num)', 'Carrito_controller::incrementar_producto/$1');
     $routes->post('decrementar_producto/(:num)', 'Carrito_controller::decrementar_producto/$1');
     $routes->post('vaciar_carrito', 'Carrito_controller::vaciar_carrito');
+    $routes->post('registrar_venta', 'Ventas_controller::registrar_venta');
 });
 
 $routes->get('modificar_usuario','User_modify_controller::user_modify',['filter'=>'register']);

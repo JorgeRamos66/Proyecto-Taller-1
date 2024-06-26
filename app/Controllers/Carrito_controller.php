@@ -66,7 +66,7 @@ class Carrito_controller extends BaseController{
     
         // Si la cantidad solicitada es mayor al stock disponible, muestra un mensaje de error
         if ($cantidad > $stockDisponible) {
-            return redirect()->to(base_url('ver_carrito'))->with('mensaje', 'No hay suficiente stock disponible para este producto.');
+            return redirect()->to(base_url('catalogoDeProductos'))->with('mensaje', 'No hay suficiente stock disponible para este producto.');
         }
     
         // Busca si el producto ya está en el carrito
@@ -93,7 +93,7 @@ class Carrito_controller extends BaseController{
         }
     
         // Redirecciona de vuelta al carrito después de agregar el producto
-        return redirect()->to(base_url('ver_carrito'))->with('mensaje', 'Producto añadido al carrito.');
+        return redirect()->to(base_url('catalogoDeProductos'))->with('mensaje', 'Producto añadido al carrito.');
     }
     public function incrementar_producto($index)
     {

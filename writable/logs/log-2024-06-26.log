@@ -43,3 +43,130 @@ in APPPATH\Controllers\Carrito_controller.php on line 76.
  2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Carrito_controller))
  3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 16:19:59 --> Object of class CodeIgniter\Session\Session could not be converted to string
+in APPPATH\Controllers\Ventas_controller.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->registrar_venta()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-26 16:23:49 --> mysqli_sql_exception: Table 'db_ramos_jorge.products' doesn't exist in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `product...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Models\Producto_Model.php(57): CodeIgniter\Database\BaseBuilder->update()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(55): App\Models\Producto_Model->updateStock('11', 6)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->registrar_venta()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-26 16:23:49 --> Table 'db_ramos_jorge.products' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `productos`.`stock_producto` = :productos.stock_producto:
+WHERE `productos`.`id_producto` = :productos.id_producto:', [...], false)
+ 2 APPPATH\Models\Producto_Model.php(57): CodeIgniter\Database\BaseBuilder->update()
+ 3 APPPATH\Controllers\Ventas_controller.php(55): App\Models\Producto_Model->updateStock('11', 6)
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->registrar_venta()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-26 16:29:34 --> mysqli_sql_exception: Unknown column 'ventas_cabecera' in 'where clause' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Models\Venta_Detalle_Model.php(27): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(70): App\Models\Venta_Detalle_Model->getDetalles('&1')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->ver_factura('&1')
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-26 16:29:34 --> Unknown column 'ventas_cabecera' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ventas_detalle`
+JOIN `ventas_cabecera` ON `ventas_cabecera`.`id_ventas_cabecera` = `ventas_detalle`.`venta_id`
+JOIN `productos` ON `productos`.`id_producto` = `ventas_detalle`.`productos_id`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+WHERE `ventas_cabecera` = :ventas_cabecera:', [...], false)
+ 2 APPPATH\Models\Venta_Detalle_Model.php(27): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Ventas_controller.php(70): App\Models\Venta_Detalle_Model->getDetalles('&1')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->ver_factura('&1')
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-26 16:36:11 --> mysqli_sql_exception: Unknown column 'ventas_detalle.productos_id' in 'on clause' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Models\Venta_Detalle_Model.php(27): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(70): App\Models\Venta_Detalle_Model->getDetalles('&1')
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->ver_factura('&1')
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-26 16:36:11 --> Unknown column 'ventas_detalle.productos_id' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ventas_detalle`
+JOIN `ventas_cabecera` ON `ventas_cabecera`.`id_ventas_cabecera` = `ventas_detalle`.`venta_id`
+JOIN `productos` ON `productos`.`id_producto` = `ventas_detalle`.`productos_id`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+WHERE `ventas_cabecera`.`id_ventas_cabecera` = :ventas_cabecera.id_ventas_cabecera:', [...], false)
+ 2 APPPATH\Models\Venta_Detalle_Model.php(27): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Ventas_controller.php(70): App\Models\Venta_Detalle_Model->getDetalles('&1')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->ver_factura('&1')
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 16:37:45 --> Invalid argument supplied for foreach()
+in APPPATH\Views\proyecto\front\Principal.php on line 106.
+ 1 APPPATH\Views\proyecto\front\Principal.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\proyecto\\front\\Principal.php', 106, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\front\\Principal.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/front/Principal', [], true)
+ 5 APPPATH\Controllers\Admin_controller.php(12): view('proyecto/front/Principal')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin_controller->Admin_view()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 16:53:47 --> syntax error, unexpected ')'
+in APPPATH\Views\proyecto\back\Gestion_consultas.php on line 38.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_consultas', [], true)
+ 3 APPPATH\Controllers\Contacto_controller.php(104): view('proyecto/back/Gestion_consultas')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Contacto_controller->listar_consultas()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Contacto_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 17:29:19 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Producto_controller.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto_controller->catalogo_productos()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 17:35:41 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Producto_controller.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto_controller->catalogo_productos()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 17:35:42 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Producto_controller.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto_controller->catalogo_productos()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 17:35:45 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Producto_controller.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto_controller->catalogo_productos()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

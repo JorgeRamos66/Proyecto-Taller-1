@@ -33,7 +33,7 @@ class Producto_Model extends Model
     public function getBuilderProductos(){
         $db = \Config\Database::connect();
 
-        $builder = $db->table('products');
+        $builder = $db->table('productos');
         $builder->select('*');
         $builder->join('categoria','categorias.id_categoria = productos.id_categoria');
 
@@ -56,4 +56,5 @@ class Producto_Model extends Model
         $builder->set('productos.stock_producto', $stock);
         $builder->update();
     }
+    
 }

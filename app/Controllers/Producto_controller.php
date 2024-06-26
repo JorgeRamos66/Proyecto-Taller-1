@@ -12,12 +12,14 @@ class Producto_controller extends BaseController{
     }
 
     public function catalogo_productos() {
+        
         $productoModel = new Producto_Model();
-        $categoriasModel = new Categoria_Model();
+        $categoriaModel = new Categoria_Model();
     
         // Parámetros para la paginación y búsqueda
         $itemsPerPage = $this->request->getVar('itemsPerPage') ? $this->request->getVar('itemsPerPage') : 5;
         $search = $this->request->getGet('search');
+        
     
         // Obtener productos con o sin filtro de búsqueda
         if ($search) {
@@ -26,16 +28,18 @@ class Producto_controller extends BaseController{
                                        ->orLike('descripcion_producto', $search)
                                        ->orLike('marca_producto', $search)
                                        ->groupEnd()
+                                       ->getProductosAlta() // Obtener solo productos no eliminados
                                        ->paginate($itemsPerPage, 'productos'); // Use 'page' here
         } else {
-            $productos = $productoModel->paginate($itemsPerPage, 'productos'); // Use 'page' here
+            $productos = $productoModel->getProductosAlta() // Obtener solo productos no eliminados
+                                       ->paginate($itemsPerPage, 'productos'); // Use 'page' here
         }
+        
         $pager = $productoModel->pager;
-        $pager->setPath('catalogoDeProductos'); // Establece la ruta base para la paginación
-    
+        $pager->setPath('catalogo_productos'); // Establecer la ruta base para la paginación
     
         $data = [
-            'categorias' => $categoriasModel->getCategorias(),
+            'categorias' => $categoriaModel->getCategorias(),
             'productos' => $productos,
             'pager' => $pager,
             'itemsPerPage' => $itemsPerPage,
@@ -47,6 +51,7 @@ class Producto_controller extends BaseController{
                . view('proyecto/front/Barra_de_navegacion')
                . view('proyecto/front/Catalogo_productos', $data)
                . view('proyecto/front/Pie_de_pagina');
+               
     }
 
     public function gestion_productos() {

@@ -8,8 +8,8 @@
     <link href="<?php echo base_url ('./assets/css/miestilo.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url ('./assets/css/bootstrap.min.css') ?>" rel="stylesheet" integrity="" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 

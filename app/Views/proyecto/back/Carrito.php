@@ -77,7 +77,7 @@ $id = $session->get('id_usuario');
     </div>
     <div class="row mt-3">
         <div class="col-12 text-center">
-            <form action="<?= base_url('Ventas_controller/registrar_venta'); ?>" method="post" class="d-inline">
+            <form action="<?= base_url('registrar_venta'); ?>" method="post" class="d-inline">
                 <button type="submit" class="btn btn-success">Confirmar Orden</button>
             </form>
             <form action="<?= base_url('vaciar_carrito'); ?>" method="post" class="d-inline">

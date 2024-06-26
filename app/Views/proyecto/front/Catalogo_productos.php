@@ -17,7 +17,7 @@ $id = $session->get('id_usuario');
     
     <div class="d-flex justify-content-between mb-3">
     <!-- Formulario de Búsqueda -->
-    <form class="col-9" method="get" action="<?= base_url('catalogoDeProductos'); ?>">
+    <form class="col-2" method="get" action="<?= base_url('catalogoDeProductos'); ?>">
         <button type="submit" class="m-auto btn btn-sm btn-outline-danger" style="display: inline-block;">Buscar</button>
         <a href="<?= base_url('catalogoDeProductos'); ?>"><button type="button" class="btn btn-sm btn-outline-light" style="display: inline-block;">Borrar</button></a>
         <input type="text" name="search" class="form-control form-control-sm me-2 bg-light border-danger col-3" placeholder="Buscar producto" value="<?= isset($search) ? esc($search) : ''; ?>" />
@@ -48,7 +48,7 @@ $id = $session->get('id_usuario');
                         <p class="card-text" style="font-size: 0.8rem;">Precio: $<?= number_format($producto['precio_producto'], 2); ?></p>
                         <form action="<?= base_url('agregar_carrito'); ?>" method="post">
                             <input type="hidden" name="id" value="<?= $producto['id_producto']; ?>">
-                            <?php if(session()->has('loggedIn')): ?>
+                            <?php if(session()->has('loggedIn') && $perfil == 2): ?>
                                 <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#compraModal" 
                                     data-id="<?= $producto['id_producto']; ?>"
                                     data-nombre="<?= $producto['nombre_producto']; ?>"

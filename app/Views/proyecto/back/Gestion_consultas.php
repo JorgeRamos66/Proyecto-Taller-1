@@ -2,15 +2,14 @@
     <div class="d-flex justify-content-center my-2">
         <h2 class="mb-4 btn btn-lg btn-outline-success disabled bg-black">Gestion Consultas</h2>
     </div>
-    <div class="btn-group container d-flex justify-content-center align-items-center col-2">
-        <input type="radio" class="btn-check btn-sm" name="options-outlined" id="success-outlined" autocomplete="off" checked>
-        <label class="btn btn-outline-dark btn-sm" for="success-outlined">Todos</label>
 
-        <input type="radio" class="btn-check btn-sm" name="options-outlined" id="danger-outlined" autocomplete="off">
-        <label class="btn btn-outline-dark btn-sm" for="danger-outlined">No leidos</label>
-
-        <input type="radio" class="btn-check btn-sm" name="options-outlined" id="dark-outlined" autocomplete="off">
-        <label class="btn btn-outline-dark btn-sm" for="dark-outlined">Leidos</label>
+    <!-- Formulario de Búsqueda -->
+    <div class="d-flex justify-content-center mb-2">
+        <form class="d-flex justify-content-end col-2 mb-3" method="get" action="<?= base_url('gestion_consultas'); ?>">
+            <input type="text" name="search" class="form-control form-control-sm me-2 bg-light border-success" placeholder="Buscar consulta" value="<?= isset($search) ? esc($search) : ''; ?>" />
+            <button type="submit" class="btn btn-sm btn-outline-success">Buscar</button>
+        </form>
+        <a href="<?= base_url('gestion_consultas'); ?>"><button type="button" class="btn btn-sm btn-outline-dark">Borrar</button></a>
     </div>
 
     <table class="table table-success table-hover table-striped table-bordered align-middle text-center">
@@ -35,18 +34,26 @@
                     <td>
                         <div class="btn-group">
                             <!-- Updated 'Leer' button to include 'data-id' -->
-                            <a href="#" class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#consultaModal" data-message="<?php echo htmlspecialchars($consulta['consulta_mensaje']); ?>" data-id="<?= $id; ?>">Leer</a>
+                            <a href="#" class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#consultaModal"
+                             data-message="<?php echo htmlspecialchars($consulta['consulta_mensaje']); ?>" data-id="<?= $id; ?>"><?= $consulta['consulta_leido'] == 'NO' ? 'Leer' : 'Des-Leer' ?></a>
                         </div>
                     </td>
                     <td><?php echo $consulta['consulta_registrado']; ?></td>
                     <td><?php echo $consulta['consulta_leido']; ?></td>
                 </tr>
             <?php endforeach; ?>
+            <?php if (empty($consultas)): ?>
+                <tr>
+                    <td colspan="6" class="text-center">No hay consultas disponibles.</td>
+                </tr>
+            <?php endif; ?>
         </tbody>
     </table>
-</section>
-                            
 
+    <div class="d-flex justify-content-center mt-3">
+        <?= $pager->links('consultas', 'bootstrap5_full'); ?>
+    </div>
+</section>
 
 <!-- Bootstrap Modal -->
 <div class="modal fade" id="consultaModal" tabindex="-1" aria-labelledby="consultaModalLabel" aria-hidden="true">
@@ -73,34 +80,41 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const consultaModal = document.getElementById('consultaModal');
-    const consultaModalBody = document.getElementById('consultaModalBody');
-    const markAsReadForm = document.getElementById('markAsReadForm');
-    const consultaIdInput = document.getElementById('consultaIdInput');
+    // Función para configurar el modal y sus eventos
+    function setupModal() {
+        const consultaModal = document.getElementById('consultaModal');
+        const consultaModalBody = document.getElementById('consultaModalBody');
+        const markAsReadForm = document.getElementById('markAsReadForm');
+        const consultaIdInput = document.getElementById('consultaIdInput');
 
-    // Initialize the modal with options to prevent close on backdrop click or Escape key press
-    const bootstrapModal = new bootstrap.Modal(consultaModal, {
-        backdrop: 'static',
-        keyboard: false
-    });
+        // Inicialización del modal con opciones para evitar el cierre al hacer clic fuera o al presionar Esc
+        const bootstrapModal = new bootstrap.Modal(consultaModal, {
+            backdrop: 'static',
+            keyboard: false
+        });
 
-    consultaModal.addEventListener('show.bs.modal', function (event) {
-        const button = event.relatedTarget; // Button that triggered the modal
-        const message = button.getAttribute('data-message'); // Extract info from data-* attributes
-        const id = button.getAttribute('data-id'); // Extract id from data-* attributes
+        // Evento al mostrar el modal
+        consultaModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget; // Botón que activó el modal
+            const message = button.getAttribute('data-message'); // Extraer información de los atributos data-*
+            const id = button.getAttribute('data-id'); // Extraer el ID desde los atributos data-*
 
-        // Update the modal's content
-        consultaModalBody.textContent = message; 
-        // Set the action attribute of the form dynamically
-        markAsReadForm.action = `<?= base_url('leer-consulta/'); ?>${id}`;
-        // Set the consultation ID in the hidden input
-        consultaIdInput.value = id;
-    });
+            // Actualizar el contenido del modal
+            consultaModalBody.textContent = message; 
+            // Establecer la acción del formulario dinámicamente
+            markAsReadForm.action = `<?= base_url('leer-consulta/'); ?>${id}`;
+            // Establecer el ID de la consulta en el input oculto
+            consultaIdInput.value = id;
+        });
 
-    // Close modal only when the "Cerrar" button is clicked
-    consultaModal.querySelector('.btn-close, .btn-secondary').addEventListener('click', function () {
-        bootstrapModal.hide();
-    });
+        // Evento al cerrar el modal solo cuando se hace clic en "Cerrar"
+        consultaModal.querySelector('.btn-close, .btn-secondary').addEventListener('click', function () {
+            bootstrapModal.hide();
+        });
+    }
+
+    // Llamar a setupModal al cargar y cada vez que se cambie de página
+    setupModal();
 
     const radioButtons = document.querySelectorAll('input[name="options-outlined"]');
     const tableRows = document.querySelectorAll('tbody tr');
@@ -108,11 +122,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function filterRows() {
         const selectedOption = document.querySelector('input[name="options-outlined"]:checked').id;
         tableRows.forEach(row => {
-            if (selectedOption === 'success-outlined') { // Show all
+            if (selectedOption === 'success-outlined') { // Mostrar todos
                 row.style.display = '';
-            } else if (selectedOption === 'danger-outlined' && row.getAttribute('data-leido') === 'NO') { // Show only unread
+            } else if (selectedOption === 'danger-outlined' && row.getAttribute('data-leido') === 'NO') { // Mostrar solo no leídos
                 row.style.display = '';
-            } else if (selectedOption === 'dark-outlined' && row.getAttribute('data-leido') === 'SI') { // Show only read
+            } else if (selectedOption === 'dark-outlined' && row.getAttribute('data-leido') === 'SI') { // Mostrar solo leídos
                 row.style.display = '';
             } else {
                 row.style.display = 'none';
@@ -124,7 +138,35 @@ document.addEventListener('DOMContentLoaded', function () {
         radio.addEventListener('change', filterRows);
     });
 
-    // Initial filter
+    // Filtro inicial
     filterRows();
+
+    // Manejar la paginación
+    const paginationLinks = document.querySelectorAll('.pagination a.page-link');
+
+    paginationLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const url = this.getAttribute('href');
+
+            // Cargar la nueva página usando fetch o similar
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    // Reemplazar el contenido de la sección de consultas
+                    const parser = new DOMParser();
+                    const newDocument = parser.parseFromString(data, 'text/html');
+                    const newSection = newDocument.querySelector('section.container');
+
+                    // Reemplazar la sección existente con la nueva
+                    const oldSection = document.querySelector('section.container');
+                    oldSection.parentNode.replaceChild(newSection, oldSection);
+
+                    // Volver a configurar el modal después de cargar la nueva sección
+                    setupModal();
+                })
+                .catch(error => console.error('Error al cargar la página:', error));
+        });
+    });
 });
 </script>
