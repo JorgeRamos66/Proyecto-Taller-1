@@ -14,9 +14,15 @@
                 </div>
                 <div class="separator" style="color: white;"></div>
                 <div class="row-fluid">
-                    <a href="https://web.facebook.com/" target="_blank"><img src="<?php echo base_url ('./assets/img/facebookpng.png') ?>" width="40px" alt="Facebook"></a>
-                    <a href="https://web.instagram.com/" target="_blank"><img src="<?php echo base_url ('./assets/img/instapng.png') ?>" width="40px" alt="Instagram"></a>
-                    <a href="https://web.whatsapp.com/" target="_blank"><img src="<?php echo base_url ('./assets/img/whatspng.png') ?>" width="40px" alt="Whatsapp"></a>
+                    <a href="https://web.facebook.com/" target="_blank" class="mx-2" aria-label="Facebook">
+                        <i class="fab fa-facebook-square" style="font-size: 40px; color: #3b5998;"></i>
+                    </a>
+                    <a href="https://web.instagram.com/" target="_blank" class="mx-2" aria-label="Instagram">
+                        <i class="fab fa-instagram" style="font-size: 40px; color: #E4405F;"></i>
+                    </a>
+                    <a href="https://web.whatsapp.com/" target="_blank" class="mx-2" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
+                    </a>
                 </div>
             </div>
         </div>

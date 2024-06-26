@@ -3,7 +3,10 @@
     padding:0;
     }
     
-    
+    .fa-store {
+      color: green;
+      font-size: 1.5em;
+  }
 
     .header1{
         background-color: black;
