@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-06-2024 a las 04:10:39
+-- Tiempo de generación: 26-06-2024 a las 20:41:10
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -65,7 +65,7 @@ CREATE TABLE `consultas` (
 --
 
 INSERT INTO `consultas` (`id_consulta`, `consulta_nombre`, `consulta_apellido`, `consulta_email`, `consulta_mensaje`, `consulta_registrado`, `consulta_leido`) VALUES
-(123129, 'Jorge Raul', 'Ramos Morton', 'jpdjorgito12@gmail.com', 'consulta', '', 'SI'),
+(123129, 'Jorge Raul', 'Ramos Morton', 'jpdjorgito12@gmail.com', 'consulta', '', 'NO'),
 (123130, 'asdasd', 'asdasd', 'jpdjorgito12@gmail.com', 'asdasd', '', 'SI'),
 (123131, 'asdasd', 'asdasd', 'jpdjorgito12@gmail.com', 'asdasdasd', '', 'SI'),
 (123132, 'Jorge Raul', 'Cantero Loebarth', 'jpdjorgito12@gmail.com', 'soy el admin xd', '', 'SI'),
@@ -74,7 +74,7 @@ INSERT INTO `consultas` (`id_consulta`, `consulta_nombre`, `consulta_apellido`, 
 (123135, 'Administrador', 'Sabrozon', 'admin@gmail.com', 'soy el admin xd', 'NO', 'SI'),
 (123137, 'Jorge Raul', 'Ramos Morton', 'jpdjorgito12@gmail.com', 'consultaasdasd', 'NO', 'NO'),
 (123138, 'Administrador', 'Sabrozon', 'admin@gmail.com', 'pruebaaa', 'NO', 'NO'),
-(123140, 'Jorge Raul', 'Ramos Morton', 'jpdjorgito12@gmail.com', 'soy el admin xdasdasdasd', 'NO', 'NO'),
+(123140, 'Jorge Raul', 'Ramos Morton', 'jpdjorgito12@gmail.com', 'soy el admin xdasdasdasd', 'NO', 'SI'),
 (123142, 'Administrador', 'Sabrozon', 'admin@gmail.com', 'prueba numero mil xd', 'SI', 'NO'),
 (123143, 'Jorge Ramos', 'Morton Raul', 'lawea@hotmail.com', 'prueba de usuario no registrado dejando mensaje', 'NO', 'NO'),
 (123144, 'Marcos', 'Alonso', 'marcos@live.com.ar', 'prueba de consulta del señor marcos, quien esta registrado', 'SI', 'NO');
@@ -121,16 +121,16 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `nombre_producto`, `imagen_producto`, `id_categoria`, `precio_producto`, `marca_producto`, `descripcion_producto`, `stock_producto`, `eliminado_producto`) VALUES
-(8, 'AFA 23', '1719199254_d572463f8cf98c4500cc.webp', 1, 5400.00, 'Adidas', 'Una pelota de futbol de la seleccion argentina', 0, 'SI'),
-(9, 'Predator Club Pastor', '1719199618_adbcebd5d814caa70376.webp', 4, 54000.00, 'Adidas', 'Un botin de futbol 11 hecho por una marca de reconocimiento mundial.', 3, 'NO'),
-(10, 'Predator Accuracy', '1719199697_01978cdc816419464a19.webp', 1, 11000.00, 'Adidas', 'Un botin de futbol 11 hecho por una prestigiosa marca.', 2, 'NO'),
-(11, 'Kick off', '1719205772_e73fbdb84e67b757460b.webp', 1, 2200.00, 'Nassau', 'Una pelota de futbol de buena calidad y a un precio accesible.', 12, 'NO'),
-(12, 'Canilleras de futbol	', '1719198057_07dfb721c7304029b8fd.webp', 5, 3000.00, 'Adidas', 'Canilleras de futbol 5 y 11, hechas en colaboracion con Messi', 5, 'NO'),
+(8, 'AFA 23', '1719199254_d572463f8cf98c4500cc.webp', 1, 5400.00, 'Adidas', 'Una pelota de futbol de la seleccion argentina', 6, 'SI'),
+(9, 'Predator Club Pastor', '1719199618_adbcebd5d814caa70376.webp', 4, 54000.00, 'Adidas', 'Un botin de futbol 11 hecho por una marca de reconocimiento mundial.', 19, 'NO'),
+(10, 'Predator Accuracy', '1719199697_01978cdc816419464a19.webp', 1, 11000.00, 'Adidas', 'Un botin de futbol 11 hecho por una prestigiosa marca.', 11, 'NO'),
+(11, 'Kick off', '1719205772_e73fbdb84e67b757460b.webp', 1, 2200.00, 'Nassau', 'Una pelota de futbol de buena calidad y a un precio accesible.', 0, 'NO'),
+(12, 'Canilleras de futbol	', '1719198057_07dfb721c7304029b8fd.webp', 5, 3000.00, 'Adidas', 'Canilleras de futbol 5 y 11, hechas en colaboracion con Messi', 3, 'NO'),
 (13, 'Brazuca top training', '1719357385_f37924bbed186715267f.jpg', 1, 34000.00, 'Adidas', 'Una pelota de futbol con tematica brazilera.', 5, 'NO'),
 (14, 'Magia Match Ball', '1719357459_c2e84b2bdd09322d8cd9.jpg', 1, 35000.00, 'Nike', 'Una pelota de futbol de la marca Nike hecha para un nivel profesional.', 7, 'NO'),
-(15, 'Matis 500', '1719357531_caceb0d634cd581c1956.jpg', 2, 23000.00, 'Penalty', 'Una pelota de futbol 5 de increíble calidad, hecha para durar.', 22, 'NO'),
+(15, 'Matis 500', '1719357531_caceb0d634cd581c1956.jpg', 2, 23000.00, 'Penalty', 'Una pelota de futbol 5 de increíble calidad, hecha para durar.', 12, 'NO'),
 (16, 'Retro II', '1719357586_66989d06b00dee154e3c.webp', 2, 12020.00, 'Topper ', 'Una pelota de futbol 5 de precio accesible.', 1, 'NO'),
-(17, 'MAX 500 D', '1719357675_3d1d26c7f56959e0306f.jpeg', 2, 33000.00, 'Penalty ', 'Una pelota de futbol 5 disponible en 3 colores, blanca, negra y naranja.', 0, 'NO'),
+(17, 'MAX 500 D', '1719357675_3d1d26c7f56959e0306f.jpeg', 2, 33000.00, 'Penalty ', 'Una pelota de futbol 5 disponible en 3 colores, blanca, negra y naranja.', 3, 'NO'),
 (18, 'King Dexter', '1719357715_d027228e6774db22e1e3.jpeg', 5, 3000.00, 'Puma ', 'Canilleras de Fútbol de una marca prestigiosa. ', 13, 'NO'),
 (19, 'Standalone Guard', '1719357764_82b72f60b36c31f75ed2.jpeg', 5, 5400.00, 'Puma ', 'Canilleras de futbol Unisex.', 69, 'NO'),
 (20, 'Plasti LitmusAzul', '1719357821_652896352e02fd1a5c8e.jpg', 5, 13000.00, 'Procer', 'Canillera de alta calidad.', 3, 'NO'),
@@ -172,6 +172,66 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `usuario`, `email`, 
 (123145, 'clelia', 'canteros', 'clerloe1', 'clelialoebarth@gmail.com', '$2y$10$UbVE3aOZkjn0cOQBxllY6.tf9bgtOY8xV06MdftmOf9SpvcEAuIMq', 2, 'NO'),
 (123146, 'Marcos', 'Alonso', 'marcos', 'marcos@live.com.ar', '$2y$10$X2nLA.wSmOcxstspBe1imOtkRqDTkeVA33tdW0VX6fNcBYp3JKRxe', 2, 'NO');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ventas_cabecera`
+--
+
+CREATE TABLE `ventas_cabecera` (
+  `id_ventas_cabecera` int(11) NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp(),
+  `usuario_id` int(11) NOT NULL,
+  `total_venta` float(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `ventas_cabecera`
+--
+
+INSERT INTO `ventas_cabecera` (`id_ventas_cabecera`, `fecha`, `usuario_id`, `total_venta`) VALUES
+(1, '2024-06-26 16:21:24', 123142, 351200.00),
+(2, '2024-06-26 16:23:49', 123142, 351200.00),
+(3, '2024-06-26 16:29:34', 123142, 351200.00),
+(4, '2024-06-26 16:36:10', 123142, 74600.00),
+(5, '2024-06-26 18:10:08', 123142, 116400.00),
+(6, '2024-06-26 18:24:43', 123143, 112200.00),
+(7, '2024-06-26 18:26:00', 123143, 4400.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ventas_detalle`
+--
+
+CREATE TABLE `ventas_detalle` (
+  `id_venta_detalle` int(11) NOT NULL,
+  `venta_id` int(11) NOT NULL,
+  `producto_id` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `precio` float(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `ventas_detalle`
+--
+
+INSERT INTO `ventas_detalle` (`id_venta_detalle`, `venta_id`, `producto_id`, `cantidad`, `precio`) VALUES
+(1, 2, 11, 6, 13200.00),
+(2, 3, 11, 6, 13200.00),
+(3, 3, 9, 2, 108000.00),
+(4, 3, 15, 10, 230000.00),
+(5, 4, 9, 1, 54000.00),
+(6, 4, 10, 1, 11000.00),
+(7, 4, 11, 3, 6600.00),
+(8, 4, 12, 1, 3000.00),
+(9, 5, 9, 2, 108000.00),
+(10, 5, 8, 1, 5400.00),
+(11, 5, 12, 1, 3000.00),
+(12, 6, 11, 1, 2200.00),
+(13, 6, 10, 10, 110000.00),
+(14, 7, 11, 2, 4400.00);
+
 --
 -- Índices para tablas volcadas
 --
@@ -209,6 +269,21 @@ ALTER TABLE `usuarios`
   ADD KEY `perfil_id` (`perfil_id`);
 
 --
+-- Indices de la tabla `ventas_cabecera`
+--
+ALTER TABLE `ventas_cabecera`
+  ADD PRIMARY KEY (`id_ventas_cabecera`),
+  ADD KEY `usuario_id` (`usuario_id`);
+
+--
+-- Indices de la tabla `ventas_detalle`
+--
+ALTER TABLE `ventas_detalle`
+  ADD PRIMARY KEY (`id_venta_detalle`),
+  ADD KEY `producto_id` (`producto_id`),
+  ADD KEY `venta_id` (`venta_id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -243,6 +318,18 @@ ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123147;
 
 --
+-- AUTO_INCREMENT de la tabla `ventas_cabecera`
+--
+ALTER TABLE `ventas_cabecera`
+  MODIFY `id_ventas_cabecera` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `ventas_detalle`
+--
+ALTER TABLE `ventas_detalle`
+  MODIFY `id_venta_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -257,6 +344,19 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`perfil_id`) REFERENCES `perfiles` (`id_perfil`);
+
+--
+-- Filtros para la tabla `ventas_cabecera`
+--
+ALTER TABLE `ventas_cabecera`
+  ADD CONSTRAINT `ventas_cabecera_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id_usuario`);
+
+--
+-- Filtros para la tabla `ventas_detalle`
+--
+ALTER TABLE `ventas_detalle`
+  ADD CONSTRAINT `ventas_detalle_ibfk_1` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id_producto`),
+  ADD CONSTRAINT `ventas_detalle_ibfk_2` FOREIGN KEY (`venta_id`) REFERENCES `ventas_cabecera` (`id_ventas_cabecera`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
