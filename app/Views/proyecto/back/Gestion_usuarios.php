@@ -35,7 +35,7 @@
                     <td>
                         <div class="btn-group justify-content-center d-flex">
                             <?php if($usuario['perfil_id'] == 1): ?>
-                                <a href="<?php echo base_url('editar-usuario/'.$id); ?>" class="btn btn-sm btn-outline-success">Editar</a>
+                                <a href="<?php echo base_url('editar-usuario/'.$id); ?>" class="btn btn-sm btn-outline-success disabled">Borrar</a>
                             <?php elseif($usuario['baja'] == 'NO'): ?>
                                 <a href="<?php echo base_url('eliminar-usuario/'. $id); ?>" class="btn btn-sm btn-outline-dark">Borrar</a>
                                 

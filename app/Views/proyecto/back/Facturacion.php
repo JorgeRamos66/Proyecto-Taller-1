@@ -1,48 +1,15 @@
 <section class="container mt-5 py-1" style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.2); border-radius: 10px;">
     <div class="d-flex justify-content-center my-2">
-    <div class="d-flex justify-content-center my-2 "><h2 class="mb-4 btn btn-lg btn-outline-warning disabled bg-black" >Ventas</h2></div>
+        <h2 class="mb-4 btn btn-lg btn-outline-success disabled bg-black">Gestion Ventas</h2>
     </div>
 
-    <!-- Formulario de Búsqueda y Filtrado por Rango de Fechas -->
-    <div class="container mb-3 p-3 d-flex justify-content-center">
-        <form class="row row-cols-2 gy-2 gx-3 text-center align-items-center" method="get" action="<?= base_url('ver_ventas'); ?>">
-            <!-- Campo de Búsqueda -->
-            <div class="col-auto">
-                <input type="text" name="search" class="form-control form-control-sm border-warning" 
-                    placeholder="Buscar ventas" value="<?= isset($search) ? esc($search) : ''; ?>" />
-            </div>
-            
-            <!-- Botones de Buscar y Borrar -->
-            <div class="col-auto">
-                <button type="submit" class="btn btn-sm btn-outline-warning text-white">Buscar</button>
-            </div>
-            
-
-            <!-- Campo de Fecha Inicio -->
-            <div class="col-auto">
-                <label for="startDate" class="form-label mb-0">Fecha Inicio:</label>
-                <input type="date" id="startDate" name="startDate" 
-                    class="form-control form-control-sm border-warning" 
-                    value="<?= isset($_GET['startDate']) ? esc($_GET['startDate']) : ''; ?>">
-            </div>
-
-            <!-- Campo de Fecha Fin -->
-            <div class="col-auto">
-                <label for="endDate" class="form-label mb-0">Fecha Fin:</label>
-                <input type="date" id="endDate" name="endDate" 
-                    class="form-control form-control-sm border-warning" 
-                    value="<?= isset($_GET['endDate']) ? esc($_GET['endDate']) : ''; ?>">
-            </div>
-
-            <!-- Botón de Filtrar -->
-            <div class="col-auto">
-                <button type="submit" class="btn btn-sm btn-outline-warning text-white">Filtrar</button>
-            </div>
-
-            <div class="col-auto">
-                <a href="<?= base_url('ver_ventas'); ?>" class="btn btn-sm btn-outline-dark">Borrar</a>
-            </div>
+    <!-- Formulario de Búsqueda -->
+    <div class="d-flex justify-content-center mb-2">
+        <form class="d-flex justify-content-end col-2 mb-3" method="get" action="<?= base_url('gestion_ventas'); ?>">
+            <input type="text" name="search" class="form-control form-control-sm me-2 bg-light border-success" placeholder="Buscar ventas" value="<?= isset($search) ? esc($search) : ''; ?>" />
+            <button type="submit" class="btn btn-sm btn-outline-success">Buscar</button>
         </form>
+        <a href="<?= base_url('gestion_ventas'); ?>"><button type="button" class="btn btn-sm btn-outline-dark">Borrar</button></a>
     </div>
 
     <table class="table table-success table-hover table-striped table-bordered align-middle text-center">
@@ -51,8 +18,7 @@
                 <th>ID Venta</th>
                 <th>Nombre Usuario</th>
                 <th>Total</th>
-                <th>Fecha
-                </th>
+                <th>Fecha</th>
                 <th>Acciones</th>
             </tr>
         </thead>

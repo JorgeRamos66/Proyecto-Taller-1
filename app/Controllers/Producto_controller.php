@@ -55,6 +55,7 @@ class Producto_controller extends BaseController{
 
     public function gestion_productos() {
         $productoModel = new Producto_Model();
+        $categoriaModel = new Categoria_Model();
     
         // Obtener el término de búsqueda y número de elementos por página
         $search = $this->request->getGet('search');
@@ -72,15 +73,19 @@ class Producto_controller extends BaseController{
         } else {
             $productos = $productoModel->paginate($itemsPerPage, 'productos');
         }
+
+        $categorias = $categoriaModel->getCategorias();
     
         $pager = $productoModel->pager;
         $pager->setPath('gestion_productos'); // Establece la ruta base para la paginación
     
         $data = [
             'productos' => $productos,
+            'categorias' => $categorias,
             'pager' => $pager,
             'itemsPerPage' => $itemsPerPage,
-            'search' => $search
+            'search' => $search,
+            'titulo' => 'Gestión de Productos',
         ];
     
         return view('proyecto/front/Encabezado', $data)
@@ -108,7 +113,7 @@ class Producto_controller extends BaseController{
         $input = $this->validate([
             'nombre_producto'       => 'required|min_length[3]|max_length[25]',
             'id_categoria'          => 'required|is_not_unique[categorias.id_categoria]',
-            'precio_producto'       => 'required|numeric',
+            'precio_producto'       => 'required|numeric|greater_than[0]',
             'marca_producto'        => 'required|min_length[3]|max_length[25]',
             'descripcion_producto'  => 'required|min_length[3]|max_length[100]',
             'stock_producto'        => 'required|integer|greater_than[0]',
@@ -126,15 +131,16 @@ class Producto_controller extends BaseController{
             ],
             'precio_producto'=>[
                 'required'   =>'Debe ingresar un precio para el producto.',
-                'numeric'    =>'Debe ingresar un valor numerico.'
+                'numeric'    =>'Debe ingresar un valor numerico.',
+                'greater_than'  =>'Debe ingresar un precio positivo.'
             ],
             'marca_producto'    =>[
-                'required'      =>'Debe ingresar un precio de venta para el producto.',
+                'required'      =>'Debe ingresar la marca a la que pertenece el producto.',
                 'min_length'    =>'Debe tener minimo 3 caracteres.',
                 'max_length'    =>'Debe tener maximo 25 caracteres.'
             ],
             'descripcion_producto'=>[
-                'required'        =>'Debe ingresar un stock inicial para el producto.',
+                'required'        =>'Debe ingresar una descripcion del producto producto.',
                 'min_length'      =>'Debe tener minimo 3 caracteres.',
                 'max_length'      =>'Debe tener maximo 100 caracteres.'
             ],

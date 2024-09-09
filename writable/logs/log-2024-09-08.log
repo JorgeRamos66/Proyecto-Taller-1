@@ -1,0 +1,319 @@
+ERROR - 2024-09-08 17:24:03 --> mysqli_sql_exception: Unknown column 'usuarios.nombre_usuario' in 'field list' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `ventas_...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas_...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas_...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-08 17:24:03 --> Unknown column 'usuarios.nombre_usuario' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_cabecera`.`id_ventas_cabecera`, `ventas_cabecera`.`total_venta`, `ventas_cabecera`.`fecha`, `usuarios`.`nombre_usuario`
+FROM `ventas_cabecera`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+ LIMIT 5', [], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+ 5 APPPATH\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-09-08 17:28:27 --> mysqli_sql_exception: Unknown column 'usuarios.nombre_usuario' in 'field list' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `ventas_...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas_...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas_...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-08 17:28:27 --> Unknown column 'usuarios.nombre_usuario' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_cabecera`.`id_ventas_cabecera`, `ventas_cabecera`.`total_venta`, `ventas_cabecera`.`fecha`, `usuarios`.`nombre_usuario`
+FROM `ventas_cabecera`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+ LIMIT 5', [], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+ 5 APPPATH\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-09-08 17:28:29 --> mysqli_sql_exception: Unknown column 'usuarios.nombre_usuario' in 'field list' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `ventas_...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas_...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas_...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-08 17:28:29 --> Unknown column 'usuarios.nombre_usuario' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_cabecera`.`id_ventas_cabecera`, `ventas_cabecera`.`total_venta`, `ventas_cabecera`.`fecha`, `usuarios`.`nombre_usuario`
+FROM `ventas_cabecera`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+ LIMIT 5', [], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+ 5 APPPATH\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-09-08 17:28:30 --> mysqli_sql_exception: Unknown column 'usuarios.nombre_usuario' in 'field list' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `ventas_...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas_...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas_...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 5)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 5)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-08 17:28:30 --> Unknown column 'usuarios.nombre_usuario' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_cabecera`.`id_ventas_cabecera`, `ventas_cabecera`.`total_venta`, `ventas_cabecera`.`fecha`, `usuarios`.`nombre_usuario`
+FROM `ventas_cabecera`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+ LIMIT 5, 5', [], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 5)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 5)
+ 5 APPPATH\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-09-08 17:28:31 --> mysqli_sql_exception: Unknown column 'usuarios.nombre_usuario' in 'field list' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `ventas_...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas_...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas_...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-08 17:28:31 --> Unknown column 'usuarios.nombre_usuario' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_cabecera`.`id_ventas_cabecera`, `ventas_cabecera`.`total_venta`, `ventas_cabecera`.`fecha`, `usuarios`.`nombre_usuario`
+FROM `ventas_cabecera`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+ LIMIT 5', [], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+ 5 APPPATH\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-09-08 17:28:32 --> mysqli_sql_exception: Unknown column 'usuarios.nombre_usuario' in 'field list' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `ventas_...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas_...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas_...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-08 17:28:32 --> Unknown column 'usuarios.nombre_usuario' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_cabecera`.`id_ventas_cabecera`, `ventas_cabecera`.`total_venta`, `ventas_cabecera`.`fecha`, `usuarios`.`nombre_usuario`
+FROM `ventas_cabecera`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+ LIMIT 5', [], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+ 5 APPPATH\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-09-08 17:28:42 --> mysqli_sql_exception: Unknown column 'usuarios.nombre_usuario' in 'field list' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `ventas_...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas_...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas_...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-08 17:28:42 --> Unknown column 'usuarios.nombre_usuario' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_cabecera`.`id_ventas_cabecera`, `ventas_cabecera`.`total_venta`, `ventas_cabecera`.`fecha`, `usuarios`.`nombre_usuario`
+FROM `ventas_cabecera`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+ LIMIT 5', [], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+ 5 APPPATH\Controllers\Ventas_controller.php(98): CodeIgniter\BaseModel->paginate(5, 'ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-08 18:00:27 --> Call to a member function find() on null
+in APPPATH\Views\proyecto\back\Gestion_productos.php on line 72.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_productos', [], true)
+ 4 APPPATH\Controllers\Producto_controller.php(88): view('proyecto/back/Gestion_productos', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto_controller->gestion_productos()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-08 18:06:30 --> Invalid argument supplied for foreach()
+in APPPATH\Views\proyecto\back\Gestion_productos.php on line 77.
+ 1 APPPATH\Views\proyecto\back\Gestion_productos.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\proyecto\\back\\Gestion_productos.php', 77, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\back\\Gestion_productos.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_productos', [], true)
+ 5 APPPATH\Controllers\Producto_controller.php(88): view('proyecto/back/Gestion_productos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto_controller->gestion_productos()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-09-08 18:14:50 --> Invalid argument supplied for foreach()
+in APPPATH\Views\proyecto\back\Gestion_productos.php on line 74.
+ 1 APPPATH\Views\proyecto\back\Gestion_productos.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\proyecto\\back\\Gestion_productos.php', 74, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\proyecto\\back\\Gestion_productos.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('proyecto/back/Gestion_productos', [], true)
+ 5 APPPATH\Controllers\Producto_controller.php(88): view('proyecto/back/Gestion_productos', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Producto_controller->gestion_productos()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Producto_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-09-08 22:52:09 --> mysqli_sql_exception: Unknown column 'usuarios.nombre_usuario' in 'field list' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `ventas_...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ventas_...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ventas_...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(100): CodeIgniter\BaseModel->paginate(5, 'ventas')
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-09-08 22:52:10 --> Unknown column 'usuarios.nombre_usuario' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `ventas_cabecera`.`id_ventas_cabecera`, `ventas_cabecera`.`total_venta`, `ventas_cabecera`.`fecha`, `usuarios`.`nombre_usuario`
+FROM `ventas_cabecera`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+ LIMIT 5', [], false)
+ 2 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(5, 0)
+ 4 SYSTEMPATH\BaseModel.php(1192): CodeIgniter\BaseModel->findAll(5, 0)
+ 5 APPPATH\Controllers\Ventas_controller.php(100): CodeIgniter\BaseModel->paginate(5, 'ventas')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-09-08 22:58:57 --> mysqli_sql_exception: Unknown column 'usuarios.nombre_usuario' in 'where clause' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(95): CodeIgniter\BaseModel->paginate(5, 'ventas')
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-09-08 22:58:57 --> Unknown column 'usuarios.nombre_usuario' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas_cabecera`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+WHERE `usuarios`.`nombre_usuario` LIKE :usuarios.nombre_usuario: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\Ventas_controller.php(95): CodeIgniter\BaseModel->paginate(5, 'ventas')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-09-08 23:31:24 --> mysqli_sql_exception: Unknown column 'ventas_detalle.ventas_cabecera_id' in 'on clause' in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT COUNT(*)...', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Ventas_controller.php(121): CodeIgniter\BaseModel->paginate(5, 'ventas')
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-09-08 23:31:24 --> Unknown column 'ventas_detalle.ventas_cabecera_id' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1700): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `ventas_cabecera`
+JOIN `usuarios` ON `usuarios`.`id_usuario` = `ventas_cabecera`.`usuario_id`
+JOIN `ventas_detalle` ON `ventas_detalle`.`ventas_cabecera_id` = `ventas_cabecera`.`id_ventas_cabecera`
+JOIN `productos` ON `productos`.`id_producto` = `ventas_detalle`.`producto_id`', [], false)
+ 2 SYSTEMPATH\Model.php(606): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1188): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\Ventas_controller.php(121): CodeIgniter\BaseModel->paginate(5, 'ventas')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Ventas_controller->gestion_ventas()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Ventas_controller))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

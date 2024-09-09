@@ -1,9 +1,15 @@
+
+<?php if (session()->getFlashdata('msj')): ?>
+    <div class="container col-4 alert alert-success text-center fs-6 fade show" role="alert">
+        <?= session()->getFlashdata('msj') ?>
+    </div>
+<?php endif;?>
 <?php $validation = \Config\Services::validation(); ?>
 <?php $id = $usuario['id_usuario']?>
 <div class="container" style="max-width: 600px; margin: auto; background-color: rgb(255, 255, 255, 0.5); padding: 20px; border-radius: 20px; border-color: aqua; backdrop-filter: blur(10px);">
     <h1 class="text-bg-dark rounded-3 text-center text-info">Perfil de Usuario</h1>
 
-    <form method="post" action="<?php echo base_url('actualizar-usuario/'.$id) ?>">
+    <form method="post" action="<?php echo base_url('actualizar-usuario/' . base64_encode($id)); ?>">
         <div class="input-group mb-1">
             <span class="input-group-text text-info bg-dark" style="text-shadow: none;" id="basic-addon3">Nombre:</span>
             <input name="nombre" type="text" class="form-control text-dark" value="<?php echo esc($usuario['nombre']); ?>">
@@ -82,7 +88,7 @@
         <!-- Action Buttons -->
         <div class="container text-center">
             <button type="submit" class="btn btn-sm btn-success">Guardar Cambios</button>
-            <a href="<?php echo base_url('perfil-usuario/'.$id); ?>" class="btn btn-sm btn-primary">Cancelar</a>
+            <a href="<?php echo base_url('perfil-usuario/' . base64_encode($id));  ?>" class="btn btn-sm btn-primary">Cancelar</a>
         </div>
     </form>
 </div>

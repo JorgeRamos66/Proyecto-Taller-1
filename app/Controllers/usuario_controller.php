@@ -217,31 +217,53 @@ class Usuario_controller extends BaseController{
 
     }
 
-    public function perfil_usuario($id=null){
-        
+    public function perfil_usuario($encodedId = null)
+    {
+        // Decodificar el ID del usuario
+        $id = base64_decode($encodedId);
+
+        // Verificar si el ID es válido
+        if (!is_numeric($id)) {
+            return redirect()->back()->with('msg', 'ID no válido.');
+        }
+
         $usuarioModel = new Usuario_Model();
         $data['usuario'] = $usuarioModel->find($id);
-        
         $data['titulo'] = 'Perfil';
 
         return view('proyecto/front/Encabezado', $data)
-        .view('proyecto/front/Barra_de_navegacion')
-        .view('proyecto/back/Perfil_usuario')
-        .view('proyecto/front/Pie_de_pagina');
+            . view('proyecto/front/Barra_de_navegacion')
+            . view('proyecto/back/Perfil_usuario')
+            . view('proyecto/front/Pie_de_pagina');
     }
-    public function editar_usuario($id=null){
-        
+
+    public function editar_usuario($encodedId = null)
+    {
+        // Decodificar el ID del usuario
+        $id = base64_decode($encodedId);
+
+        // Verificar si el ID es válido
+        if (!is_numeric($id)) {
+            return redirect()->back()->with('msg', 'ID no válido.');
+        }
+
         $usuarioModel = new Usuario_Model();
         $data['usuario'] = $usuarioModel->find($id);
         $data['titulo'] = 'Editar Perfil';
 
         return view('proyecto/front/Encabezado', $data)
-        .view('proyecto/front/Barra_de_navegacion')
-        .view('proyecto/back/Editar_perfil')
-        .view('proyecto/front/Pie_de_pagina');
+            . view('proyecto/front/Barra_de_navegacion')
+            . view('proyecto/back/Editar_perfil')
+            . view('proyecto/front/Pie_de_pagina');
     }
-    public function actualizar_perfil($id = null) {
+    public function actualizar_perfil($encodedId = null) {
         helper(['form', 'url', 'session']);
+        $id = base64_decode($encodedId);
+
+        // Verificar si el ID es válido
+        if (!is_numeric($id)) {
+            return redirect()->back()->with('msj', 'ID no válido.');
+        }
         $usuarioModel = new Usuario_Model();
     
         // Common validation rules
@@ -337,7 +359,7 @@ class Usuario_controller extends BaseController{
         // Update the user in the database
         $usuarioModel->update($id, $data);
     
-        return redirect()->to(base_url('perfil-usuario/'.$id))->with('msj', 'Perfil actualizado correctamente. Vuelva a iniciar sesion para visualizar los cambios');
+        return redirect()->to(base_url('perfil-usuario/' . base64_encode($id)))->with('msj', 'Perfil actualizado correctamente. Vuelva a iniciar sesion para visualizar los cambios');
     }
     
 

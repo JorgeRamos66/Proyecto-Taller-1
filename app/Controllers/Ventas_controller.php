@@ -69,26 +69,57 @@ class Ventas_controller extends Controller {
         $session->setFlashdata('mensaje', 'Venta registrada exitosamente.');
         return redirect()->to(base_url('catalogoDeProductos'));
     }
-    public function gestion_ventas() {
-        helper(['url', 'form']);
     
+    public function gestion_ventas()
+    {
+        helper(['url', 'form']);
         $ventasModel = new Venta_Cabecera_Model();
         $usuarioModel = new Usuario_Model();
-         /**
+    
+        // Obtener la solicitud (request)
+        /**
          * @var IncomingRequest $request 
          */
         $request = $this->request;
     
         // Parámetros para la paginación y búsqueda
         $itemsPerPage = $request->getVar('itemsPerPage') ? $request->getVar('itemsPerPage') : 5;
-        $search = $request->getGet('search');
-        
-        // Obtener ventas con o sin filtro de búsqueda
+        $search = $request->getGet('search'); // Obtener el término de búsqueda
+        $startDate = $request->getGet('startDate'); // Obtener la fecha de inicio
+        $endDate = $request->getGet('endDate'); // Obtener la fecha de fin
+    
+        // Inicializar la consulta base con JOIN para obtener el nombre del usuario
+        $ventasQuery = $ventasModel
+            ->select('ventas_cabecera.id_ventas_cabecera, ventas_cabecera.total_venta, ventas_cabecera.fecha, usuarios.usuario')
+            ->join('usuarios', 'usuarios.id_usuario = ventas_cabecera.usuario_id');
+    
+        // Aplicar filtro de búsqueda si existe
         if ($search) {
-            $ventas = $ventasModel->like('usuario_id', $search)
-                                  ->paginate($itemsPerPage, 'ventas');
-        } else {
-            $ventas = $ventasModel->paginate($itemsPerPage, 'ventas');
+            $ventasQuery->like('usuarios.usuario', $search);
+        }
+    
+        // Aplicar filtros de fechas si se seleccionaron
+        if ($startDate && $endDate) {
+            // Convertir fechas al formato correcto para la consulta
+            $startDateFormatted = date('Y-m-d 00:00:00', strtotime($startDate));
+            $endDateFormatted = date('Y-m-d 23:59:59', strtotime($endDate));
+            $ventasQuery->where('ventas_cabecera.fecha >=', $startDateFormatted)
+                        ->where('ventas_cabecera.fecha <=', $endDateFormatted);
+        } elseif ($startDate) {
+            $startDateFormatted = date('Y-m-d 00:00:00', strtotime($startDate));
+            $ventasQuery->where('ventas_cabecera.fecha >=', $startDateFormatted);
+        } elseif ($endDate) {
+            $endDateFormatted = date('Y-m-d 23:59:59', strtotime($endDate));
+            $ventasQuery->where('ventas_cabecera.fecha <=', $endDateFormatted);
+        }
+    
+        // Paginar los resultados
+        $ventas = $ventasQuery->paginate($itemsPerPage, 'ventas');
+    
+        // Verificar errores de la consulta
+        if ($ventasModel->errors()) {
+            // Muestra los errores en el log o puedes mostrarlos en la vista para depuración
+            log_message('error', 'Errores en la consulta: ' . print_r($ventasModel->errors(), true));
         }
     
         $pager = $ventasModel->pager;
@@ -99,24 +130,45 @@ class Ventas_controller extends Controller {
             'pager' => $pager,
             'itemsPerPage' => $itemsPerPage,
             'search' => $search,
+            'startDate' => $startDate,
+            'endDate' => $endDate,
             'titulo' => 'Gestión de Ventas',
         ];
     
         return view('proyecto/front/Encabezado', $data)
-               . view('proyecto/front/Barra_de_navegacion')
+               . view('proyecto/front/Barra_de_navegacion_admin')
                . view('proyecto/back/Ventas', $data)
                . view('proyecto/front/Pie_de_pagina');
     }
-
     public function ver_factura($venta_id) {
         $detalleventas = new Venta_Detalle_Model();
-        $data['venta'] = $detalleventas->getDetalles($venta_id);
-        $data['titulo'] = "Mi compra";
+        $ventaDetalles = $detalleventas->getDetalles($venta_id);
+    
+        $data = [
+            'venta' => $ventaDetalles
+        ];
+    
+        return $this->response->setJSON($data);
+    }
+    public function obtener_detalle_venta($venta_id) {
+        $detalleventas = new Venta_Detalle_Model();
+        $detalles = $detalleventas->getDetalles($venta_id);
+        $productoModel = new Producto_Model();
+    
+        $result = [];
+        foreach ($detalles as $detalle) {
+            // Obtener el nombre del producto
+            $producto = $productoModel->find($detalle['producto_id']);
 
-        return view('proyecto/front/Encabezado', $data)
-            . view('proyecto/front/Barra_de_navegacion')
-            . view('proyecto/back/Vista_compras')
-            . view('proyecto/front/Pie_de_pagina');
+            $result[] = [
+                'nombre_producto' => $producto['nombre_producto'],
+                'cantidad' => $detalle['cantidad'],
+                'precio_unitario' => number_format($detalle['precio'] / $detalle['cantidad'], 2),
+                'total' => number_format($detalle['precio'], 2),
+            ];
+        }
+    
+        return $this->response->setJSON(['detalles' => $result]);
     }
 
     public function ver_facturas_usuario($id_usuario) {

@@ -26,7 +26,7 @@
         
         <tbody>
             <?php foreach ($consultas as $consulta): ?>
-                <tr class="<?= $consulta['consulta_leido'] == 'SI' ? 'table-dark' : '' ?>" data-leido="<?= $consulta['consulta_leido']; ?>">
+                <tr class="<?= $consulta['consulta_leido'] == 'SI' ? 'table-light' : 'table-success' ?>" data-leido="<?= $consulta['consulta_leido']; ?>">
                     <?php $id = $consulta['id_consulta']; ?>
                     <td><?php echo $consulta['consulta_nombre']; ?></td>
                     <td><?php echo $consulta['consulta_apellido']; ?></td>
@@ -34,7 +34,7 @@
                     <td>
                         <div class="btn-group">
                             <!-- Updated 'Leer' button to include 'data-id' -->
-                            <a href="#" class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#consultaModal"
+                            <a href="#" class="btn btn-sm <?= $consulta['consulta_leido'] == 'SI' ? 'btn-outline-success' : 'btn-outline-light' ?>" data-bs-toggle="modal" data-bs-target="#consultaModal"
                              data-message="<?php echo htmlspecialchars($consulta['consulta_mensaje']); ?>" data-id="<?= $id; ?>"><?= $consulta['consulta_leido'] == 'NO' ? 'Leer' : 'Des-Leer' ?></a>
                         </div>
                     </td>
@@ -80,93 +80,51 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    // Función para configurar el modal y sus eventos
     function setupModal() {
         const consultaModal = document.getElementById('consultaModal');
         const consultaModalBody = document.getElementById('consultaModalBody');
         const markAsReadForm = document.getElementById('markAsReadForm');
         const consultaIdInput = document.getElementById('consultaIdInput');
 
-        // Inicialización del modal con opciones para evitar el cierre al hacer clic fuera o al presionar Esc
-        const bootstrapModal = new bootstrap.Modal(consultaModal, {
-            backdrop: 'static',
-            keyboard: false
-        });
-
-        // Evento al mostrar el modal
         consultaModal.addEventListener('show.bs.modal', function (event) {
             const button = event.relatedTarget; // Botón que activó el modal
-            const message = button.getAttribute('data-message'); // Extraer información de los atributos data-*
-            const id = button.getAttribute('data-id'); // Extraer el ID desde los atributos data-*
+            const message = button.getAttribute('data-message');
+            const id = button.getAttribute('data-id');
 
-            // Actualizar el contenido del modal
-            consultaModalBody.textContent = message; 
-            // Establecer la acción del formulario dinámicamente
+            consultaModalBody.textContent = message;
             markAsReadForm.action = `<?= base_url('leer-consulta/'); ?>${id}`;
-            // Establecer el ID de la consulta en el input oculto
             consultaIdInput.value = id;
         });
-
-        // Evento al cerrar el modal solo cuando se hace clic en "Cerrar"
-        consultaModal.querySelector('.btn-close, .btn-secondary').addEventListener('click', function () {
-            bootstrapModal.hide();
-        });
     }
 
-    // Llamar a setupModal al cargar y cada vez que se cambie de página
     setupModal();
 
-    const radioButtons = document.querySelectorAll('input[name="options-outlined"]');
-    const tableRows = document.querySelectorAll('tbody tr');
+    function attachPaginationEvents() {
+        const paginationLinks = document.querySelectorAll('.pagination a.page-link');
 
-    function filterRows() {
-        const selectedOption = document.querySelector('input[name="options-outlined"]:checked').id;
-        tableRows.forEach(row => {
-            if (selectedOption === 'success-outlined') { // Mostrar todos
-                row.style.display = '';
-            } else if (selectedOption === 'danger-outlined' && row.getAttribute('data-leido') === 'NO') { // Mostrar solo no leídos
-                row.style.display = '';
-            } else if (selectedOption === 'dark-outlined' && row.getAttribute('data-leido') === 'SI') { // Mostrar solo leídos
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
-            }
+        paginationLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const url = this.getAttribute('href');
+
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        const parser = new DOMParser();
+                        const newDocument = parser.parseFromString(data, 'text/html');
+                        const newSection = newDocument.querySelector('section.container');
+                        const oldSection = document.querySelector('section.container');
+                        oldSection.parentNode.replaceChild(newSection, oldSection);
+                        
+                        // Reaplicar configuraciones después de la carga
+                        setupModal();
+                        attachPaginationEvents(); // Reasociar eventos de paginación
+                    })
+                    .catch(error => console.error('Error al cargar la página:', error));
+            });
         });
     }
 
-    radioButtons.forEach(radio => {
-        radio.addEventListener('change', filterRows);
-    });
-
-    // Filtro inicial
-    filterRows();
-
-    // Manejar la paginación
-    const paginationLinks = document.querySelectorAll('.pagination a.page-link');
-
-    paginationLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            const url = this.getAttribute('href');
-
-            // Cargar la nueva página usando fetch o similar
-            fetch(url)
-                .then(response => response.text())
-                .then(data => {
-                    // Reemplazar el contenido de la sección de consultas
-                    const parser = new DOMParser();
-                    const newDocument = parser.parseFromString(data, 'text/html');
-                    const newSection = newDocument.querySelector('section.container');
-
-                    // Reemplazar la sección existente con la nueva
-                    const oldSection = document.querySelector('section.container');
-                    oldSection.parentNode.replaceChild(newSection, oldSection);
-
-                    // Volver a configurar el modal después de cargar la nueva sección
-                    setupModal();
-                })
-                .catch(error => console.error('Error al cargar la página:', error));
-        });
-    });
+    attachPaginationEvents();
 });
 </script>

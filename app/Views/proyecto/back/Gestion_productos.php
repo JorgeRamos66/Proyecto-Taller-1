@@ -24,22 +24,14 @@
         <h2 class="mb-4 btn btn-lg btn-outline-success disabled bg-black">Gestion Productos</h2>
     </div>
 
-    
-
     <!-- Formulario de Búsqueda -->
     <div class="d-flex justify-content-center mb-2">
         <form class="d-flex justify-content-end col-2 mb-3" method="get" action="<?= base_url('gestion_productos'); ?>">
             <input type="text" name="search" class="form-control form-control-sm me-2 bg-light border-success" placeholder="Buscar producto" value="<?= isset($search) ? esc($search) : ''; ?>" />
             <button type="submit" class="btn btn-sm btn-outline-success">Buscar</button>
         </form>
-        <a href="<?= base_url('gestion_productos'); ?>"><button type="button" class="btn btn-sm btn-outline-dark">Borrar</button>
-        </a>
+        <a href="<?= base_url('gestion_productos'); ?>"><button type="button" class="btn btn-sm btn-outline-dark">Borrar</button></a>
     </div>
-    
-    
-    
-
-    
 
     <table class="table table-success table-hover table-striped table-bordered align-middle text-center">
         <thead class="thead-dark">
@@ -52,10 +44,14 @@
                 <th>Descripcion</th>
                 <th>Stock</th>
                 <th>Eliminado?</th>
-                <th class="text-center">
+                <th class="text-center btn-group">
                     <a href="<?= base_url('form-producto'); ?>">
-                        <button type="button" class="btn btn-sm btn-outline-success">Agregar producto</button>
-                    </a></th>
+                        <button type="button" class="btn btn-sm btn-outline-success ">Agregar producto</button>
+                    </a>
+                    <a href="<?= base_url('gestion_categorias'); ?>">
+                        <button type="button" class="btn btn-sm btn-outline-dark ">ABM Categoria</button>
+                    </a>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -68,8 +64,16 @@
                     <td>
                         <img height="70px" width="85px" src="<?= base_url('assets/uploads/'.$imagen); ?>" alt="">
                     </td>
-                    <?php $cat = $producto['id_categoria'] - 1; ?>
-                    <td><?= $categorias[$cat]['descripcion_categoria']; ?></td>
+                    <?php 
+                    $categoriaDescripcion = 'Categoría no encontrada';
+                    foreach ($categorias as $categoria) {
+                        if ($categoria['id_categoria'] == $producto['id_categoria']) {
+                            $categoriaDescripcion = $categoria['descripcion_categoria'];
+                            break;
+                        }
+                    }
+                    ?>
+                    <td><?= $categoriaDescripcion; ?></td>
                     <td>$<?= number_format($producto['precio_producto'], 2); ?></td>
                     <td><?= $producto['marca_producto']; ?></td>
                     <td><?= $producto['descripcion_producto']; ?></td>
@@ -102,3 +106,54 @@
         <?= $pager->links('productos', 'bootstrap5_full'); ?>
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    function setupModal() {
+        const consultaModal = document.getElementById('consultaModal');
+        const consultaModalBody = document.getElementById('consultaModalBody');
+        const markAsReadForm = document.getElementById('markAsReadForm');
+        const consultaIdInput = document.getElementById('consultaIdInput');
+
+        consultaModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget; // Botón que activó el modal
+            const message = button.getAttribute('data-message');
+            const id = button.getAttribute('data-id');
+
+            consultaModalBody.textContent = message;
+            markAsReadForm.action = `<?= base_url('leer-consulta/'); ?>${id}`;
+            consultaIdInput.value = id;
+        });
+    }
+
+    setupModal();
+
+    function attachPaginationEvents() {
+        const paginationLinks = document.querySelectorAll('.pagination a.page-link');
+
+        paginationLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const url = this.getAttribute('href');
+
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        const parser = new DOMParser();
+                        const newDocument = parser.parseFromString(data, 'text/html');
+                        const newSection = newDocument.querySelector('section.container');
+                        const oldSection = document.querySelector('section.container');
+                        oldSection.parentNode.replaceChild(newSection, oldSection);
+                        
+                        // Reaplicar configuraciones después de la carga
+                        setupModal();
+                        attachPaginationEvents(); // Reasociar eventos de paginación
+                    })
+                    .catch(error => console.error('Error al cargar la página:', error));
+            });
+        });
+    }
+
+    attachPaginationEvents();
+});
+</script>
