@@ -3,7 +3,15 @@
     padding:0;
     }
 
-    
+    .alert-floating {
+      position: fixed;
+      top: 20px; /* Ajusta la distancia desde la parte superior según lo desees */
+      right: 20px; /* Ajusta la distancia desde la parte derecha */
+      z-index: 1050; /* Asegura que las alertas estén por encima de otros elementos */
+      width: auto; /* Ajusta el ancho según sea necesario */
+      max-width: 300px; /* Controla el ancho máximo de la alerta */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Añade una sombra para destacar */
+  }
     
     .fas {
       color: blue;

@@ -115,6 +115,7 @@ $routes->group('', ['filter' => 'logged'], function ($routes) {
 
     /*rutas del Carrito de Usuarios*/
     $routes->get('ver_carrito', 'Carrito_controller::ver_carrito');
+    $routes->get('verificar_carrito', 'Carrito_controller::verificar_carrito');
     $routes->post('agregar_carrito', 'Carrito_controller::agregar_al_carrito'); 
     $routes->post('quitar_producto/(:any)','carrito_controller::borrar_del_carrito/$1');
     $routes->post('incrementar_producto/(:num)', 'Carrito_controller::incrementar_producto/$1');

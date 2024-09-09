@@ -188,17 +188,30 @@ class Usuario_controller extends BaseController{
         return redirect()->to(base_url('login'));
     }
 
-    public function listar_usuarios(){
-
+    public function listar_usuarios()
+    {
         $usuarioModel = new Usuario_Model();
-        
-        $data['usuarios'] = $usuarioModel->getUsuariosTodos();
-        $data['titulo'] = 'Gestion productos';
+
+        // Número de registros por página
+        $itemsPerPage = 10;
+
+        // Obtener el número de página actual
+        $page = $this->request->getVar('page') ?? 1;
+
+        // Obtener los usuarios paginados
+        $usuarios = $usuarioModel->paginate($itemsPerPage, 'usuarios');
+
+        // Enviar los datos a la vista
+        $data = [
+            'usuarios' => $usuarios,
+            'pager'    => $usuarioModel->pager, // Enviar el objeto de paginación
+            'titulo'   => 'Gestión de Usuarios'
+        ];
 
         return view('proyecto/front/Encabezado', $data)
-        .view('proyecto/front/Barra_de_navegacion_admin')
-        .view('proyecto/back/Gestion_usuarios')
-        .view('proyecto/front/Pie_de_pagina');
+            . view('proyecto/front/Barra_de_navegacion_admin')
+            . view('proyecto/back/Gestion_usuarios')
+            . view('proyecto/front/Pie_de_pagina');
     }
     public function eliminar_usuario($id=null){
         $usuarioModel = new Usuario_Model();

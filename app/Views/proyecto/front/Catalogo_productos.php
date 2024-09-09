@@ -17,15 +17,14 @@ $id = $session->get('id_usuario');
     
     <div class="d-flex justify-content-between mb-3">
     <!-- Formulario de Búsqueda -->
-    <form class="col-2" method="get" action="<?= base_url('catalogoDeProductos'); ?>">
-        <button type="submit" class="m-auto btn btn-sm btn-outline-danger" style="display: inline-block;">Buscar</button>
-        <a href="<?= base_url('catalogoDeProductos'); ?>"><button type="button" class="btn btn-sm btn-outline-light" style="display: inline-block;">Borrar</button></a>
+    <form class="col-2" method="get" action="<?= site_url('catalogoDeProductos'); ?>">
+        <button type="submit" class="m-auto btn btn-sm btn-outline-danger">Buscar</button>
+        <a href="<?= site_url('catalogoDeProductos'); ?>"><button type="button" class="btn btn-sm btn-outline-light">Borrar</button></a>
         <input type="text" name="search" class="form-control form-control-sm me-2 bg-light border-danger col-3" placeholder="Buscar producto" value="<?= isset($search) ? esc($search) : ''; ?>" />
     </form>
-    
 
     <!-- Selector para el número de productos por página -->
-    <form method="get" action="<?= base_url('catalogoDeProductos'); ?>" class="d-flex align-items-center">
+    <form method="get" action="<?= site_url('catalogoDeProductos'); ?>" class="d-flex align-items-center">
         <div class="input-group">
             <label class="input-group-text" for="itemsPerPage">Mostrar</label>
             <select name="itemsPerPage" id="itemsPerPage" class="form-select" onchange="this.form.submit()">
@@ -53,6 +52,7 @@ $id = $session->get('id_usuario');
                         <form action="<?= base_url('agregar_carrito'); ?>" method="post">
                             <input type="hidden" name="id" value="<?= $producto['id_producto']; ?>">
                             <?php if(session()->has('loggedIn') && $perfil == 2): ?>
+                                <!-- Botón de Comprar -->
                                 <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#compraModal" 
                                     data-id="<?= $producto['id_producto']; ?>"
                                     data-nombre="<?= $producto['nombre_producto']; ?>"

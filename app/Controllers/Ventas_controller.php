@@ -7,6 +7,7 @@ use App\Models\Producto_Model;
 use App\Models\Usuario_Model;
 use App\Models\Venta_Cabecera_Model;
 use App\Models\Venta_Detalle_Model;
+use CodeIgniter\HTTP\RequestInterface;
 
 class Ventas_controller extends Controller {
     public function __construct(){
@@ -17,33 +18,43 @@ class Ventas_controller extends Controller {
 
     public function registrar_venta() {
         $session = session();
-
         $cart = $session->get('cart') ?? [];
-
+        
         if (empty($cart)) {
-            $session->setFlashdata('mensaje', 'No hay productos en el carrito para confirmar la orden.');
-            return redirect()->to(base_url('catalogoDeProductos'));
+            return $this->response->setJSON(['success' => false, 'message' => 'No hay productos en el carrito para confirmar la orden.']);
         }
 
         $ventas = new Venta_Cabecera_Model();
         $detalleventas = new Venta_Detalle_Model();
         $producto = new Producto_Model();
-        $usuario = new Usuario_Model();
+        
+        // Obtener datos del POST
+        $paymentMethod = $this->request->getPost('paymentMethod');
+        $deliveryMethod = $this->request->getPost('deliveryMethod');
+        $address = $this->request->getPost('address');
 
-        // Calculate total
+        // Validar el método de pago
+        if (!in_array($paymentMethod, ['card', 'mercado_pago', 'transfer', 'cash'])) {
+            return $this->response->setJSON(['success' => false, 'message' => 'Método de pago no válido.']);
+        }
+
+        // Calcular total
         $total = array_reduce($cart, function($carry, $item) {
             return $carry + ($item['price'] * $item['qty']);
         }, 0);
 
-        // Insert into ventas_cabecera
+        // Insertar en ventas_cabecera
         $nueva_venta = [
             'usuario_id' => $session->get('id_usuario'),
             'total_venta' => $total,
-            'fecha' => date('Y-m-d H:i:s')
+            'fecha' => date('Y-m-d H:i:s'),
+            'payment_method' => $paymentMethod,
+            'delivery_method' => $deliveryMethod,
+            'address' => $deliveryMethod === 'delivery' ? $address : null
         ];
         $venta_id = $ventas->insert($nueva_venta);
 
-        // Insert into ventas_detalle
+        // Insertar en ventas_detalle
         foreach ($cart as $item) {
             $detalle = [
                 'venta_id' => $venta_id,
@@ -52,22 +63,20 @@ class Ventas_controller extends Controller {
                 'precio' => $item['price'] * $item['qty']
             ];
 
-            // Check stock availability
+            // Verificar disponibilidad de stock
             $producto_actual = $producto->find($item['id']);
             if ($producto_actual['stock_producto'] >= $item['qty']) {
                 $detalleventas->insert($detalle);
-                // Update stock
+                // Actualizar stock
                 $producto->updateStock($item['id'], $producto_actual['stock_producto'] - $item['qty']);
             } else {
-                $session->setFlashdata('mensaje', 'No hay suficiente stock disponible para el producto "' . $producto_actual['nombre_producto'] . '".');
-                return redirect()->to(base_url('catalogoDeProductos'));
+                return $this->response->setJSON(['success' => false, 'message' => 'No hay suficiente stock disponible para el producto "' . $producto_actual['nombre_producto'] . '".']);
             }
         }
 
-        // Clear cart after successful order
+        // Limpiar carrito después de una orden exitosa
         $session->remove('cart');
-        $session->setFlashdata('mensaje', 'Venta registrada exitosamente.');
-        return redirect()->to(base_url('catalogoDeProductos'));
+        return $this->response->setJSON(['success' => true, 'message' => 'Venta registrada exitosamente.']);
     }
     
     public function gestion_ventas()
