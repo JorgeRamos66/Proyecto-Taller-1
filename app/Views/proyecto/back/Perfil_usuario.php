@@ -27,7 +27,7 @@
         <?php $id = $usuario['id_usuario']?>
 
         <div class="container text-center">
-            <a href="<?php echo base_url('editar-usuario/'.$id); ?>" class="btn btn-sm btn-success">Editar Perfil</a>
+            <a href="<?php echo base_url('editar-usuario/' . base64_encode($id)); ?>" class="btn btn-sm btn-success">Editar Perfil</a>
             <a href="<?php echo base_url('/'); ?>" class="btn btn-sm btn-primary">Atras</a>
-            </div>
+        </div>
     </div>

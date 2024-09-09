@@ -74,6 +74,15 @@ $routes->group('', ['filter' => 'admin'], function ($routes) {
     $routes->get('activar-producto/(:num)','Producto_controller::activar_producto/$1');
     $routes->get('editar-producto/(:num)','Producto_controller::editar_producto/$1');
     $routes->post('actualizar-producto/(:num)','Producto_controller::update/$1');
+
+    $routes->get('gestion_categorias','Categoria_controller::gestion_categorias');
+    $routes->post('enviar-categoria','Categoria_controller::store');
+    $routes->get('form-categoria','Categoria_controller::crear_categoria');
+    $routes->get('activar-categoria/(:num)','Categoria_controller::activar_categoria/$1');
+    $routes->get('editar-categoria/(:num)','Categoria_controller::editar_categoria/$1');
+    $routes->post('actualizar-categoria/(:num)','Categoria_controller::update/$1');
+    $routes->get('eliminar-categoria/(:num)', 'Categoria_controller::eliminar_categoria/$1');
+
     
 
     $routes->get('gestion_usuarios','Usuario_controller::listar_usuarios');
@@ -81,23 +90,32 @@ $routes->group('', ['filter' => 'admin'], function ($routes) {
     $routes->get('activar-usuario/(:num)','Usuario_controller::activar_usuario/$1');
 
     $routes->get('ver_ventas','Ventas_controller::gestion_ventas');
+    $routes->get('obtener_detalle_venta/(:segment)', 'Ventas_controller::obtener_detalle_venta/$1');
+    
+
 
     $routes->get('gestion_consultas','Contacto_controller::listar_consultas');
     $routes->post('leer-consulta/(:num)','Contacto_controller::marcar_consulta_leido/$1');
-    $routes->get('desleer-consulta/(:num)','Contacto_controller::marcar_consulta_desleido/$1');
-
+    $routes->post('desleer-consulta/(:num)','Contacto_controller::marcar_consulta_desleido/$1');
+    
+    
+    $routes->get('facturacion','Ventas_controller::gestion_ventas');
     
 });
 $routes->group('', ['filter' => 'logged'], function ($routes) {
-    $routes->get('perfil-usuario/(:num)','Usuario_controller::perfil_usuario/$1');
-    $routes->get('editar-usuario/(:num)','Usuario_controller::editar_usuario/$1');
-    $routes->post('actualizar-usuario/(:num)', 'Usuario_controller::actualizar_perfil/$1');
+    $routes->get('perfil-usuario/(:segment)', 'Usuario_controller::perfil_usuario/$1');
 
-    $routes->get('vista_compras/(:num)','Ventas_controller::ver_factura/&1');
-    $routes->get('ver_facturas_usuario/(:num)','Ventas_controller::ver_facturas_usuarios/&1');
+    $routes->group('', ['filter' => 'checkUser'], function ($routes) {
+        $routes->get('editar-usuario/(:segment)', 'Usuario_controller::editar_usuario/$1');
+        $routes->post('actualizar-usuario/(:segment)', 'Usuario_controller::actualizar_perfil/$1');
+    });
+
+    $routes->get('vista_compras/(:segment)', 'Ventas_controller::ver_factura/$1');
+    $routes->get('ver_facturas_usuario/(:segment)', 'Ventas_controller::ver_facturas_usuarios/$1');
 
     /*rutas del Carrito de Usuarios*/
     $routes->get('ver_carrito', 'Carrito_controller::ver_carrito');
+    $routes->get('verificar_carrito', 'Carrito_controller::verificar_carrito');
     $routes->post('agregar_carrito', 'Carrito_controller::agregar_al_carrito'); 
     $routes->post('quitar_producto/(:any)','carrito_controller::borrar_del_carrito/$1');
     $routes->post('incrementar_producto/(:num)', 'Carrito_controller::incrementar_producto/$1');

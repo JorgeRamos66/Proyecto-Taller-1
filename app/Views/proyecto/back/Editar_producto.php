@@ -44,6 +44,8 @@
                     </option>
                 <?php endforeach; ?>
             </select>
+            
+            
                 <?php if($validation->getError('id_categoria')) {?>
                     <div class='py-1 alert alert-danger my-0' style="color: red; text-shadow: none;">
                         <?= $error = $validation->getError('id_categoria'); ?>

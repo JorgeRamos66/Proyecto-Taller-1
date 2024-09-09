@@ -1,0 +1,491 @@
+ERROR - 2024-06-28 01:31:02 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-28 01:31:02 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `productos`
+ORDER BY `id_producto` DESC
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-28 01:32:02 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=16848 in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'D:\\Xamp\\htdocs\\...', 174, Array)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-28 01:32:02 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `productos`
+ORDER BY `id_producto` DESC
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-28 01:32:06 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-28 01:32:06 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `productos`
+ORDER BY `id_producto` DESC
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-28 01:33:07 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=24888 in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'D:\\Xamp\\htdocs\\...', 174, Array)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-28 01:33:07 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `productos`
+ORDER BY `id_producto` DESC
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-28 01:54:35 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=12872 in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'D:\\Xamp\\htdocs\\...', 174, Array)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2024-06-28 01:54:35 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=12872 in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'D:\\Xamp\\htdocs\\...', 174, Array)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-28 01:54:35 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `productos`
+ORDER BY `id_producto` DESC
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-28 01:54:35 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `productos`
+ORDER BY `id_producto` DESC
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-28 01:54:35 --> Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Debug\Exceptions.php on line 165.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-28 02:12:06 --> Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Debug\Exceptions.php on line 165.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-28 02:12:06 --> Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Debug\Exceptions.php on line 165.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-28 02:12:06 --> Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 134.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2024-06-28 02:12:23 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=20064 in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'D:\\Xamp\\htdocs\\...', 174, Array)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-28 02:12:23 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `productos`
+ORDER BY `id_producto` DESC
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-28 02:36:20 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-28 02:36:20 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `productos`
+ORDER BY `id_producto` DESC
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-28 02:38:56 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', 'db_ramos_jorge', 3306, '', 0)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ in D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\Xamp\htdocs\proyecto_ramos_jorge\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Xamp\htdocs\proyecto_ramos_jorge\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+#5 D:\Xamp\htdocs\proyecto_ramos_jorge\app\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+#6 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(934): App\Controllers\Home->Principal()
+#7 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\Xamp\htdocs\proyecto_ramos_jorge\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\Xamp\htdocs\proyecto_ramos_jorge\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-28 02:38:56 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `productos`
+ORDER BY `id_producto` DESC
+ LIMIT 3', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(3, 0)
+ 5 APPPATH\Controllers\Home.php(13): CodeIgniter\BaseModel->findAll(3)
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->Principal()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
