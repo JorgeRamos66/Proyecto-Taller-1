@@ -30,40 +30,41 @@ $id = $session->get('id_usuario');
             // Inicializa el total del carrito
             $total_carrito = 0; 
             ?>
-            <?php foreach ($cart as $index => $item): ?>
-                <?php 
-                // Calcula el subtotal por producto
-                $subtotal = $item['price'] * $item['qty']; 
-                // Suma el subtotal al total del carrito
-                $total_carrito += $subtotal; 
-                ?>
-                <tr>
-                    <td><?= esc($item['name']); ?></td>
-                    <td>$<?= number_format($item['price'], 2); ?></td>
-                    <td>
-                        <div class="btn-group">
-                            <form action="<?= base_url('incrementar_producto/' . $index); ?>" method="post" class="d-inline">
-                                <button type="submit" class="btn btn-sm btn-outline-dark">+</button>
-                            </form>
-                            <div class="btn btn-sm btn-dark">
-                                <?= esc($item['qty']); ?>
+            <?php if (isset($cartItems) && is_array($cartItems) && !empty($cartItems)): ?>
+                <?php foreach ($cartItems as $index => $item): ?>
+                    <?php 
+                    // Calcula el subtotal por producto
+                    $subtotal = $item['price'] * $item['qty']; 
+                    // Suma el subtotal al total del carrito
+                    $total_carrito += $subtotal; 
+                    ?>
+                    <tr>
+                        <td><?= esc($item['name']); ?></td>
+                        <td>$<?= number_format($item['price'], 2); ?></td>
+                        <td>
+                            <div class="btn-group">
+                                <form action="<?= base_url('incrementar_producto/' . $index); ?>" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-outline-dark">+</button>
+                                </form>
+                                <div class="btn btn-sm btn-dark">
+                                    <?= esc($item['qty']); ?>
+                                </div>
+                                
+                                <form action="<?= base_url('decrementar_producto/' . $index); ?>" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-outline-dark">-</button>
+                                </form>
                             </div>
                             
-                            <form action="<?= base_url('decrementar_producto/' . $index); ?>" method="post" class="d-inline">
-                                <button type="submit" class="btn btn-sm btn-outline-dark">-</button>
+                        </td>
+                        <td>$<?= number_format($subtotal, 2); ?></td>
+                        <td>
+                            <form action="<?= base_url('quitar_producto/' . $index); ?>" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
                             </form>
-                        </div>
-                        
-                    </td>
-                    <td>$<?= number_format($subtotal, 2); ?></td>
-                    <td>
-                        <form action="<?= base_url('quitar_producto/' . $index); ?>" method="post" class="d-inline">
-                            <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
-                        </form>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-            <?php if (empty($cart)): ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
                 <tr>
                     <td colspan="5" class="text-center">No hay productos en el carrito.</td>
                 </tr>
@@ -149,7 +150,7 @@ $id = $session->get('id_usuario');
                 </div>
 
                 <!-- Sección de pago adicional (oculta por defecto) -->
-                <div id="additionalPaymentFields" style="display: none;">
+                <div id="additionalPaymentFields">
                     <div id="cardPaymentFields" style="display: none;">
                         <h6 class="mt-3">Pago con Tarjeta</h6>
                         <form id="cardPaymentForm">
@@ -158,145 +159,229 @@ $id = $session->get('id_usuario');
                                 <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required pattern="\d{4} \d{4} \d{4} \d{4}">
                             </div>
                             <div class="mb-3">
-                                <label for="cardExpiry" class="form-label">Fecha de Vencimiento</label>
+                                <label for="cardExpiry" class="form-label">Fecha de Expiración</label>
                                 <input type="text" class="form-control" id="cardExpiry" placeholder="MM/AA" required pattern="\d{2}/\d{2}">
                             </div>
                             <div class="mb-3">
-                                <label for="cardCVC" class="form-label">Código de Seguridad</label>
-                                <input type="text" class="form-control" id="cardCVC" placeholder="123" required pattern="\d{3}">
+                                <label for="cardCVV" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="cardCVV" placeholder="123" required pattern="\d{3}">
                             </div>
                         </form>
                     </div>
-                    
+
+                    <div id="mercadoPagoFields" style="display: none;">
+                        <h6 class="mt-3">Pago con Mercado Pago</h6>
+                        <form id="mercadoPagoForm">
+                            <div class="mb-3">
+                                <label for="mercadoPagoEmail" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="mercadoPagoEmail" placeholder="tu-email@example.com" required>
+                            </div>
+                        </form>
+                    </div>
+
                     <div id="transferPaymentFields" style="display: none;">
                         <h6 class="mt-3">Pago por Transferencia</h6>
-                        <p>CBU: 12345678901</p>
-                        <form id="transferPaymentForm">
+                        <form id="transferForm">
                             <div class="mb-3">
-                                <label for="transferReceipt" class="form-label">Adjuntar Comprobante de Transferencia (PDF)</label>
-                                <input type="file" class="form-control" id="transferReceipt" accept=".pdf" required>
+                                <label for="transferAccount" class="form-label">Cuenta de Transferencia</label>
+                                <input type="text" class="form-control" id="transferAccount" placeholder="Número de cuenta" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="transferAmount" class="form-label">Monto Transferido</label>
+                                <input type="text" class="form-control" id="transferAmount" placeholder="Monto transferido" required>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atrás</button>
-                <button type="button" class="btn btn-success" id="nextButton">Siguiente</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" id="confirmOrderButton" class="btn btn-primary">Confirmar Orden</button>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Modal para seleccionar pago y envío -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalLabel">Seleccionar Método de Pago y Envío</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Sección de pago -->
+                <h6>Seleccione el método de pago:</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="paymentCash" value="cash" checked>
+                    <label class="form-check-label" for="paymentCash">
+                        Contado
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="paymentCard" value="card">
+                    <label class="form-check-label" for="paymentCard">
+                        Tarjeta
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMercadoPago" value="mercado_pago">
+                    <label class="form-check-label" for="paymentMercadoPago">
+                        Mercado Pago
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="paymentTransfer" value="transfer">
+                    <label class="form-check-label" for="paymentTransfer">
+                        Transferencia
+                    </label>
+                </div>
+                
+                <!-- Sección de envío -->
+                <h6 class="mt-3">Seleccione el método de envío:</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="deliveryMethod" id="pickupStore" value="pickup" checked>
+                    <label class="form-check-label" for="pickupStore">
+                        Retirar en sucursal
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="deliveryMethod" id="deliveryAddress" value="delivery">
+                    <label class="form-check-label" for="deliveryAddress">
+                        Enviar a domicilio
+                    </label>
+                </div>
+
+                <!-- Campo de dirección (solo visible si se elige envío a domicilio) -->
+                <div class="mt-2" id="addressInput" style="display: none;">
+                    <label for="address">Dirección de envío:</label>
+                    <input type="text" class="form-control" id="address" placeholder="Ingrese su dirección">
+                </div>
+
+                <!-- Sección de pago adicional (oculta por defecto) -->
+                <div id="additionalPaymentFields">
+                    <div id="cardPaymentFields" style="display: none;">
+                        <h6 class="mt-3">Pago con Tarjeta</h6>
+                        <form id="cardPaymentForm">
+                            <div class="mb-3">
+                                <label for="cardNumber" class="form-label">Número de Tarjeta</label>
+                                <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required pattern="\d{4} \d{4} \d{4} \d{4}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cardExpiry" class="form-label">Fecha de Expiración</label>
+                                <input type="text" class="form-control" id="cardExpiry" placeholder="MM/AA" required pattern="\d{2}/\d{2}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cardCVV" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="cardCVV" placeholder="123" required pattern="\d{3}">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="mercadoPagoFields" style="display: none;">
+                        <h6 class="mt-3">Pago con Mercado Pago</h6>
+                        <form id="mercadoPagoForm">
+                            <div class="mb-3">
+                                <label for="mercadoPagoEmail" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="mercadoPagoEmail" placeholder="tu-email@example.com" required>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="transferPaymentFields" style="display: none;">
+                        <h6 class="mt-3">Pago por Transferencia</h6>
+                        <form id="transferForm">
+                            <div class="mb-3">
+                                <label for="transferAccount" class="form-label">Cuenta de Transferencia</label>
+                                <input type="text" class="form-control" id="transferAccount" placeholder="Número de cuenta" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="transferAmount" class="form-label">Monto Transferido</label>
+                                <input type="text" class="form-control" id="transferAmount" placeholder="Monto transferido" required>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" id="confirmOrderButton" class="btn btn-primary">Confirmar Orden</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts JS -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const addressInput = document.getElementById('addressInput');
+        const paymentCash = document.getElementById('paymentCash');
+        const paymentCard = document.getElementById('paymentCard');
+        const paymentMercadoPago = document.getElementById('paymentMercadoPago');
+        const paymentTransfer = document.getElementById('paymentTransfer');
         const deliveryAddress = document.getElementById('deliveryAddress');
-        const nextButton = document.getElementById('nextButton');
-        const confirmOrderButton = document.querySelector('button[data-bs-target="#paymentModal"]');
+        const pickupStore = document.getElementById('pickupStore');
+        const addressInput = document.getElementById('addressInput');
+        
+        const cardPaymentFields = document.getElementById('cardPaymentFields');
+        const mercadoPagoFields = document.getElementById('mercadoPagoFields');
+        const transferPaymentFields = document.getElementById('transferPaymentFields');
 
-        deliveryAddress.addEventListener('change', function () {
-            addressInput.style.display = 'block';
-        });
-
-        document.getElementById('pickupStore').addEventListener('change', function () {
-            addressInput.style.display = 'none';
-        });
-
-        nextButton.addEventListener('click', function () {
-            const selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
-            switch (selectedPaymentMethod) {
-                case 'card':
-                    showCardPaymentModal();
-                    break;
-                case 'mercado_pago':
-                    window.location.href = 'https://www.mercadopago.com.ar/';
-                    break;
-                case 'transfer':
-                    showTransferPaymentModal();
-                    break;
-                case 'cash':
-                    confirmOrder('cash');
-                    break;
+        function updatePaymentFields() {
+            if (paymentCash.checked) {
+                cardPaymentFields.style.display = 'none';
+                mercadoPagoFields.style.display = 'none';
+                transferPaymentFields.style.display = 'none';
+            } else if (paymentCard.checked) {
+                cardPaymentFields.style.display = 'block';
+                mercadoPagoFields.style.display = 'none';
+                transferPaymentFields.style.display = 'none';
+            } else if (paymentMercadoPago.checked) {
+                cardPaymentFields.style.display = 'none';
+                mercadoPagoFields.style.display = 'block';
+                transferPaymentFields.style.display = 'none';
+            } else if (paymentTransfer.checked) {
+                cardPaymentFields.style.display = 'none';
+                mercadoPagoFields.style.display = 'none';
+                transferPaymentFields.style.display = 'block';
             }
-        });
+        }
 
-        confirmOrderButton.addEventListener('click', function(event) {
+        function updateAddressField() {
+            if (deliveryAddress.checked) {
+                addressInput.style.display = 'block';
+            } else {
+                addressInput.style.display = 'none';
+            }
+        }
 
-            // Realiza una solicitud para verificar si el carrito está vacío
-            fetch('<?php echo base_url('verificar_carrito'); ?>')
+        paymentCash.addEventListener('change', updatePaymentFields);
+        paymentCard.addEventListener('change', updatePaymentFields);
+        paymentMercadoPago.addEventListener('change', updatePaymentFields);
+        paymentTransfer.addEventListener('change', updatePaymentFields);
+
+        deliveryAddress.addEventListener('change', updateAddressField);
+        pickupStore.addEventListener('change', updateAddressField);
+
+        document.getElementById('confirmOrderButton').addEventListener('click', function () {
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value;
+            const address = document.getElementById('address').value;
+            
+            fetch("<?= base_url('verificar_carrito'); ?>")
                 .then(response => response.json())
                 .then(data => {
-                    if (data.empty) {
-                        alert('No hay productos en el carrito para confirmar la orden.');
+                    if (data.hasItems) {
+                        // Aquí se deben enviar los datos de la venta
+                        document.querySelector('form[action="<?= base_url('registrar_venta'); ?>"]').submit();
                     } else {
-                        // Si el carrito no está vacío, muestra el modal
-                        $('#paymentModal').modal('show');
+                        alert('El carrito está vacío.');
                     }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Error al verificar el estado del carrito.');
                 });
         });
 
-        function showCardPaymentModal() {
-            $('#paymentModal').modal('hide');
-            $('#cardPaymentModal').modal('show');
-        }
-
-        function showTransferPaymentModal() {
-            $('#paymentModal').modal('hide');
-            $('#transferPaymentModal').modal('show');
-        }
-
-        function confirmOrder(paymentMethod) {
-            const formData = new FormData();
-            formData.append('deliveryMethod', document.querySelector('input[name="deliveryMethod"]:checked').value);
-            formData.append('address', document.getElementById('address').value);
-            formData.append('paymentMethod', paymentMethod);
-
-            // Validación para el método de pago con tarjeta
-            if (paymentMethod === 'card') {
-                const cardNumber = document.getElementById('cardNumber').value;
-                const cardExpiry = document.getElementById('cardExpiry').value;
-                const cardCVC = document.getElementById('cardCVC').value;
-
-                if (!cardNumber || !cardExpiry || !cardCVC) {
-                    alert('Por favor complete todos los campos de la tarjeta.');
-                    return;
-                }
-
-                formData.append('cardNumber', cardNumber);
-                formData.append('cardExpiry', cardExpiry);
-                formData.append('cardCVC', cardCVC);
-            } else if (paymentMethod === 'transfer') {
-                const transferReceipt = document.getElementById('transferReceipt').files[0];
-                if (transferReceipt) {
-                    formData.append('transferReceipt', transferReceipt);
-                } else {
-                    alert('Por favor adjunte el comprobante de transferencia.');
-                    return;
-                }
-            }
-
-            fetch('<?php echo base_url('registrar_venta'); ?>', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Orden confirmada exitosamente.');
-                    window.location.href = '<?php echo base_url('catalogoDeProductos'); ?>';
-                } else {
-                    alert('Error al confirmar la orden: ' + data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Error en la confirmación de la orden.');
-            });
-        }
+        // Inicializar el estado de los campos adicionales
+        updatePaymentFields();
+        updateAddressField();
     });
 </script>

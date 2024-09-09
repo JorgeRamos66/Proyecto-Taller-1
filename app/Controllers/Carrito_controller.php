@@ -1,37 +1,23 @@
 <?php
 
 namespace App\Controllers;
-Use App\Models\Producto_Model;
-use CodeIgniter\Session\Session;
+
+use App\Models\Producto_Model;
 use CodeIgniter\Controller;
-use App\Models\Cabecera_Ventas_Model;
-use App\Models\Detalle_Ventas_Model;
 
-class Carrito_controller extends BaseController{
-
-    public function __construct(){
-        helper(['form','url','cart']);
-
-        $session = session();
-        $cart = \config\Services::cart();
-        $cart->contents();    
+class Carrito_controller extends BaseController
+{
+    public function __construct()
+    {
+        helper(['form', 'url', 'cart']);
     }
 
-    //Ver el carrito
+    // Ver el carrito
     public function ver_carrito()
     {
-        $cart = $this->session->get('cart') ?? [];
-        $productoModel = new Producto_Model();
-
-        foreach ($cart as &$item) {
-            $producto = $productoModel->find($item['id']);
-            $item['producto'] = $producto ? $producto : null;
-        }
-
-        $data = [
-            'titulo' => 'Carrito de Compras',
-            'cart' => $cart,
-        ];
+        // Obtén los datos del carrito desde la sesión
+        $session = session();
+        $data['cartItems'] = $session->get('cart') ?? [];
 
         return view('proyecto/front/Encabezado', $data)
             . view('proyecto/front/Barra_de_navegacion')
@@ -39,8 +25,9 @@ class Carrito_controller extends BaseController{
             . view('proyecto/front/Pie_de_pagina');
     }
 
-    public function agregar_al_carrito() {
-        // Obtén el servicio de sesión y el carrito
+    // Agregar producto al carrito
+    public function agregar_al_carrito()
+    {
         $session = session();
         $cart = $session->get('cart') ?? [];
     
@@ -53,7 +40,6 @@ class Carrito_controller extends BaseController{
         // Verifica el stock disponible para el nuevo producto
         $stockDisponible = $this->obtenerStock($productId);
     
-        // Si la cantidad solicitada es mayor al stock disponible, muestra un mensaje de error
         if ($cantidad > $stockDisponible) {
             return redirect()->to(base_url('catalogoDeProductos'))->with('mensaje', 'No hay suficiente stock disponible para este producto.');
         }
@@ -62,7 +48,6 @@ class Carrito_controller extends BaseController{
         $producto_existente = false;
         foreach ($cart as $index => $item) {
             if ($item['id'] == $productId) {
-                // Si el producto ya está en el carrito, incrementa la cantidad utilizando la función incrementarProducto
                 $this->incrementar_producto($index);
                 $producto_existente = true;
                 break;
@@ -73,7 +58,7 @@ class Carrito_controller extends BaseController{
         if (!$producto_existente) {
             $producto = [
                 'id' => $productId,
-                'name' => $nombre_producto, // Asegúrate de cambiar 'name' según la estructura de tu carrito
+                'name' => $nombre_producto,
                 'price' => $precio,
                 'qty' => $cantidad,
             ];
@@ -81,12 +66,14 @@ class Carrito_controller extends BaseController{
             $session->set('cart', $cart);
         }
     
-        // Redirecciona de vuelta al carrito después de agregar el producto
         return redirect()->to(base_url('catalogoDeProductos'))->with('mensaje', 'Producto añadido al carrito.');
     }
+
+    // Incrementar producto en el carrito
     public function incrementar_producto($index)
     {
-        $cart = $this->session->get('cart');
+        $session = session();
+        $cart = $session->get('cart');
 
         if (isset($cart[$index])) {
             $productId = $cart[$index]['id'];
@@ -94,9 +81,9 @@ class Carrito_controller extends BaseController{
 
             if ($cart[$index]['qty'] < $stockDisponible) {
                 $cart[$index]['qty']++;
-                $this->session->set('cart', $cart);
+                $session->set('cart', $cart);
             } else {
-                return redirect()->back()->with('mensaje', 'Esta superando el stock máximo en esta compra.');
+                return redirect()->back()->with('mensaje', 'Está superando el stock máximo en esta compra.');
             }
         } else {
             return redirect()->back()->with('mensaje', 'Índice de producto no válido.');
@@ -105,16 +92,16 @@ class Carrito_controller extends BaseController{
         return redirect()->back();
     }
 
+    // Decrementar producto en el carrito
     public function decrementar_producto($index)
     {
-        $cart = $this->session->get('cart');
+        $session = session();
+        $cart = $session->get('cart');
 
-        // Verifica si el índice proporcionado está dentro del rango válido para el carrito
         if (isset($cart[$index])) {
-            // El límite de decremento es 1 (no se puede tener menos de 1 producto en el carrito)
             if ($cart[$index]['qty'] > 1) {
                 $cart[$index]['qty']--;
-                $this->session->set('cart', $cart);
+                $session->set('cart', $cart);
             } else {
                 return redirect()->back()->with('mensaje', 'No se pueden establecer cantidades inferiores a una unidad. Si desea eliminar el producto, presione "Eliminar".');
             }
@@ -125,27 +112,29 @@ class Carrito_controller extends BaseController{
         return redirect()->back();
     }
 
-
+    // Borrar producto del carrito
     public function borrar_del_carrito($index)
     {
-        $cart = $this->session->get('cart');
+        $session = session();
+        $cart = $session->get('cart');
 
         if (isset($cart[$index])) {
             unset($cart[$index]);
-            $this->session->set('cart', array_values($cart));
+            $session->set('cart', array_values($cart));
         }
 
-        return redirect()->to('ver_carrito');
+        return redirect()->to(base_url('ver_carrito'));
     }
 
+    // Vaciar el carrito
     public function vaciar_carrito()
     {
-        $this->session->remove('cart');
+        $session = session();
+        $session->remove('cart');
         return redirect()->back()->with('mensaje', 'Carrito vaciado.');
     }
 
-    
-    
+    // Obtener stock del producto
     public function obtenerStock($id_producto)
     {
         $productoModel = new Producto_Model();
@@ -158,23 +147,16 @@ class Carrito_controller extends BaseController{
         }
     }
 
-
-    public function devolver_carrito() {
-        $cart = \Config\Services::cart();  
-        return $cart->contents(); // Return cart contents
-    }
+    // Verificar si el carrito está vacío
     public function verificar_carrito()
     {
         $session = session();
-        $cart = $session->get('cart') ?? [];
+        $cartItems = $session->get('cart') ?? [];
 
-        return $this->response->setJSON(['empty' => empty($cart)]);
+        if (empty($cartItems)) {
+            return $this->response->setJSON(['empty' => true]);
+        } else {
+            return $this->response->setJSON(['empty' => false]);
+        }
     }
-
-    private function validateCartData($data) {
-        // Validar que todos los campos requeridos están presentes
-        return isset($data['id'], $data['qty'], $data['price'], $data['name']) &&
-               is_numeric($data['price']) && is_numeric($data['qty']);
-    }
-    
 }
