@@ -10,8 +10,8 @@ class Categoria_Model extends Model {
     'activo_categoria'];
     protected $returnType = 'array';
 
-    public function getCategorias(){
-        return $this->findAll();
+    public function getCategorias() {
+        return $this->findAll(); // O cualquier otro método que retorne las categorías
     }
 
 }

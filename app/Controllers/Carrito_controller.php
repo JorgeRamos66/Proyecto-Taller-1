@@ -18,6 +18,7 @@ class Carrito_controller extends BaseController
         // Obtén los datos del carrito desde la sesión
         $session = session();
         $data['cartItems'] = $session->get('cart') ?? [];
+        $data['titulo'] = "Carrito de compras";
 
         return view('proyecto/front/Encabezado', $data)
             . view('proyecto/front/Barra_de_navegacion')
@@ -30,30 +31,35 @@ class Carrito_controller extends BaseController
     {
         $session = session();
         $cart = $session->get('cart') ?? [];
-    
+
         // Obtén los datos del producto a agregar desde el formulario
         $productId = $this->request->getPost('id');
         $nombre_producto = $this->request->getPost('nombre_producto');
         $precio = $this->request->getPost('precio');
         $cantidad = $this->request->getPost('cantidad');
-    
+
         // Verifica el stock disponible para el nuevo producto
         $stockDisponible = $this->obtenerStock($productId);
-    
+
         if ($cantidad > $stockDisponible) {
             return redirect()->to(base_url('catalogoDeProductos'))->with('mensaje', 'No hay suficiente stock disponible para este producto.');
         }
-    
+
         // Busca si el producto ya está en el carrito
         $producto_existente = false;
         foreach ($cart as $index => $item) {
             if ($item['id'] == $productId) {
-                $this->incrementar_producto($index);
+                // Solo actualiza la cantidad en el carrito si hay suficiente stock
+                if (($item['qty'] + $cantidad) <= $stockDisponible) {
+                    $cart[$index]['qty'] += $cantidad;
+                } else {
+                    return redirect()->to(base_url('catalogoDeProductos'))->with('mensaje', 'No hay suficiente stock disponible para este producto.');
+                }
                 $producto_existente = true;
                 break;
             }
         }
-    
+
         // Si el producto no está en el carrito, agrégalo como un nuevo ítem
         if (!$producto_existente) {
             $producto = [
@@ -63,9 +69,10 @@ class Carrito_controller extends BaseController
                 'qty' => $cantidad,
             ];
             $cart[] = $producto;
-            $session->set('cart', $cart);
         }
-    
+        
+        $session->set('cart', $cart);
+
         return redirect()->to(base_url('catalogoDeProductos'))->with('mensaje', 'Producto añadido al carrito.');
     }
 
@@ -153,10 +160,11 @@ class Carrito_controller extends BaseController
         $session = session();
         $cartItems = $session->get('cart') ?? [];
 
+        // Cambiar la respuesta a la clave 'hasItems' que es lo que el script espera
         if (empty($cartItems)) {
-            return $this->response->setJSON(['empty' => true]);
+            return $this->response->setJSON(['hasItems' => false]);
         } else {
-            return $this->response->setJSON(['empty' => false]);
+            return $this->response->setJSON(['hasItems' => true]);
         }
     }
 }

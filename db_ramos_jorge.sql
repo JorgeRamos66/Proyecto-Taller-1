@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-06-2024 a las 01:02:11
+-- Tiempo de generación: 10-09-2024 a las 09:16:15
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -42,7 +42,10 @@ INSERT INTO `categorias` (`id_categoria`, `descripcion_categoria`, `activo_categ
 (2, 'Pelota de futbol 5', 1),
 (3, 'Botin de futbol 5', 1),
 (4, 'Botin de futbol 11', 1),
-(5, 'Canilleras de futbol', 1);
+(5, 'Canilleras de futbol', 1),
+(6, 'Pelota de Voley', 0),
+(7, 'Pelota de tenis', 0),
+(8, 'Pelota de futbol 12', 0);
 
 -- --------------------------------------------------------
 
@@ -65,15 +68,10 @@ CREATE TABLE `consultas` (
 --
 
 INSERT INTO `consultas` (`id_consulta`, `consulta_nombre`, `consulta_apellido`, `consulta_email`, `consulta_mensaje`, `consulta_registrado`, `consulta_leido`) VALUES
-(123129, 'Jorge Raul', 'Ramos Morton', 'jpdjorgito12@gmail.com', 'consulta', '', 'NO'),
-(123130, 'asdasd', 'asdasd', 'jpdjorgito12@gmail.com', 'asdasd', '', 'SI'),
-(123131, 'asdasd', 'asdasd', 'jpdjorgito12@gmail.com', 'asdasdasd', '', 'NO'),
-(123132, 'Jorge Raul', 'Cantero Loebarth', 'jpdjorgito12@gmail.com', 'soy el admin xd', '', 'SI'),
-(123134, 'Jorge Raul', 'Ramos Morton', 'jpdjorgito12@gmail.com', 'consultaxdddd', '', 'NO'),
 (123135, 'Administrador', 'Sabrozon', 'admin@gmail.com', 'soy el admin xd', 'NO', 'SI'),
 (123137, 'Jorge Raul', 'Ramos Morton', 'jpdjorgito12@gmail.com', 'consultaasdasd', 'NO', 'NO'),
-(123138, 'Administrador', 'Sabrozon', 'admin@gmail.com', 'pruebaaa', 'NO', 'NO'),
-(123140, 'Jorge Raul', 'Ramos Morton', 'jpdjorgito12@gmail.com', 'soy el admin xdasdasdasd', 'NO', 'SI'),
+(123138, 'Administrador', 'Sabrozon', 'admin@gmail.com', 'pruebaaa', 'NO', 'SI'),
+(123140, 'Jorge Raul', 'Ramos Morton', 'jpdjorgito12@gmail.com', 'soy el admin xdasdasdasd', 'NO', 'NO'),
 (123142, 'Administrador', 'Sabrozon', 'admin@gmail.com', 'prueba numero mil xd', 'SI', 'NO'),
 (123143, 'Jorge Ramos', 'Morton Raul', 'lawea@hotmail.com', 'prueba de usuario no registrado dejando mensaje', 'NO', 'NO'),
 (123144, 'Marcos', 'Alonso', 'marcos@live.com.ar', 'prueba de consulta del señor marcos, quien esta registrado', 'SI', 'NO');
@@ -121,23 +119,23 @@ CREATE TABLE `productos` (
 
 INSERT INTO `productos` (`id_producto`, `nombre_producto`, `imagen_producto`, `id_categoria`, `precio_producto`, `marca_producto`, `descripcion_producto`, `stock_producto`, `eliminado_producto`) VALUES
 (8, 'AFA 23', '1719199254_d572463f8cf98c4500cc.webp', 1, 5400.00, 'Adidas', 'Una pelota de futbol de la seleccion argentina', 6, 'SI'),
-(9, 'Predator Club Pastor', '1719199618_adbcebd5d814caa70376.webp', 4, 54000.00, 'Adidas', 'Un botin de futbol 11 hecho por una marca de reconocimiento mundial.', 9, 'NO'),
-(10, 'Predator Accuracy', '1719199697_01978cdc816419464a19.webp', 1, 11000.00, 'Adidas', 'Un botin de futbol 11 hecho por una prestigiosa marca.', 11, 'NO'),
-(11, 'Kick off', '1719205772_e73fbdb84e67b757460b.webp', 1, 2200.00, 'Nassau', 'Una pelota de futbol de buena calidad y a un precio accesible.', 0, 'NO'),
-(12, 'Canilleras de futbol	', '1719198057_07dfb721c7304029b8fd.webp', 5, 3000.00, 'Adidas', 'Canilleras de futbol 5 y 11, hechas en colaboracion con Messi', 3, 'NO'),
-(13, 'Brazuca top training', '1719357385_f37924bbed186715267f.jpg', 1, 34000.00, 'Adidas', 'Una pelota de futbol con tematica brazilera.', 5, 'NO'),
+(9, 'Predator Club Pastor', '1719199618_adbcebd5d814caa70376.webp', 4, 54000.00, 'Adidas', 'Un botin de futbol 11 hecho por una marca de reconocimiento mundial.', 1, 'NO'),
+(10, 'Predator Accuracy', '1719199697_01978cdc816419464a19.webp', 1, 11000.00, 'Adidas', 'Un botin de futbol 11 hecho por una prestigiosa marca.', 0, 'NO'),
+(11, 'Kick off', '1719205772_e73fbdb84e67b757460b.webp', 1, 2200.00, 'Nassau', 'Una pelota de futbol de buena calidad y a un precio accesible.', 5, 'NO'),
+(12, 'Canilleras de futbol	', '1719198057_07dfb721c7304029b8fd.webp', 5, 3000.00, 'Adidas', 'Canilleras de futbol 5 y 11, hechas en colaboracion con Messi', 0, 'NO'),
+(13, 'Brazuca top training', '1719357385_f37924bbed186715267f.jpg', 1, 34000.00, 'Adidas', 'Una pelota de futbol con tematica brazilera.', 1, 'NO'),
 (14, 'Magia Match Ball', '1719357459_c2e84b2bdd09322d8cd9.jpg', 1, 35000.00, 'Nike', 'Una pelota de futbol de la marca Nike hecha para un nivel profesional.', 7, 'NO'),
-(15, 'Matis 500', '1719357531_caceb0d634cd581c1956.jpg', 2, 23000.00, 'Penalty', 'Una pelota de futbol 5 de increíble calidad, hecha para durar.', 12, 'NO'),
-(16, 'Retro II', '1719357586_66989d06b00dee154e3c.webp', 2, 12020.00, 'Topper ', 'Una pelota de futbol 5 de precio accesible.', 1, 'NO'),
+(15, 'Matis 500', '1719357531_caceb0d634cd581c1956.jpg', 2, 23000.00, 'Penalty', 'Una pelota de futbol 5 de increíble calidad, hecha para durar.', 8, 'NO'),
+(16, 'Retro II', '1719357586_66989d06b00dee154e3c.webp', 2, 12020.00, 'Topper ', 'Una pelota de futbol 5 de precio accesible.', 0, 'NO'),
 (17, 'MAX 500 D', '1719357675_3d1d26c7f56959e0306f.jpeg', 2, 33000.00, 'Penalty ', 'Una pelota de futbol 5 disponible en 3 colores, blanca, negra y naranja.', 3, 'NO'),
-(18, 'King Dexter', '1719357715_d027228e6774db22e1e3.jpeg', 5, 3000.00, 'Puma ', 'Canilleras de Fútbol de una marca prestigiosa. ', 13, 'NO'),
+(18, 'King Dexter', '1719357715_d027228e6774db22e1e3.jpeg', 5, 3000.00, 'Puma ', 'Canilleras de Fútbol de una marca prestigiosa. ', 7, 'NO'),
 (19, 'Standalone Guard', '1719357764_82b72f60b36c31f75ed2.jpeg', 5, 5400.00, 'Puma ', 'Canilleras de futbol Unisex.', 69, 'NO'),
 (20, 'Plasti LitmusAzul', '1719357821_652896352e02fd1a5c8e.jpg', 5, 13000.00, 'Procer', 'Canillera de alta calidad.', 3, 'NO'),
 (21, 'Bravo Xxiii', '1719358256_2f01d87db635846ffd58.webp', 1, 24500.00, 'Penalty ', 'Una pelota de futbol.', 3, 'NO'),
 (22, 'Player 20', '1719358306_1f3cfa8d49aac6029596.jpg', 1, 22150.00, 'Kappa', 'Una pelota de futbol bien bonita.', 2, 'NO'),
-(23, 'Indoor Victory', '1719358492_c94b4055bcdc1be3bc52.png', 3, 56000.00, 'Kappa', 'Un botin de futbol 5 hecho por una marca de reconocimiento mundial.', 3, 'NO'),
+(23, 'Indoor Victory', '1719358492_c94b4055bcdc1be3bc52.png', 3, 56000.00, 'Kappa', 'Un botin de futbol 5 hecho por una marca de reconocimiento mundial.', 2, 'NO'),
 (24, 'Kaiser II', '1719358533_ba85716a2d2778a04d73.webp', 3, 67000.00, 'Topper ', 'Un botin de futbol 5 de alta calidad y durabilidad.', 10, 'NO'),
-(25, 'Crazyfast 3', '1719358569_57acabe19e53b601ce5e.webp', 3, 76000.00, 'Adidas', 'Un botin de futbol 11 hecho por una marca de reconocimiento mundial.', 1, 'NO'),
+(25, 'Crazyfast 3', '1719358569_57acabe19e53b601ce5e.webp', 3, 76000.00, 'Adidas', 'Un botin de futbol 11 hecho por una marca de reconocimiento mundial.', 0, 'NO'),
 (26, 'Stingray II', '1719358652_e6f715a845059d179381.webp', 4, 45050.00, 'Topper ', 'Un botin de futbol 11 un poco mas accesible y de una marca muy conocida.', 21, 'NO'),
 (27, 'Veloce Fg', '1719358724_a92648ef89eb6a83f38d.webp', 1, 56400.00, 'Kappa', 'Un botin de futbol 11 hecho para los profesionales.', 4, 'SI');
 
@@ -165,12 +163,13 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `usuario`, `email`, `pass`, `perfil_id`, `baja`) VALUES
 (123140, 'Administrador', 'Sabrozon', 'admin', 'admin@gmail.com', '$2y$10$iU9pbYE.VR86qtyxszNoa.wDFjN1.6AZmChAwyUbP8ZAddSxhmeea', 1, 'NO'),
 (123141, 'Jorge Raul', 'Ramos Morton', 'pancaseroo', 'jpd_jorgito_12@hotmail.com', '$2y$10$noYs.T2eakjsXiEvEJOE2.l4mNvjK48s.06buERdZrhQTsa02jCjK', 2, 'SI'),
-(123142, 'Jorge Raul', 'Ramos Morton', 'pancasero', 'jpdjorgito12@gmail.com', '$2y$10$szbACntNIZlK/yQeg0EN0ezD0jWX3A3MXCuU0pJcie.NCKWX2ZOwK', 2, 'NO'),
+(123142, 'Jorge Raul', 'Ramos Morton', 'pancasero', 'jpdjorgito12@gmail.com', '$2y$10$ZM.Vno4AHYZfn0pNfekrfOcqiFj0ApcZLQtYvE7yTZe.jXso7ii9i', 2, 'NO'),
 (123143, 'Clelia Raquel', 'Canteros Loebarth', 'cler', 'jpd_jorgito_12s@hotmail.com', '$2y$10$k01s6M4eRKb1/nmUL1JAHumbClKtvlfF0WskixDZIs/uDIVb7leFS', 2, 'NO'),
 (123144, 'Jorge Ramos', 'Cantero Loebarth', '36468588', 'vallvalenchu@gmail.com', '$2y$10$x5bfMfz0McCusDARxnfjTeKKy/HUoc0QTQefeb.d/LBEE3Mr4nS6O', 2, 'NO'),
 (123145, 'clelia', 'canteros', 'clerloe1', 'clelialoebarth@gmail.com', '$2y$10$UbVE3aOZkjn0cOQBxllY6.tf9bgtOY8xV06MdftmOf9SpvcEAuIMq', 2, 'NO'),
 (123146, 'Marcos', 'Alonso', 'marcos', 'marcos@live.com.ar', '$2y$10$X2nLA.wSmOcxstspBe1imOtkRqDTkeVA33tdW0VX6fNcBYp3JKRxe', 2, 'NO'),
-(123147, 'Victor', 'Ramos', 'vikram', 'vikram@gmail.com', '$2y$10$mrzWanUjMMNUM3APgLiuB.us4fH/ZYIvgRRkHwDk0aAVTcR0rtBYO', 2, 'NO');
+(123147, 'Jorge Raul', 'Ramos Morton', 'Ramos99', 'jpdjorgito12@hotmail.com', '$2y$10$HyYpH7OEnmm.DFzHQgDVVu5qOWRsEKjMtP3.WoIYN49CT0pSCVImm', 2, 'NO'),
+(1231232, 'Administrador2', 'Guapeton', 'admin2', 'admin2@gmail.com', 'admin2', 1, 'NO');
 
 -- --------------------------------------------------------
 
@@ -190,14 +189,21 @@ CREATE TABLE `ventas_cabecera` (
 --
 
 INSERT INTO `ventas_cabecera` (`id_ventas_cabecera`, `fecha`, `usuario_id`, `total_venta`) VALUES
-(1, '2024-06-26 16:21:24', 123142, 351200.00),
-(2, '2024-06-26 16:23:49', 123142, 351200.00),
-(3, '2024-06-26 16:29:34', 123142, 351200.00),
-(4, '2024-06-26 16:36:10', 123142, 74600.00),
-(5, '2024-06-26 18:10:08', 123142, 116400.00),
-(6, '2024-06-26 18:24:43', 123143, 112200.00),
-(7, '2024-06-26 18:26:00', 123143, 4400.00),
-(8, '2024-06-26 22:52:21', 123147, 54000.00);
+(8, '2024-09-08 17:33:10', 123147, 96000.00),
+(9, '2024-09-08 17:34:40', 123147, 76000.00),
+(10, '2024-09-06 23:28:52', 123143, 352000.00),
+(11, '2024-09-09 16:42:42', 123142, 81200.00),
+(12, '2024-09-09 16:48:47', 123142, 66000.00),
+(13, '2024-09-09 17:20:07', 123142, 68000.00),
+(14, '2024-09-09 18:11:09', 123142, 100000.00),
+(15, '2024-09-09 18:49:24', 123142, 12020.00),
+(16, '2024-09-10 02:48:33', 123142, 2200.00),
+(17, '2024-09-10 02:53:58', 123142, 3000.00),
+(18, '2024-09-10 02:54:34', 123142, 54000.00),
+(19, '2024-09-10 02:59:55', 123142, 324000.00),
+(20, '2024-09-10 03:51:20', 123142, 54000.00),
+(21, '2024-09-10 03:52:59', 123142, 46000.00),
+(22, '2024-09-10 07:10:16', 123142, 108000.00);
 
 -- --------------------------------------------------------
 
@@ -218,21 +224,28 @@ CREATE TABLE `ventas_detalle` (
 --
 
 INSERT INTO `ventas_detalle` (`id_venta_detalle`, `venta_id`, `producto_id`, `cantidad`, `precio`) VALUES
-(1, 2, 11, 6, 13200.00),
-(2, 3, 11, 6, 13200.00),
-(3, 3, 9, 2, 108000.00),
-(4, 3, 15, 10, 230000.00),
-(5, 4, 9, 1, 54000.00),
-(6, 4, 10, 1, 11000.00),
-(7, 4, 11, 3, 6600.00),
-(8, 4, 12, 1, 3000.00),
-(9, 5, 9, 2, 108000.00),
-(10, 5, 8, 1, 5400.00),
-(11, 5, 12, 1, 3000.00),
-(12, 6, 11, 1, 2200.00),
-(13, 6, 10, 10, 110000.00),
-(14, 7, 11, 2, 4400.00),
-(15, 8, 9, 1, 54000.00);
+(15, 8, 10, 2, 22000.00),
+(16, 8, 18, 6, 18000.00),
+(17, 8, 23, 1, 56000.00),
+(18, 9, 25, 1, 76000.00),
+(19, 10, 10, 2, 22000.00),
+(20, 10, 9, 6, 324000.00),
+(21, 10, 12, 2, 6000.00),
+(22, 11, 10, 1, 11000.00),
+(23, 11, 11, 1, 2200.00),
+(24, 11, 13, 2, 68000.00),
+(25, 12, 10, 6, 66000.00),
+(26, 13, 13, 2, 68000.00),
+(27, 14, 9, 1, 54000.00),
+(28, 14, 15, 2, 46000.00),
+(29, 15, 16, 1, 12020.00),
+(30, 16, 11, 1, 2200.00),
+(31, 17, 12, 1, 3000.00),
+(32, 18, 9, 1, 54000.00),
+(33, 19, 9, 6, 324000.00),
+(34, 20, 9, 1, 54000.00),
+(35, 21, 15, 2, 46000.00),
+(36, 22, 9, 2, 108000.00);
 
 --
 -- Índices para tablas volcadas
@@ -293,7 +306,7 @@ ALTER TABLE `ventas_detalle`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `consultas`
@@ -317,19 +330,19 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123148;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1231233;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas_cabecera`
 --
 ALTER TABLE `ventas_cabecera`
-  MODIFY `id_ventas_cabecera` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_ventas_cabecera` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas_detalle`
 --
 ALTER TABLE `ventas_detalle`
-  MODIFY `id_venta_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_venta_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Restricciones para tablas volcadas

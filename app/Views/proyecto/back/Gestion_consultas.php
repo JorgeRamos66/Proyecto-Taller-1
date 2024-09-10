@@ -5,11 +5,12 @@
 
     <!-- Formulario de Búsqueda -->
     <div class="d-flex justify-content-center mb-2">
-        <form class="d-flex justify-content-end col-2 mb-3" method="get" action="<?= base_url('gestion_consultas'); ?>">
+        <form class="bg-light p-1 rounded bg-opacity-50 d-flex justify-content-end col-3 mb-3" method="get" action="<?= base_url('gestion_consultas'); ?>">
             <input type="text" name="search" class="form-control form-control-sm me-2 bg-light border-success" placeholder="Buscar consulta" value="<?= isset($search) ? esc($search) : ''; ?>" />
-            <button type="submit" class="btn btn-sm btn-outline-success">Buscar</button>
+            <button type="submit" class="btn btn-sm btn-outline-success mx-1">Buscar</button>
+            <a href="<?= base_url('gestion_consultas'); ?>"><button type="button" class="btn btn-sm btn-outline-dark">Borrar</button></a>
         </form>
-        <a href="<?= base_url('gestion_consultas'); ?>"><button type="button" class="btn btn-sm btn-outline-dark">Borrar</button></a>
+        
     </div>
 
     <table class="table table-success table-hover table-striped table-bordered align-middle text-center">

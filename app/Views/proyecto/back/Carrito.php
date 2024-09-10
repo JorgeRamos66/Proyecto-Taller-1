@@ -183,12 +183,13 @@ $id = $session->get('id_usuario');
                         <h6 class="mt-3">Pago por Transferencia</h6>
                         <form id="transferForm">
                             <div class="mb-3">
-                                <label for="transferAccount" class="form-label">Cuenta de Transferencia</label>
+                                <label for="transferAccount" class="form-label">CBU: 82133146717263</label>
                                 <input type="text" class="form-control" id="transferAccount" placeholder="Número de cuenta" required>
                             </div>
                             <div class="mb-3">
-                                <label for="transferAmount" class="form-label">Monto Transferido</label>
-                                <input type="text" class="form-control" id="transferAmount" placeholder="Monto transferido" required>
+                                <label for="transferReceipt" class="form-label">Adjuntar Comprobante</label>
+                                <input type="file" class="form-control" id="transferReceipt" accept=".pdf" required>
+                                <small class="form-text text-muted">Adjunte el comprobante de transferencia en formato PDF.</small>
                             </div>
                         </form>
                     </div>
@@ -202,186 +203,90 @@ $id = $session->get('id_usuario');
     </div>
 </div>
 
-<!-- Modal para seleccionar pago y envío -->
-<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="paymentModalLabel">Seleccionar Método de Pago y Envío</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Sección de pago -->
-                <h6>Seleccione el método de pago:</h6>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="paymentMethod" id="paymentCash" value="cash" checked>
-                    <label class="form-check-label" for="paymentCash">
-                        Contado
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="paymentMethod" id="paymentCard" value="card">
-                    <label class="form-check-label" for="paymentCard">
-                        Tarjeta
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMercadoPago" value="mercado_pago">
-                    <label class="form-check-label" for="paymentMercadoPago">
-                        Mercado Pago
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="paymentMethod" id="paymentTransfer" value="transfer">
-                    <label class="form-check-label" for="paymentTransfer">
-                        Transferencia
-                    </label>
-                </div>
-                
-                <!-- Sección de envío -->
-                <h6 class="mt-3">Seleccione el método de envío:</h6>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="deliveryMethod" id="pickupStore" value="pickup" checked>
-                    <label class="form-check-label" for="pickupStore">
-                        Retirar en sucursal
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="deliveryMethod" id="deliveryAddress" value="delivery">
-                    <label class="form-check-label" for="deliveryAddress">
-                        Enviar a domicilio
-                    </label>
-                </div>
 
-                <!-- Campo de dirección (solo visible si se elige envío a domicilio) -->
-                <div class="mt-2" id="addressInput" style="display: none;">
-                    <label for="address">Dirección de envío:</label>
-                    <input type="text" class="form-control" id="address" placeholder="Ingrese su dirección">
-                </div>
 
-                <!-- Sección de pago adicional (oculta por defecto) -->
-                <div id="additionalPaymentFields">
-                    <div id="cardPaymentFields" style="display: none;">
-                        <h6 class="mt-3">Pago con Tarjeta</h6>
-                        <form id="cardPaymentForm">
-                            <div class="mb-3">
-                                <label for="cardNumber" class="form-label">Número de Tarjeta</label>
-                                <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required pattern="\d{4} \d{4} \d{4} \d{4}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="cardExpiry" class="form-label">Fecha de Expiración</label>
-                                <input type="text" class="form-control" id="cardExpiry" placeholder="MM/AA" required pattern="\d{2}/\d{2}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="cardCVV" class="form-label">CVV</label>
-                                <input type="text" class="form-control" id="cardCVV" placeholder="123" required pattern="\d{3}">
-                            </div>
-                        </form>
-                    </div>
-
-                    <div id="mercadoPagoFields" style="display: none;">
-                        <h6 class="mt-3">Pago con Mercado Pago</h6>
-                        <form id="mercadoPagoForm">
-                            <div class="mb-3">
-                                <label for="mercadoPagoEmail" class="form-label">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="mercadoPagoEmail" placeholder="tu-email@example.com" required>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div id="transferPaymentFields" style="display: none;">
-                        <h6 class="mt-3">Pago por Transferencia</h6>
-                        <form id="transferForm">
-                            <div class="mb-3">
-                                <label for="transferAccount" class="form-label">Cuenta de Transferencia</label>
-                                <input type="text" class="form-control" id="transferAccount" placeholder="Número de cuenta" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="transferAmount" class="form-label">Monto Transferido</label>
-                                <input type="text" class="form-control" id="transferAmount" placeholder="Monto transferido" required>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" id="confirmOrderButton" class="btn btn-primary">Confirmar Orden</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Scripts JS -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const paymentCash = document.getElementById('paymentCash');
-        const paymentCard = document.getElementById('paymentCard');
-        const paymentMercadoPago = document.getElementById('paymentMercadoPago');
-        const paymentTransfer = document.getElementById('paymentTransfer');
-        const deliveryAddress = document.getElementById('deliveryAddress');
-        const pickupStore = document.getElementById('pickupStore');
-        const addressInput = document.getElementById('addressInput');
-        
-        const cardPaymentFields = document.getElementById('cardPaymentFields');
-        const mercadoPagoFields = document.getElementById('mercadoPagoFields');
-        const transferPaymentFields = document.getElementById('transferPaymentFields');
-
-        function updatePaymentFields() {
-            if (paymentCash.checked) {
-                cardPaymentFields.style.display = 'none';
-                mercadoPagoFields.style.display = 'none';
-                transferPaymentFields.style.display = 'none';
-            } else if (paymentCard.checked) {
-                cardPaymentFields.style.display = 'block';
-                mercadoPagoFields.style.display = 'none';
-                transferPaymentFields.style.display = 'none';
-            } else if (paymentMercadoPago.checked) {
-                cardPaymentFields.style.display = 'none';
-                mercadoPagoFields.style.display = 'block';
-                transferPaymentFields.style.display = 'none';
-            } else if (paymentTransfer.checked) {
-                cardPaymentFields.style.display = 'none';
-                mercadoPagoFields.style.display = 'none';
-                transferPaymentFields.style.display = 'block';
-            }
-        }
-
-        function updateAddressField() {
-            if (deliveryAddress.checked) {
-                addressInput.style.display = 'block';
-            } else {
-                addressInput.style.display = 'none';
-            }
-        }
-
-        paymentCash.addEventListener('change', updatePaymentFields);
-        paymentCard.addEventListener('change', updatePaymentFields);
-        paymentMercadoPago.addEventListener('change', updatePaymentFields);
-        paymentTransfer.addEventListener('change', updatePaymentFields);
-
-        deliveryAddress.addEventListener('change', updateAddressField);
-        pickupStore.addEventListener('change', updateAddressField);
-
-        document.getElementById('confirmOrderButton').addEventListener('click', function () {
-            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
-            const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value;
-            const address = document.getElementById('address').value;
-            
-            fetch("<?= base_url('verificar_carrito'); ?>")
-                .then(response => response.json())
-                .then(data => {
-                    if (data.hasItems) {
-                        // Aquí se deben enviar los datos de la venta
-                        document.querySelector('form[action="<?= base_url('registrar_venta'); ?>"]').submit();
-                    } else {
-                        alert('El carrito está vacío.');
-                    }
-                });
-        });
-
-        // Inicializar el estado de los campos adicionales
+    function setDefaultSelections() {
+        document.getElementById('paymentCash').checked = true;
+        document.getElementById('pickupStore').checked = true;
         updatePaymentFields();
-        updateAddressField();
+        updateDeliveryFields();
+    }
+
+    $('#paymentModal').on('show.bs.modal', function () {
+        setDefaultSelections();
     });
+
+    const paymentCash = document.getElementById('paymentCash');
+    const paymentCard = document.getElementById('paymentCard');
+    const paymentMercadoPago = document.getElementById('paymentMercadoPago');
+    const paymentTransfer = document.getElementById('paymentTransfer');
+    const deliveryAddress = document.getElementById('deliveryAddress');
+    const pickupStore = document.getElementById('pickupStore');
+    const addressInput = document.getElementById('addressInput');
+
+    const cardPaymentFields = document.getElementById('cardPaymentFields');
+    const mercadoPagoFields = document.getElementById('mercadoPagoFields');
+    const transferPaymentFields = document.getElementById('transferPaymentFields');
+
+    function updatePaymentFields() {
+        cardPaymentFields.style.display = 'none';
+        mercadoPagoFields.style.display = 'none';
+        transferPaymentFields.style.display = 'none';
+
+        if (paymentCard.checked) {
+            cardPaymentFields.style.display = 'block';
+        } else if (paymentMercadoPago.checked) {
+            mercadoPagoFields.style.display = 'block';
+        } else if (paymentTransfer.checked) {
+            transferPaymentFields.style.display = 'block';
+        }
+    }
+
+    function updateDeliveryFields() {
+        addressInput.style.display = deliveryAddress.checked ? 'block' : 'none';
+    }
+
+    if (paymentCash) paymentCash.addEventListener('change', updatePaymentFields);
+    if (paymentCard) paymentCard.addEventListener('change', updatePaymentFields);
+    if (paymentMercadoPago) paymentMercadoPago.addEventListener('change', updatePaymentFields);
+    if (paymentTransfer) paymentTransfer.addEventListener('change', updatePaymentFields);
+    if (pickupStore) pickupStore.addEventListener('change', updateDeliveryFields);
+    if (deliveryAddress) deliveryAddress.addEventListener('change', updateDeliveryFields);
+
+    updatePaymentFields();
+    updateDeliveryFields();
+
+    document.getElementById('confirmOrderButton').addEventListener('click', function () {
+        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+        const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked');
+
+        if (!paymentMethod || !deliveryMethod) {
+            alert('Seleccione un método de pago y un método de entrega.');
+            return;
+        }
+
+        if (paymentMethod.value === 'mercado_pago') {
+            // Redirigir a Mercado Pago (simulación)
+            window.location.href = 'https://mpago.la/1hXFwFA'; // Aquí se usa el enlace proporcionado
+            return;
+        }
+
+        fetch("<?= base_url('verificar_carrito'); ?>")
+            .then(response => response.json())
+            .then(data => {
+                if (data.hasItems) {
+                    document.querySelector('form[action="<?= base_url('registrar_venta'); ?>"]').submit();
+                } else {
+                    alert('El carrito está vacío.');
+                }
+            })
+            .catch(error => {
+                console.error('Error al verificar el carrito:', error);
+                alert('Hubo un problema al verificar el carrito. Intente de nuevo.');
+            });
+    });
+});
+
 </script>

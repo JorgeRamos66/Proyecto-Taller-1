@@ -15,11 +15,11 @@ class Venta_Detalle_Model extends Model {
     public function getDetalles($id = null) {
         $db = \Config\Database::connect();
         $builder = $db->table('ventas_detalle');
-        $builder->select('*');
+        $builder->select('ventas_detalle.*, productos.*, usuarios.nombre as nombre_usuario, usuarios.apellido as apellido_usuario');
         $builder->join('ventas_cabecera', 'ventas_cabecera.id_ventas_cabecera = ventas_detalle.venta_id');
         $builder->join('productos', 'productos.id_producto = ventas_detalle.producto_id');
         $builder->join('usuarios', 'usuarios.id_usuario = ventas_cabecera.usuario_id');
-        if($id != null) {
+        if ($id != null) {
             $builder->where('ventas_cabecera.id_ventas_cabecera', $id);
         }
         $query = $builder->get();

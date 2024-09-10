@@ -55,14 +55,12 @@ class Producto_controller extends BaseController{
 
     public function gestion_productos() {
         $productoModel = new Producto_Model();
-    
-        // Obtener el término de búsqueda y número de elementos por página
+        $categoriaModel = new Categoria_Model(); // Asegúrate de que se esté instanciando
+        
         $search = $this->request->getGet('search');
         $itemsPerPage = $this->request->getGet('itemsPerPage') ?? 5;
-    
-        // Aplicar filtro de búsqueda si existe
+        
         if ($search) {
-            // Busca en nombre o marca
             $productos = $productoModel->groupStart()
                                        ->like('nombre_producto', $search)
                                        ->orLike('descripcion_producto', $search)
@@ -72,21 +70,22 @@ class Producto_controller extends BaseController{
         } else {
             $productos = $productoModel->paginate($itemsPerPage, 'productos');
         }
-    
+        
         $pager = $productoModel->pager;
-        $pager->setPath('gestion_productos'); // Establece la ruta base para la paginación
-    
+        $pager->setPath('gestion_productos');
+        
         $data = [
             'productos' => $productos,
             'pager' => $pager,
             'itemsPerPage' => $itemsPerPage,
-            'search' => $search
+            'search' => $search,
+            'categorias' => $categoriaModel->getCategorias(), // Asegúrate de que esta línea esté presente
         ];
-    
+        
         return view('proyecto/front/Encabezado', $data)
-            .view('proyecto/front/Barra_de_navegacion_admin')
-            .view('proyecto/back/Gestion_productos', $data) // Pasa $data aquí
-            .view('proyecto/front/Pie_de_pagina');
+            . view('proyecto/front/Barra_de_navegacion_admin')
+            . view('proyecto/back/Gestion_productos', $data)
+            . view('proyecto/front/Pie_de_pagina');
     }
 
     public function crear_producto(){

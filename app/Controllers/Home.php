@@ -10,7 +10,11 @@ class Home extends BaseController
         $productoModel = new Producto_Model();
         
         // Fetch the latest 3 products
-        $latestProducts = $productoModel->orderBy('id_producto', 'DESC')->findAll(3); // Fetching 3 latest products
+        $latestProducts = $productoModel
+        ->where('eliminado_producto', 'NO') // Filtro para productos no eliminados
+        ->orderBy('id_producto', 'DESC')    // Ordenar por id_producto en orden descendente
+        ->findAll(3);                       // Obtener los 3 productos más recientes
+
         
         $data = [
             'titulo' => 'Ratita Sporting',

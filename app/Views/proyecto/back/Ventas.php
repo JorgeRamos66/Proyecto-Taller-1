@@ -4,8 +4,8 @@
     </div>
 
     <!-- Formulario de Búsqueda y Filtrado por Rango de Fechas -->
-    <div class="container mb-3 p-3 d-flex justify-content-center">
-        <form class="row row-cols-2 gy-2 gx-3 text-center align-items-center" method="get" action="<?= base_url('ver_ventas'); ?>">
+    <div class="container mb-3 d-flex justify-content-center">
+        <form class="bg-light p-1 rounded bg-opacity-50 row row-cols-2 text-center align-items-center" method="get" action="<?= base_url('ver_ventas'); ?>">
             <!-- Campo de Búsqueda -->
             <div class="col-auto">
                 <input type="text" name="search" class="form-control form-control-sm border-warning" 

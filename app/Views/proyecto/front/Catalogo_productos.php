@@ -151,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var productoCantidad = compraModal.querySelector('#productoCantidad');
         productoCantidad.value = 1; // Valor por defecto
         productoCantidad.setAttribute('max', stock); // Máximo stock disponible
+        
 
         // Update hidden fields in the form
         var productoId = compraModal.querySelector('#productoId');

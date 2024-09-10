@@ -99,7 +99,9 @@ $routes->group('', ['filter' => 'admin'], function ($routes) {
     $routes->post('desleer-consulta/(:num)','Contacto_controller::marcar_consulta_desleido/$1');
     
     
-    $routes->get('facturacion','Ventas_controller::gestion_ventas');
+    $routes->get('facturacion','Ventas_controller::gestion_facturacion');
+    $routes->get('generarFactura/(:num)', 'Factura_controller::generarFactura/$1');
+
     
 });
 $routes->group('', ['filter' => 'logged'], function ($routes) {

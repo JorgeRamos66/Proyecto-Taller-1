@@ -1,0 +1,16 @@
+USUARIO
+CONTRASEÑA
+
+admin
+admin
+
+
+pancasero
+asd
+
+admin2
+admin2
+
+
+cler
+cler
